@@ -11,7 +11,7 @@ import SwiftUI
 struct PKM_CollectionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExpansionsView()
         }
     }
 }
