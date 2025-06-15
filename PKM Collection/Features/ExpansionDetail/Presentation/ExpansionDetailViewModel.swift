@@ -14,12 +14,21 @@ final class ExpansionDetailViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: String?
     
+    private let fetchCardListUseCase: FetchCardListUseCase
+    private let expansion: Expansion
     
+    init(
+        fetchCardListUseCase: FetchCardListUseCase,
+        expansion: Expansion
+    ) {
+        self.fetchCardListUseCase = fetchCardListUseCase
+        self.expansion = expansion
+    }
 
-    func load(expansion: Expansion) async {
+    func load() async {
         isLoading = true
         do {
-//            cards = try await APIClient.shared.fetchSetData(setInfo)
+            cards = try await fetchCardListUseCase.execute(path: expansion.path)
         } catch {
             print(error.localizedDescription)
             self.error = error.localizedDescription

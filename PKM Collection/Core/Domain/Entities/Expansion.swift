@@ -29,6 +29,11 @@ struct NumInfo: Decodable {
         case master
         case regular
     }
+    
+    init( master: Int, regular: Int) {
+        self.master = master
+        self.regular = regular
+    }
 }
 
 // MARK: - Expansion Entity
@@ -45,7 +50,6 @@ struct Expansion: Decodable, Identifiable {
     let symbolUrl: String
     let logoUrl: String
 
-
     private enum CodingKeys: String, CodingKey {
         case id = "key"
         case series
@@ -61,13 +65,13 @@ struct Expansion: Decodable, Identifiable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         self.id = try container.decode(String.self, forKey: .id)
         self.series = try container.decode(String.self, forKey: .series)
         self.path = try container.decode(String.self, forKey: .path)
-        
+
         self.name = try container.decode(String.self, forKey: .name)
-        
+
         self.num = try container.decode(NumInfo.self, forKey: .num)
         self.hash = try container.decode(String.self, forKey: .hash)
         self.abbr = try container.decode(String.self, forKey: .abbr)
@@ -75,5 +79,28 @@ struct Expansion: Decodable, Identifiable {
         self.symbolUrl = try container.decode(String.self, forKey: .symbolUrl)
         self.logoUrl = try container.decode(String.self, forKey: .logoUrl)
     }
-}
 
+    init(
+        id: String,
+        series: String,
+        path: String,
+        name: String,
+        num: NumInfo,
+        hash: String,
+        abbr: String,
+        releaseDate: String,
+        symbolUrl: String,
+        logoUrl: String
+    ) {
+        self.id = id
+        self.series = series
+        self.path = path
+        self.name = name
+        self.num = num
+        self.hash = hash
+        self.abbr = abbr
+        self.releaseDate = releaseDate
+        self.symbolUrl = symbolUrl
+        self.logoUrl = logoUrl
+    }
+}

@@ -17,6 +17,7 @@ struct PKMCollectionApp: App {
         WindowGroup {
             ExpansionListView()
                 .environmentObject(Self.appContainer.makeExpansionListViewModel())
+                .environment(.appContainer, Self.appContainer)
         }
     }
 }

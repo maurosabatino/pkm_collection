@@ -10,14 +10,9 @@ import Kingfisher
 // MARK: - ExpansionDetailView
 
 struct ExpansionDetailView: View {
-    @StateObject private var viewModel = ExpansionDetailViewModel()
+    @EnvironmentObject  var viewModel: ExpansionDetailViewModel
     
-    let expansion: Expansion
-    
-    
-    init(expansion: Expansion) {
-        self.expansion = expansion
-    }
+
     
     var body: some View {
         GeometryReader { geometry in
@@ -36,7 +31,7 @@ struct ExpansionDetailView: View {
             }
             .navigationTitle("Carte")
             .task {
-                await viewModel.load(expansion: expansion)
+                await viewModel.load()
             }
         }
     }
