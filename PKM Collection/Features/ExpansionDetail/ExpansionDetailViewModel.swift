@@ -16,10 +16,10 @@ final class ExpansionDetailViewModel: ObservableObject {
     
     
 
-    func load(setInfo: SetInfo) async {
+    func load(expansion: Expansion) async {
         isLoading = true
         do {
-            cards = try await APIClient.shared.fetchSetData(setInfo)
+//            cards = try await APIClient.shared.fetchSetData(setInfo)
         } catch {
             print(error.localizedDescription)
             self.error = error.localizedDescription

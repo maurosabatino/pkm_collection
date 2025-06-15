@@ -7,16 +7,16 @@
 import SwiftUI
 import Kingfisher
 
-// MARK: - ExpansionDetailView (La View Principale con la Logica del Layout)
+// MARK: - ExpansionDetailView
+
 struct ExpansionDetailView: View {
     @StateObject private var viewModel = ExpansionDetailViewModel()
     
-    let setInfo: SetInfo
+    let expansion: Expansion
     
-    let compactWidthThreshold: CGFloat = 500
     
-    init(setInfo: SetInfo) {
-        self.setInfo = setInfo
+    init(expansion: Expansion) {
+        self.expansion = expansion
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct ExpansionDetailView: View {
                 } else if let error = viewModel.error {
                     Text("Errore: \(error)")
                 } else {
-                    if geometry.size.width < compactWidthThreshold {
+                    if geometry.size.width < Constants.compactWidthThreshold {
                         ListView(cards: viewModel.cards)
                     } else {
                         GridView(cards: viewModel.cards, availableWidth: geometry.size.width)
@@ -36,9 +36,15 @@ struct ExpansionDetailView: View {
             }
             .navigationTitle("Carte")
             .task {
-                await viewModel.load(setInfo: setInfo)
+                await viewModel.load(expansion: expansion)
             }
         }
+    }
+}
+
+extension ExpansionDetailView {
+    enum Constants {
+        static let compactWidthThreshold: CGFloat = 500
     }
 }
 
@@ -68,7 +74,7 @@ struct CardListRow: View {
                 Text("N° \(card.collectorNumber.full ?? "N.A.")")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text(card.rarity.designation.rawValue)
+                Text(card.rarity?.designation.rawValue ?? "N.A.")
                     .font(.caption)
                     .foregroundColor(.gray)
             }

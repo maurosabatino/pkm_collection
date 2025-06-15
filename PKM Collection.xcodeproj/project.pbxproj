@@ -198,6 +198,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 34423AED2DEF563E0000F97A;
 			minimizedProjectReferenceProxies = 1;
@@ -399,7 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "PKM Collection/PKM_Collection.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PKM Collection/Resources/PKM_Collection.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8CA7MUH5E9;
@@ -437,7 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "PKM Collection/PKM_Collection.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "PKM Collection/Resources/PKM_Collection.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8CA7MUH5E9;

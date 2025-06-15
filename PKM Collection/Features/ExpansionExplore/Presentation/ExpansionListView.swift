@@ -7,25 +7,18 @@
 
 import SwiftUI
 
-struct ExpansionsView: View {
-    @StateObject private var viewModel = ExpansionsViewModel()
+struct ExpansionListView: View {
+    @EnvironmentObject var viewModel: ExpansionListViewModel
 
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Lingua", selection: $viewModel.selectedLanguage) {
-                    ForEach(Language.allCases) { lang in
-                        Text(lang.label).tag(lang)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .padding()
 
                 if viewModel.isLoading {
                     ProgressView("Caricamento...")
                 } else {
                     List(viewModel.expansions) { expansion in
-                        NavigationLink(destination: ExpansionDetailView(setInfo: expansion)) {
+                        NavigationLink(destination: ExpansionDetailView(expansion: expansion)) {
                             Text(expansion.name)
                         }
                     }

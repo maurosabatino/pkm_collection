@@ -16,7 +16,7 @@ struct CardData: Codable, Identifiable {
     let regulationMark: String?
     let setIcon: String
     let collectorNumber: CollectorNumber
-    let rarity: Rarity
+    let rarity: Rarity?
     let stage: Stage?
     let hp: Int?
     let types: [PokemonType]?

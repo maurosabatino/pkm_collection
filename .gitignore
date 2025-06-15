@@ -1,0 +1,43 @@
+# Xcode
+.DS_Store
+*.xcodeproj
+xcuserdata/
+DerivedData/
+.build/
+*.xcarchive
+*.xcworkspace
+!default.xcworkspace
+xcshareddata/
+# Swift Package Manager
+.swiftpm/
+# CocoaPods
+Pods/
+# Carthage
+Carthage/Build/
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots/
+# Other
+.cache/
+.bundle/
+.temp/
+.vscode/
+# Private data
+*.keychain
+*.mobileprovision
+# Logs
+*.log
+# User-specific preferences
+*.plist
+# Build artifacts
+build/
+# Simulator data
+~/Library/Developer/CoreSimulator/Devices/*/data/
+# Backups
+*.bak
+*.tmp
+# Local environment variables
+.env
+# Test outputs
+*.xctest
+# Anything else you want to ignore
