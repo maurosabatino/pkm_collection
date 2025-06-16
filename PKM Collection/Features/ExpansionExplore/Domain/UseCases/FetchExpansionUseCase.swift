@@ -5,11 +5,7 @@ protocol FetchExpansionUseCase {
 }
 
 final class FetchExpansionUseCaseImpl: FetchExpansionUseCase {
-    private let reposiroty: ExpansionRepository
-    
-    init(reposiroty: ExpansionRepository) {
-        self.reposiroty = reposiroty
-    }
+    private let reposiroty: ExpansionRepository = DefaultExpansionRepository(fileName: "set-it-IT")
     
     func execute() async throws -> [Expansion] {
         do {

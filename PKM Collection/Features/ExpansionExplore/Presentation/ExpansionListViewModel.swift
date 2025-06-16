@@ -15,13 +15,8 @@ final class ExpansionListViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var error: String?
 
-    private let fetchExpansionUseCase: FetchExpansionUseCase
+    private let fetchExpansionUseCase: FetchExpansionUseCase = FetchExpansionUseCaseImpl()
 
-    init(fetchExpansionUseCase: FetchExpansionUseCase) {
-        self.fetchExpansionUseCase = fetchExpansionUseCase
-    }
-    
-    
     func load() async {
         isLoading = true
         do {

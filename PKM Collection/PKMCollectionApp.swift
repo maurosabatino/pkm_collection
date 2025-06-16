@@ -10,14 +10,9 @@ import SwiftUI
 @main
 struct PKMCollectionApp: App {
     
-    private static let appContainer = AppContainer()
-    
-    
     var body: some Scene {
         WindowGroup {
             ExpansionListView()
-                .environmentObject(Self.appContainer.makeExpansionListViewModel())
-                .environment(.appContainer, Self.appContainer)
         }
     }
 }

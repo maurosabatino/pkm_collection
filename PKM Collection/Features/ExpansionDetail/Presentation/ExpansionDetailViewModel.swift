@@ -15,17 +15,14 @@ final class ExpansionDetailViewModel: ObservableObject {
     @Published var error: String?
     
     private let fetchCardListUseCase: FetchCardListUseCase
-    private let expansion: Expansion
+    
     
     init(
-        fetchCardListUseCase: FetchCardListUseCase,
-        expansion: Expansion
     ) {
-        self.fetchCardListUseCase = fetchCardListUseCase
-        self.expansion = expansion
+        self.fetchCardListUseCase = FetchCardListUseCaseImpl()
     }
 
-    func load() async {
+    func load(expansion: Expansion) async {
         isLoading = true
         do {
             cards = try await fetchCardListUseCase.execute(path: expansion.path)

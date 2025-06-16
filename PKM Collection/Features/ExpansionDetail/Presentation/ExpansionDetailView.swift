@@ -10,28 +10,32 @@ import Kingfisher
 // MARK: - ExpansionDetailView
 
 struct ExpansionDetailView: View {
-    @EnvironmentObject  var viewModel: ExpansionDetailViewModel
+    var expansion: Expansion
     
-
+    @StateObject var vm: ExpansionDetailViewModel = .init()
     
+    init(expansion: Expansion) {
+        self.expansion = expansion
+     
+    }
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                if viewModel.isLoading {
+                if vm.isLoading {
                     ProgressView("Caricamento carte...")
-                } else if let error = viewModel.error {
+                } else if let error = vm.error {
                     Text("Errore: \(error)")
                 } else {
                     if geometry.size.width < Constants.compactWidthThreshold {
-                        ListView(cards: viewModel.cards)
+                        ListView(cards: vm.cards)
                     } else {
-                        GridView(cards: viewModel.cards, availableWidth: geometry.size.width)
+                        GridView(cards: vm.cards, availableWidth: geometry.size.width)
                     }
                 }
             }
             .navigationTitle("Carte")
             .task {
-                await viewModel.load()
+                await vm.load(expansion: expansion)
             }
         }
     }

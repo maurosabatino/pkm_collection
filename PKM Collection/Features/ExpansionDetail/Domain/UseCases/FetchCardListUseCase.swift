@@ -10,15 +10,15 @@ protocol FetchCardListUseCase {
 }
 
 final class FetchCardListUseCaseImpl: FetchCardListUseCase {
-    private let reposiroty: CardListRepository
+    private let repository: CardListRepository
     
-    init(reposiroty: CardListRepository) {
-        self.reposiroty = reposiroty
+    init() {
+        self.repository = DefaultCardListRepository()
     }
     
     func execute(path: String) async throws -> [CardData] {
         do {
-            let carList: [CardData] = try await reposiroty.fetchCardList(path: path)
+            let carList: [CardData] = try await repository.fetchCardList(path: path)
             return carList
         } catch {
             throw error

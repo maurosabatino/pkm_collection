@@ -2,7 +2,7 @@
   {
     "key": "v1",
     "series": "Scarlatto e Violetto",
-    "path": "sv1.it-IT.json",
+    "path": "sv1.it-IT",
     "name": "Scarlatto e Violetto",
     "num": {
       "master": 444,
@@ -17,7 +17,7 @@
   {
     "key": "sv2",
     "series": "Scarlatto e Violetto",
-    "path": "sv2.it-IT.json",
+    "path": "sv2.it-IT",
     "name": "Evoluzioni a Paldea",
     "num": {
       "master": 455,
@@ -32,7 +32,7 @@
   {
     "key": "sv3",
     "series": "Scarlatto e Violetto",
-    "path": "sv3.it-IT.json",
+    "path": "sv3.it-IT",
     "name": "Ossidiana Infuocata",
     "num": {
       "master": 406,
@@ -47,7 +47,7 @@
   {
     "key": "sv3-5",
     "series": "Scarlatto e Violetto",
-    "path": "sv3-5.it-IT.json",
+    "path": "sv3-5.it-IT",
     "name": "151",
     "num": {
       "master": 360,
@@ -62,7 +62,7 @@
   {
     "key": "sv4",
     "series": "Scarlatto e Violetto",
-    "path": "sv4.it-IT.json",
+    "path": "sv4.it-IT",
     "name": "Paradosso Temporale",
     "num": {
       "master": 428,
@@ -77,7 +77,7 @@
   {
     "key": "sv4-5",
     "series": "Scarlatto e Violetto",
-    "path": "sv4-5.it-IT.json",
+    "path": "sv4-5.it-IT",
     "name": "Destino di Paldea",
     "num": {
       "master": 326,
@@ -92,7 +92,7 @@
   {
     "key": "sv5",
     "series": "Scarlatto e Violetto",
-    "path": "sv5.it-IT.json",
+    "path": "sv5.it-IT",
     "name": "Cronoforze",
     "num": {
       "master": 358,
@@ -107,7 +107,7 @@
   {
     "key": "sv6",
     "series": "Scarlatto e Violetto",
-    "path": "sv6.it-IT.json",
+    "path": "sv6.it-IT",
     "name": "Crepuscolo Mascherato",
     "num": {
       "master": 373,
@@ -122,7 +122,7 @@
   {
     "key": "sv6-5",
     "series": "Scarlatto e Violetto",
-    "path": "sv6-5.it-IT.json",
+    "path": "sv6-5.it-IT",
     "name": "Segreto Fiabesco",
     "num": {
       "master": 154,
@@ -137,7 +137,7 @@
   {
     "key": "sv7",
     "series": "Scarlatto e Violetto",
-    "path": "sv7.it-IT.json",
+    "path": "sv7.it-IT",
     "name": "Corona Astrale",
     "num": {
       "master": 300,
@@ -152,7 +152,7 @@
   {
     "key": "sv8",
     "series": "Scarlatto e Violetto",
-    "path": "sv8.it-IT.json",
+    "path": "sv8.it-IT",
     "name": "Scintille Folgoranti ",
     "num": {
       "master": 417,
@@ -167,7 +167,7 @@
   {
     "key": "sv8-5",
     "series": "Scarlatto e Violetto",
-    "path": "sv8-5.it-IT.json",
+    "path": "sv8-5.it-IT",
     "name": "Evoluzioni Prismatiche",
     "num": 447,
     "hash": "76140a7489a6ede562f6ecee24e6db8c",
@@ -179,7 +179,7 @@
   {
     "key": "sv9",
     "series": "Scarlatto e Violetto",
-    "path": "sv9.it-IT.json",
+    "path": "sv9.it-IT",
     "name": "Avventure Insieme",
     "num": {
       "master": 333,
@@ -194,7 +194,7 @@
   {
     "key": "sv10",
     "series": "Scarlatto e Violetto",
-    "path": "sv10.it-IT.json",
+    "path": "sv10.it-IT",
     "name": "Rivali Predestinati",
     "num": {
       "master": 409,
@@ -209,7 +209,7 @@
   {
     "key": "svbsp",
     "series": "Scarlatto e Violetto",
-    "path": "svbsp.it-IT.json",
+    "path": "svbsp.it-IT",
     "name": "Carte promozionali stella nera serie  Scarlatto e Violetto",
     "num": {
       "master": 198,
