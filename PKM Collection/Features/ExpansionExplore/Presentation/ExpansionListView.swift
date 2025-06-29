@@ -2,28 +2,36 @@ import SwiftUI
 
 struct ExpansionListView: View {
     @StateObject var vm: ExpansionListViewModel = .init()
+    
+    // Stato per la CustomHeaderView (se usata)
+    @State private var isHeaderScrolledToTop: Bool = true
 
     var body: some View {
-        NavigationView {
-            VStack { // <-- Qui è dove il navigationTitle dovrebbe andare
+        NavigationStack {
+            VStack {
                 if vm.isLoading {
                     ProgressView("Caricamento...")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    List(vm.expansions) { expansion in
-                        NavigationLink(destination: ExpansionDetailView(expansion: expansion)) {
-                            ExpansionItemView(expansion: expansion)
-                                .padding(10) // Padding interno all'ExpansionItemView
-                                .background(Color.white) // O un colore a tua scelta per lo sfondo della cella
-                                .cornerRadius(10) // Bordi arrotondati per un effetto "card"
-                                .shadow(radius: 3) // Un'ombra leggera per la profondità
-                        }
-                        .listRowSeparator(.hidden) // Nasconde il separatore di default della riga
-                        .padding(.vertical, 5) // Padding verticale tra le righe
-                    }
-                    .listStyle(.inset)
+                    // Passiamo il binding per lo stato dello scroll
+                    ExpansionListContent(vm: vm, isHeaderScrolledToTop: $isHeaderScrolledToTop)
                 }
             }
-            .navigationTitle("Espansioni") // <-- Spostato qui
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    // Usa la tua CustomHeaderView per il titolo animato
+                    CustomHeaderView(
+                        title: "Espansioni",
+                        imageName: TabItem.expansions.systemImage,
+                        imageColor: .orange,
+                        isScrolledToTop: $isHeaderScrolledToTop
+                    )
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline) // Fondamentale per CustomHeaderView
+            .navigationDestination(for: Expansion.self) { expansion in
+                ExpansionDetailView(expansion: expansion)
+            }
         }
         .task {
             await vm.load()

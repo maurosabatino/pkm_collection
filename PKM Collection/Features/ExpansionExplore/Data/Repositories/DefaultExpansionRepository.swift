@@ -19,6 +19,15 @@ final class DefaultExpansionRepository: ExpansionRepository {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd" 
+                    
+            dateFormatter.calendar = Calendar(identifier: .iso8601)
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            
             let expansions = try decoder.decode([Expansion].self, from: data)
             return expansions
         } catch let decodingError as DecodingError {

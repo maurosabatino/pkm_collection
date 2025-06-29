@@ -78,7 +78,7 @@ struct ExpansionItemView_Previews: PreviewProvider {
             num: NumInfo(master: 444, regular: 258),
             hash: "14078a7d533f8bde403c18f043f4beba",
             abbr: "SVI",
-            releaseDate: "2023-03-30",
+            releaseDate: Date(),
             symbolUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Scarlet%20&%20Violet/symbol.png",
             logoUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Scarlet%20&%20Violet/logo.png"
         )
@@ -92,7 +92,7 @@ struct ExpansionItemView_Previews: PreviewProvider {
             num: NumInfo(master: 373, regular: 226),
             hash: "f73a800036a4dc27dcd8b67863e603bc",
             abbr: "TWM",
-            releaseDate: "2024-05-24",
+            releaseDate: Date(),
             symbolUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Twilight%20Masquerade/symbol.png",
             logoUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Twilight%20Masquerade/logo.png"
         )
@@ -106,7 +106,7 @@ struct ExpansionItemView_Previews: PreviewProvider {
             num: NumInfo(master: 447, regular: 203),
             hash: "76140a7489a6ede562f6ecee24e6db8c",
             abbr: "PRE",
-            releaseDate: "2025-01-17",
+            releaseDate: Date(),
             symbolUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Prismatic%20Evolutions/symbol.png",
             logoUrl: "https://pkmn-tcg-api-images.sfo2.cdn.digitaloceanspaces.com/Prismatic%20Evolutions/logo.png"
         )

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - NumInfo
 
-struct NumInfo: Decodable {
+struct NumInfo: Decodable, Hashable {
     let master: Int
     let regular: Int
 
@@ -38,7 +38,7 @@ struct NumInfo: Decodable {
 
 // MARK: - Expansion Entity
 
-struct Expansion: Decodable, Identifiable {
+struct Expansion: Decodable, Identifiable, Hashable {
     let id: String
     let series: String
     let path: String
@@ -46,7 +46,7 @@ struct Expansion: Decodable, Identifiable {
     let num: NumInfo
     let hash: String
     let abbr: String
-    let releaseDate: String
+    let releaseDate: Date
     let symbolUrl: String
     let logoUrl: String
 
@@ -75,7 +75,7 @@ struct Expansion: Decodable, Identifiable {
         self.num = try container.decode(NumInfo.self, forKey: .num)
         self.hash = try container.decode(String.self, forKey: .hash)
         self.abbr = try container.decode(String.self, forKey: .abbr)
-        self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
+        self.releaseDate = try container.decode(Date.self, forKey: .releaseDate)
         self.symbolUrl = try container.decode(String.self, forKey: .symbolUrl)
         self.logoUrl = try container.decode(String.self, forKey: .logoUrl)
     }
@@ -88,7 +88,7 @@ struct Expansion: Decodable, Identifiable {
         num: NumInfo,
         hash: String,
         abbr: String,
-        releaseDate: String,
+        releaseDate: Date,
         symbolUrl: String,
         logoUrl: String
     ) {
