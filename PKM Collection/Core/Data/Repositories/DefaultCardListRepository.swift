@@ -6,6 +6,10 @@
 //
 import Foundation
 
+protocol CardListRepository {
+    func fetchCardList(path: String) async throws -> [CardData]
+}
+
 final class DefaultCardListRepository: CardListRepository {
     
     

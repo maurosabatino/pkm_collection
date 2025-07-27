@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - NumInfo
 
-struct NumInfo: Decodable, Hashable {
+struct NumInfo: Decodable, Hashable, Identifiable {
+    let id = UUID()
+    
     let master: Int
     let regular: Int
 
