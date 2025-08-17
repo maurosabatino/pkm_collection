@@ -8,17 +8,16 @@ import SwiftUI
 
 struct AppColors {
     // Sfondi
-    static let backgroundPrimary = Color.blue.opacity(UIConstants.backgroundOpacityMedium) // Sfondo della lista in modalità chiara
-    static let cardBackground = Color.white // Sfondo delle card in modalità chiara
-    // Per un supporto completo a Dark Mode, potresti definire:
-    // static let backgroundPrimary = Color(light: Color.blue.opacity(UIConstants.backgroundOpacityMedium), dark: Color.black.opacity(0.8))
-    // static let cardBackground = Color(light: .white, dark: Color(.systemGray6))
+    static let backgroundPrimary = Color.blue.opacity(UIConstants.backgroundOpacityMedium)
+    static let cardBackground = Color.white
+    static let modalBackground = Color.black.opacity(UIConstants.modalBackgroundOpacity)
 
     // Testo
-    static let textPrimary = Color.primary // Si adatta automaticamente a Light/Dark Mode
-    static let textSecondary = Color.secondary // Si adatta automaticamente a Light/Dark Mode
+    static let textPrimary = Color.primary
+    static let textSecondary = Color.secondary
     static let textGray = Color.gray
     static let textBlue = Color.blue
+    static let modalCloseButton = Color.white
 
     // Elementi UI
     static let shadow = Color.black.opacity(UIConstants.backgroundOpacityHigh)
@@ -26,5 +25,5 @@ struct AppColors {
     static let placeholder = Color.gray.opacity(UIConstants.backgroundOpacityHigh)
     static let error = Color.red
     static let warning = Color.orange
-    static let accent = Color.accentColor // Colore accentuato del sistema
+    static let accent = Color.accentColor
 }

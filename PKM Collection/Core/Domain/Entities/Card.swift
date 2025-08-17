@@ -145,6 +145,7 @@ struct TcglImages: Codable {
     let tex: ImagePaths?
     let png: ImagePaths?
     let jpg: ImagePaths?
+    
 }
 
 // MARK: - ImagePaths (tex, png, jpg hanno la stessa sottostruttura, ora con foil)
@@ -152,6 +153,7 @@ struct ImagePaths: Codable {
     let front: String
     let back: String?
     let foil: String? // Aggiunto l'URL per il foil
+    let etch: String? 
 }
 
 // MARK: - PokemonType (Energie)

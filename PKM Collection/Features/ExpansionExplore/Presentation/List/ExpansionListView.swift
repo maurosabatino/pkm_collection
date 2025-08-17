@@ -39,7 +39,7 @@ struct ExpansionListView: View {
                 .ignoresSafeArea()
         )
         // Aggiunge la barra di ricerca.
-        .searchable(text: $expansionStore.searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: AppStrings.searchPlaceholder)
+        .searchable(text: $expansionStore.searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: AppStrings.searchPlaceholder)
         .onAppear {
             if expansionStore.expansions.isEmpty {
                 Task {

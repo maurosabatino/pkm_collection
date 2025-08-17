@@ -23,8 +23,15 @@ enum AppStrings {
     static let seriesPrefix = "Series: "
     static let releaseDatePrefix = "Release Date: "
     static let cardsPrefix = "Cards: "
-    static let searchPlaceholder = "Search Expansions" // Nuova stringa per la barra di ricerca
+    static let searchPlaceholder = "Search Expansions"
+    static let searchCardsPlaceholder = "Search Cards" // Nuova stringa per la barra di ricerca delle carte
 
+    // Dettagli delle carte
+    static let cardNamePlaceholder = "Card Name" // Placeholder per il nome della carta
+    static let noFoil = "No Foil" // Stringa per indicare l'assenza di foil
+    static let displayModeLabel = "Display Mode" // Nuova stringa per il picker
+    static let regularSetMode = "Regular Set" // Stringa per la modalità Regular Set
+    static let masterSetMode = "Master Set" // Stringa per la modalità Master Set
 
     // Messaggi di errore di dominio (generalizzati per non ripetere)
     static let errorPrefix = "Error: "
@@ -42,4 +49,13 @@ enum AppStrings {
     static let sampleExpansionSeries2 = "Sole e Luna"
     static let sampleExpansionName3 = "XY"
     static let sampleExpansionSeries3 = "XY"
+    static let sampleExpansionName4 = "Evoluzioni a Paldea"
+    static let sampleExpansionSeries4 = "Scarlatto e Violetto"
+    static let sampleExpansionName5 = "Destino di Paldea"
+    static let sampleExpansionSeries5 = "Scarlatto e Violetto"
+    static let sampleExpansionName6 = "Zenit Regale"
+    static let sampleExpansionSeries6 = "Spada e Scudo"
+    static let sampleCardName1 = "Pikachu"
+    static let sampleCardName2 = "Charizard"
+    static let sampleCardName3 = "Mewtwo"
 }
