@@ -1,43 +1,70 @@
-# Xcode
+### macOS ###
+# General
 .DS_Store
-*.xcodeproj
+.AppleDouble
+.LSOverride
+
+# Icon must end with two
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
 xcuserdata/
-DerivedData/
-.build/
-*.xcarchive
-*.xcworkspace
-!default.xcworkspace
-xcshareddata/
-# Swift Package Manager
-.swiftpm/
-# CocoaPods
-Pods/
-# Carthage
-Carthage/Build/
-# Fastlane
-fastlane/report.xml
-fastlane/screenshots/
-# Other
-.cache/
-.bundle/
-.temp/
-.vscode/
-# Private data
-*.keychain
-*.mobileprovision
-# Logs
-*.log
-# User-specific preferences
-*.plist
-# Build artifacts
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
-# Simulator data
-~/Library/Developer/CoreSimulator/Devices/*/data/
-# Backups
-*.bak
-*.tmp
-# Local environment variables
-.env
-# Test outputs
-*.xctest
-# Anything else you want to ignore
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+
+### Projects ###
+*.xcodeproj
+*.xcworkspace
+
+### Tuist derived files ###
+graph.dot
+Derived/
+
+### Tuist managed dependencies ###
+Tuist/.build
