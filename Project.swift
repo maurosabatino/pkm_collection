@@ -7,7 +7,7 @@ let project = Project(
             name: "PKMCollection",
             destinations: .iOS,
             product: .app,
-            bundleId: "com.maurosabatino.PKM-Collection",
+            bundleId: "com.maurosabatino.pkmcollection",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchScreen": [
@@ -16,11 +16,12 @@ let project = Project(
                     ],
                 ]
             ),
-            resources: [
-                .glob(pattern: "PKMCollection/Resources/**"),
+            sources: [
+                "App/Sources/**",
+                "Modules/**",
             ],
-            buildableFolders: [
-                "PKMCollection/Sources",
+            resources: [
+                .glob(pattern: "App/Resources/**"),
             ],
             dependencies: [
                 .external(name: "Kingfisher"),
@@ -38,12 +39,23 @@ let project = Project(
             name: "PKMCollectionTests",
             destinations: .iOS,
             product: .unitTests,
-            bundleId: "com.maurosabatino.PKM-CollectionTests",
+            bundleId: "com.maurosabatino.pkmcollection.tests",
             infoPlist: .default,
-            buildableFolders: [
-                "PKMCollection/Tests"
-            ],
-            dependencies: [.target(name: "PKMCollection")]
+            sources: ["Tests/Unit/**"],
+            dependencies: [
+                .target(name: "PKMCollection"),
+            ]
         ),
+        .target(
+            name: "PKMCollectionUITests",
+            destinations: .iOS,
+            product: .uiTests,
+            bundleId: "com.maurosabatino.pkmcollection.uitests",
+            infoPlist: .default,
+            sources: ["Tests/UITests/**"],
+            dependencies: [
+                .target(name: "PKMCollection"),
+            ]
+        )
     ]
 )
