@@ -7,6 +7,8 @@
 import SwiftUI
 import Kingfisher
 
+import CoreKit
+
 struct CachedImageView: View {
     let url: URL?
     let size: CGSize

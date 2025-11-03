@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FeatureExpansion
 
 enum TabItem: String, CaseIterable, Identifiable {
     case expansions = "Espansioni"

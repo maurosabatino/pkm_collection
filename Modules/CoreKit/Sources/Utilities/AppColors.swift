@@ -6,7 +6,9 @@
 //
 import SwiftUI
 
-struct AppColors {
+public struct AppColors {}
+
+public extension AppColors {
     // Sfondi
     static let backgroundPrimary = Color.blue.opacity(UIConstants.backgroundOpacityMedium)
     static let cardBackground = Color.white

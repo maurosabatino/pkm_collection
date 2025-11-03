@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 @MainActor
-final class ExpansionStore: ObservableObject {
+public final class ExpansionStore: ObservableObject {
     @Published var expansions: [Expansion] = []
     @Published var searchText = ""
 
@@ -31,7 +31,12 @@ final class ExpansionStore: ObservableObject {
     }
     
     private let fetchExpansionUseCase: FetchExpansionUseCase
-
+    public init () {
+        self.fetchExpansionUseCase = FetchExpansionUseCaseImpl()
+        Task {
+            await load()
+        }
+    }
     init(fetchExpansionUseCase: FetchExpansionUseCase = FetchExpansionUseCaseImpl()) {
         self.fetchExpansionUseCase = fetchExpansionUseCase
         Task {

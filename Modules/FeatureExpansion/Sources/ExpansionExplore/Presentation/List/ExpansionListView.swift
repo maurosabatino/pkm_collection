@@ -1,11 +1,13 @@
 import SwiftUI
+import CoreKit
+
 
 // MARK: - ExpansionListView
-struct ExpansionListView: View {
+public struct ExpansionListView: View {
     // Accesso allo store delle espansioni tramite EnvironmentObject.
     @EnvironmentObject var expansionStore: ExpansionStore
 
-    var body: some View {
+    public var body: some View {
         List {
             // Itera sulle chiavi delle serie ordinate per creare le sezioni.
             ForEach(expansionStore.sortedSeriesKeys, id: \.self) { series in

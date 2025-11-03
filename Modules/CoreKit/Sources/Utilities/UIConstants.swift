@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-enum UIConstants {
+public enum UIConstants {}
+
+public extension UIConstants {
     // Padding e Spacing
     static let paddingSmall: CGFloat = 4
     static let paddingMedium: CGFloat = 10

@@ -5,7 +5,9 @@
 //  Created by SABATINO MAURO on 27/07/25.
 //
 
-enum AppStrings {
+public enum AppStrings {}
+
+public extension AppStrings {
     // Titoli e etichette generali
     static let appTitle = "Pokémon Collection"
     static let expansionsTitle = "Pokémon Expansions"

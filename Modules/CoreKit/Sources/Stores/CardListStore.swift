@@ -63,7 +63,7 @@ final class CardListStore: ObservableObject {
         let filteredBySearch = allCardData.filter { cardData in
             if query.isEmpty { return true }
             let nameMatch = cardData.name.foldedForSearch.contains(query)
-            let foilTypeMatch = cardData.foil?.type.stringValue.foldedForSearch.contains(query) ?? false
+            let foilTypeMatch = cardData.foil?.type.rawValue.foldedForSearch.contains(query) ?? false
             let foilMaskMatch = cardData.foil?.mask.rawValue.foldedForSearch.contains(query) ?? false
             return nameMatch || foilTypeMatch || foilMaskMatch
         }
