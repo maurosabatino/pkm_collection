@@ -2,6 +2,7 @@ import Foundation
 
 enum FeatureExpansionStrings {
     private static let bundle = Bundle(for: BundleToken.self)
+    private static let table = "FeatureExpansion"
 
     static var moduleTitle: String { localized("featureExpansion.title") }
     static var tabLabel: String { localized("featureExpansion.tab.label") }
@@ -37,7 +38,7 @@ enum FeatureExpansionStrings {
     }
 
     private static func localized(_ key: String) -> String {
-        bundle.localizedString(forKey: key, value: nil, table: nil)
+        bundle.localizedString(forKey: key, value: nil, table: table)
     }
 
     private final class BundleToken {}
