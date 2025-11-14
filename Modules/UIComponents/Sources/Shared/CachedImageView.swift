@@ -6,18 +6,33 @@
 //
 import SwiftUI
 import Kingfisher
-
 import CoreKit
 
-struct CachedImageView: View {
-    let url: URL?
-    let size: CGSize
-    let cornerRadius: CGFloat
-    let shadowRadius: CGFloat?
-    let placeholderColor: Color
-    let errorColor: Color
+public struct CachedImageView: View {
+    private let url: URL?
+    private let size: CGSize
+    private let cornerRadius: CGFloat
+    private let shadowRadius: CGFloat?
+    private let placeholderColor: Color
+    private let errorColor: Color
 
-    var body: some View {
+    public init(
+        url: URL?,
+        size: CGSize,
+        cornerRadius: CGFloat,
+        shadowRadius: CGFloat? = nil,
+        placeholderColor: Color,
+        errorColor: Color
+    ) {
+        self.url = url
+        self.size = size
+        self.cornerRadius = cornerRadius
+        self.shadowRadius = shadowRadius
+        self.placeholderColor = placeholderColor
+        self.errorColor = errorColor
+    }
+
+    public var body: some View {
         KFImage(url)
             .resizable()
             .placeholder {
@@ -54,19 +69,42 @@ struct CachedImageView: View {
 
 // MARK: - Preview for CachedImageView
 #Preview {
-        VStack(spacing: UIConstants.spacingMedium) {
-            CachedImageView(url: URL(string: "https://images.pokemontcg.io/swsh1/symbol.png"), size: CGSize(width: 80, height: 80), cornerRadius: UIConstants.cornerRadiusMedium, shadowRadius: UIConstants.shadowRadius, placeholderColor: AppColors.placeholder, errorColor: AppColors.error)
-             
+    VStack(spacing: UIConstants.spacingMedium) {
+        CachedImageView(
+            url: URL(string: "https://images.pokemontcg.io/swsh1/symbol.png"),
+            size: CGSize(width: 80, height: 80),
+            cornerRadius: UIConstants.cornerRadiusMedium,
+            shadowRadius: UIConstants.shadowRadius,
+            placeholderColor: AppColors.placeholder,
+            errorColor: AppColors.error
+        )
 
-            CachedImageView(url: URL(string: "https://images.pokemontcg.io/swsh1/logo.png"), size: CGSize(width: 150, height: 50), cornerRadius: UIConstants.cornerRadiusSmall, shadowRadius: nil, placeholderColor: AppColors.placeholder, errorColor: AppColors.error)
-              
+        CachedImageView(
+            url: URL(string: "https://images.pokemontcg.io/swsh1/logo.png"),
+            size: CGSize(width: 150, height: 50),
+            cornerRadius: UIConstants.cornerRadiusSmall,
+            shadowRadius: nil,
+            placeholderColor: AppColors.placeholder,
+            errorColor: AppColors.error
+        )
 
-            CachedImageView(url: URL(string: "invalid-url"), size: CGSize(width: 80, height: 80), cornerRadius: UIConstants.cornerRadiusMedium, shadowRadius: UIConstants.shadowRadius, placeholderColor: AppColors.placeholder, errorColor: AppColors.error)
-                
+        CachedImageView(
+            url: URL(string: "invalid-url"),
+            size: CGSize(width: 80, height: 80),
+            cornerRadius: UIConstants.cornerRadiusMedium,
+            shadowRadius: UIConstants.shadowRadius,
+            placeholderColor: AppColors.placeholder,
+            errorColor: AppColors.error
+        )
 
-            CachedImageView(url: nil, size: CGSize(width: 80, height: 80), cornerRadius: UIConstants.cornerRadiusMedium, shadowRadius: UIConstants.shadowRadius, placeholderColor: AppColors.placeholder, errorColor: AppColors.error)
-              
-        }
-        .padding()
+        CachedImageView(
+            url: nil,
+            size: CGSize(width: 80, height: 80),
+            cornerRadius: UIConstants.cornerRadiusMedium,
+            shadowRadius: UIConstants.shadowRadius,
+            placeholderColor: AppColors.placeholder,
+            errorColor: AppColors.error
+        )
     }
-
+    .padding()
+}

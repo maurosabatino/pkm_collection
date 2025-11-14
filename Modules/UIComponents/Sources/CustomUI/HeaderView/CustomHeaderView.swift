@@ -1,20 +1,27 @@
 import SwiftUI
 
-struct ScrollOffsetPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = .zero
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+public struct ScrollOffsetPreferenceKey: PreferenceKey {
+    public static var defaultValue: CGFloat = .zero
+
+    public static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
     }
 }
 
-struct CustomHeaderView: View {
-    let title: String
-    let imageName: String
-    let imageColor: Color
-    
-    @Binding var isScrolledToTop: Bool
+public struct CustomHeaderView: View {
+    private let title: String
+    private let imageName: String
+    private let imageColor: Color
+    @Binding private var isScrolledToTop: Bool
 
-    var body: some View {
+    public init(title: String, imageName: String, imageColor: Color, isScrolledToTop: Binding<Bool>) {
+        self.title = title
+        self.imageName = imageName
+        self.imageColor = imageColor
+        self._isScrolledToTop = isScrolledToTop
+    }
+
+    public var body: some View {
         HStack {
             Image(systemName: imageName)
                 .foregroundColor(imageColor)

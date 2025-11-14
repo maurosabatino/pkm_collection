@@ -1,7 +1,5 @@
 import SwiftUI
 import FirebaseCore
-import CoreKit
-
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -17,15 +15,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct PKMCollectionApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
-    @StateObject var expansionStore = ExpansionStore()
-    @StateObject var ownedCardsStore = OwnedCardsStore()
+    @StateObject private var moduleRegistry = AppModuleRegistry()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-            .environmentObject(expansionStore)
-            .environmentObject(ownedCardsStore)
+                .environmentObject(moduleRegistry)
+                .environmentObject(moduleRegistry.navigator)
         }
     }
 }

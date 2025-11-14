@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DomainError: Error {
+public enum DomainError: Error {
     /// Errore generico di rete, spesso mappato da un `URLError`.
     case networkError(Error)
     

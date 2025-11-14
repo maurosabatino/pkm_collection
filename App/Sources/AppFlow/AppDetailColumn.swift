@@ -6,25 +6,23 @@
 //
 
 import SwiftUI
+import CoreKit
 
 struct AppDetailColumn: View {
-    var screen: AppScreen?
-    // Riceve il NavigationPath come binding
+    var selection: ModuleEntryDescriptor?
     @Binding var navigationPath: NavigationPath
-    @EnvironmentObject var expansionStore: ExpansionStore
+    let navigator: ModuleNavigator
 
     var body: some View {
         Group {
-            if let screen = screen {
-                // La NavigationStack è ora interna a ExpansionsNavigationStack,
-                // quindi qui si presenta solo la destinazione.
-                // Se questa colonna deve avere una NavigationStack propria per gestire
-                // una pila di navigazione indipendente per ogni elemento della sidebar,
-                // allora la NavigationStack(path: $navigationPath) dovrebbe avvolgere screen.destination.
-                // Per ora, assumiamo che ExpansionsNavigationStack gestisca la sua pila.
-                screen.destination // Questo sarà ExpansionsNavigationStack()
+            if let selection = selection {
+                selection.makeView(navigator: navigator)
             } else {
-                ContentUnavailableView("Select an expansion", systemImage: "folder", description: Text("Pick something from the list."))
+                ContentUnavailableView(
+                    AppStrings.selectExpansionPlaceholder,
+                    systemImage: "folder",
+                    description: Text(AppStrings.pickSomethingFromList)
+                )
             }
         }
         #if os(macOS)

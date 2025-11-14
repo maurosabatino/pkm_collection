@@ -5,7 +5,8 @@
 //  Created by Mauro on 03/06/25.
 //
 import SwiftUI
-import Kingfisher
+import CoreKit
+import UIComponents
 
 // MARK: - ExpansionDetailView
 
@@ -24,14 +25,14 @@ struct ExpansionDetailView: View {
     var body: some View {
         VStack {
             // Titolo della pagina di dettaglio
-            Text(AppStrings.expansionDetailsPrefix + expansion.name)
+            Text(FeatureExpansionStrings.expansionDetailsPrefix + expansion.name)
                 .font(.largeTitle)
                 .padding()
 
             // Picker per selezionare la modalità di visualizzazione
-            Picker(AppStrings.displayModeLabel, selection: $cardListStore.displayMode) {
-                Text(AppStrings.regularSetMode).tag(CardDisplayMode.regular)
-                Text(AppStrings.masterSetMode).tag(CardDisplayMode.master)
+            Picker(FeatureExpansionStrings.displayModeLabel, selection: $cardListStore.displayMode) {
+                Text(FeatureExpansionStrings.regularSetMode).tag(CardDisplayMode.regular)
+                Text(FeatureExpansionStrings.masterSetMode).tag(CardDisplayMode.master)
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
@@ -39,18 +40,22 @@ struct ExpansionDetailView: View {
 
             // Gestione dello stato di caricamento, errore o dati.
             if cardListStore.isLoading {
-                ProgressView(AppStrings.loadingCards)
+                ProgressView(FeatureExpansionStrings.loadingCards)
             } else if let error = cardListStore.error {
                 VStack(spacing: UIConstants.paddingMedium) {
-                    Text(AppStrings.errorLoadingCardsPrefix + error.localizedDescription)
+                    Text(FeatureExpansionStrings.errorLoadingCardsPrefix + error.localizedDescription)
                         .foregroundColor(AppColors.error)
-                    Button(AppStrings.retry) {
+                    Button(FeatureExpansionStrings.retry) {
                         Task { await cardListStore.loadCards() }
                     }
                     .buttonStyle(.borderedProminent)
                 }
             } else if cardListStore.displayedCards.isEmpty {
-                ContentUnavailableView(AppStrings.noCardsFound, systemImage: "tray.fill", description: Text(AppStrings.checkJsonOrLogic))
+                ContentUnavailableView(
+                    FeatureExpansionStrings.noCardsFound,
+                    systemImage: "tray.fill",
+                    description: Text(FeatureExpansionStrings.checkJsonOrLogic)
+                )
             } else {
                 // Griglia per visualizzare le carte.
                 ScrollView {
@@ -141,7 +146,11 @@ struct ExpansionDetailView: View {
         }
         .navigationTitle(expansion.name)
         // Aggiunge la barra di ricerca alla NavigationStack
-        .searchable(text: $cardListStore.searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: AppStrings.searchCardsPlaceholder)
+        .searchable(
+            text: $cardListStore.searchText,
+            placement: .navigationBarDrawer(displayMode: .automatic),
+            prompt: FeatureExpansionStrings.searchCardsPlaceholder
+        )
         .onAppear {
             Task {
                 await cardListStore.loadCards()
@@ -165,9 +174,9 @@ struct ExpansionDetailView_Previews: PreviewProvider {
         // Crea un'espansione di esempio per la preview.
         let sampleExpansion = Expansion(
             id: "swsh1",
-            series: AppStrings.sampleExpansionSeries1,
-            path: "swsh1", // Assicurati che questo path corrisponda a un file JSON di carte di test
-            name: AppStrings.sampleExpansionName1,
+            series: FeatureExpansionSamples.expansionSeries1,
+            path: "swsh1",
+            name: FeatureExpansionSamples.expansionName1,
             num: NumInfo(master: 202, regular: 150),
             hash: "abc",
             abbr: "SSH",
@@ -181,9 +190,78 @@ struct ExpansionDetailView_Previews: PreviewProvider {
         let mockCardListStore = CardListStore(expansionPath: sampleExpansion.path)
         // Popola lo store con carte di esempio per la preview
         mockCardListStore.allCardData = [
-            CardData(name: AppStrings.sampleCardName1, cardType: .pokemon, lang: "en", foil: nil, size: .standard, back: .pokemon1999, regulationMark: nil, setIcon: "", collectorNumber: CollectorNumber(full: "1/100", numerator: "1", denominator: "100", numeric: 1), rarity: nil, stage: .basic, hp: 60, types: [.lightning], weakness: nil, resistance: nil, retreat: 1, text: nil, abilities: nil, rules: nil, flavorText: nil, ext: Extension(tcgl: TcglExtension(cardID: "pi1", longFormID: "longpi1", archetypeID: "archpi1", reldate: "2020-01-01", key: "keypi1")), images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), jpg: nil))),
-            CardData(name: AppStrings.sampleCardName2, cardType: .pokemon, lang: "en", foil: nil, size: .standard, back: .pokemon1999, regulationMark: nil, setIcon: "", collectorNumber: CollectorNumber(full: "2/100", numerator: "2", denominator: "100", numeric: 2), rarity: nil, stage: .stage2, hp: 160, types: [.fire], weakness: nil, resistance: nil, retreat: 3, text: nil, abilities: nil, rules: nil, flavorText: nil, ext: Extension(tcgl: TcglExtension(cardID: "ch2", longFormID: "longch2", archetypeID: "archch2", reldate: "2020-01-01", key: "keych2")), images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil), jpg: nil))),
-            CardData(name: AppStrings.sampleCardName3, cardType: .pokemon, lang: "en", foil: nil, size: .standard, back: .pokemon1999, regulationMark: nil, setIcon: "", collectorNumber: CollectorNumber(full: "3/100", numerator: "3", denominator: "100", numeric: 3), rarity: nil, stage: .basic, hp: 130, types: [.psychic], weakness: nil, resistance: nil, retreat: 2, text: nil, abilities: nil, rules: nil, flavorText: nil, ext: Extension(tcgl: TcglExtension(cardID: "me3", longFormID: "longme3", archetypeID: "archme3", reldate: "2020-01-01", key: "keyme3")), images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil), jpg: nil)))
+            CardData(
+                name: FeatureExpansionSamples.cardName1,
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "1/100", numerator: "1", denominator: "100", numeric: 1),
+                rarity: nil,
+                stage: .basic,
+                hp: 60,
+                types: [.lightning],
+                weakness: nil,
+                resistance: nil,
+                retreat: 1,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "pi1", longFormID: "longpi1", archetypeID: "archpi1", reldate: "2020-01-01", key: "keypi1")),
+                images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            ),
+            CardData(
+                name: FeatureExpansionSamples.cardName2,
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "2/100", numerator: "2", denominator: "100", numeric: 2),
+                rarity: nil,
+                stage: .stage2,
+                hp: 160,
+                types: [.fire],
+                weakness: nil,
+                resistance: nil,
+                retreat: 3,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "ch2", longFormID: "longch2", archetypeID: "archch2", reldate: "2020-01-01", key: "keych2")),
+                images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            ),
+            CardData(
+                name: FeatureExpansionSamples.cardName3,
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "3/100", numerator: "3", denominator: "100", numeric: 3),
+                rarity: nil,
+                stage: .basic,
+                hp: 130,
+                types: [.psychic],
+                weakness: nil,
+                resistance: nil,
+                retreat: 2,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "me3", longFormID: "longme3", archetypeID: "archme3", reldate: "2020-01-01", key: "keyme3")),
+                images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            )
         ]
 
         return NavigationStack { // Includi in una NavigationStack per vedere il titolo

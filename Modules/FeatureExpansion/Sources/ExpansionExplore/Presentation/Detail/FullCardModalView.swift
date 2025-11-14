@@ -5,6 +5,7 @@
 //  Created by SABATINO MAURO on 27/07/25.
 //
 import SwiftUI
+import CoreKit
 import Kingfisher
 
 struct FullCardModalView: View {
@@ -205,11 +206,34 @@ struct FullCardModalView: View {
 struct FullCardModalView_Previews: PreviewProvider {
     static var previews: some View {
         @State var isShowingModal = true
-        let sampleCard = CardViewModel(cardData: CardData(name: AppStrings.sampleCardName1, cardType: .pokemon, lang: "en", foil: Foil(type: .rainbow, mask: .holo), size: .standard, back: .pokemon1999, regulationMark: nil, setIcon: "", collectorNumber: CollectorNumber(full: "1/100", numerator: "1", denominator: "100", numeric: 1), rarity: nil, stage: .basic, hp: 60, types: [.lightning], weakness: nil, resistance: nil, retreat: 1, text: nil, abilities: nil, rules: nil, flavorText: nil, ext: Extension(tcgl: TcglExtension(cardID: "pi1", longFormID: "longpi1", archetypeID: "archpi1", reldate: "2020-01-01", key: "keypi1")), images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), jpg: nil))))
+        let sampleCard = CardViewModel(
+            cardData: CardData(
+                name: FeatureExpansionSamples.cardName1,
+                cardType: .pokemon,
+                lang: "en",
+                foil: Foil(type: .rainbow, mask: .holo),
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "1/100", numerator: "1", denominator: "100", numeric: 1),
+                rarity: nil,
+                stage: .basic,
+                hp: 60,
+                types: [.lightning],
+                weakness: nil,
+                resistance: nil,
+                retreat: 1,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "pi1", longFormID: "longpi1", archetypeID: "archpi1", reldate: "2020-01-01", key: "keypi1")),
+                images: Images(tcgl: TcglImages(tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil), jpg: nil))
+        ))
 
         FullCardModalView(card: sampleCard, isShowingModal: $isShowingModal)
             .environmentObject(OwnedCardsStore())
             .previewDisplayName("Full Card Modal View")
     }
 }
-

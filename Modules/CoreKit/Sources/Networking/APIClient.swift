@@ -1,13 +1,13 @@
 import Foundation
 
 
-protocol GenericAPIClientProtocol {
+public protocol GenericAPIClientProtocol {
     func performRequest<T: Decodable>(endpoint: String) async throws -> T
 }
 
-final class APIClient: GenericAPIClientProtocol {
+public final class APIClient: GenericAPIClientProtocol {
     
-    static let shared = APIClient()
+    public static let shared = APIClient()
     private let basePath = "https://cdn.malie.io/file/malie-io/tcgl/export/"
     private let decoder: JSONDecoder
     
@@ -21,19 +21,9 @@ final class APIClient: GenericAPIClientProtocol {
         // self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    // MARK: - Public API Methods
+    // MARK: - Public API
 
-    func fetchExpansionData() async throws -> Expansion {
-        try await performRequest(endpoint: "index.json")
-    }
-    
-    func fetchSetData(_ expansion: Expansion) async throws -> [CardData] {
-        try await performRequest(endpoint: expansion.path)
-    }
-    
-    // MARK: - Private Generic Request Handler
-
-    internal func performRequest<T: Decodable>(endpoint: String) async throws -> T {
+    public func performRequest<T: Decodable>(endpoint: String) async throws -> T {
         guard let url = URL(string: basePath + endpoint) else {
             throw URLError(.badURL)
         }

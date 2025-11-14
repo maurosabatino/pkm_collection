@@ -6,38 +6,15 @@
 //
 
 import SwiftUI
-import FeatureExpansion
 
-enum TabItem: String, CaseIterable, Identifiable {
-    case expansions = "Espansioni"
-    case myCollection = "La Mia Collezione"
-    case settings = "Impostazioni"
+public struct TabItem: Identifiable {
+    public let id: String
+    public let title: LocalizedStringKey
+    public let systemImage: String
 
-    var id: String { self.rawValue }
-
-    var systemImage: String {
-        switch self {
-        case .expansions: return "books.vertical.fill" // Icona per le espansioni
-        case .myCollection: return "star.fill" // Icona per la collezione
-        case .settings: return "gear" // Icona per le impostazioni
-        }
-    }
-    
-    // Una semplice view per ogni tab/sidebar item
-    @ViewBuilder
-    func view() -> some View {
-        switch self {
-        case .expansions:
-            // La tua ExpansionListView aggiornata
-            ExpansionListView()
-        case .myCollection:
-            Text("La Mia Collezione")
-                .font(.largeTitle)
-                .navigationTitle("La Mia Collezione") // Titolo per la pagina della collezione
-        case .settings:
-            Text("Impostazioni dell'App")
-                .font(.largeTitle)
-                .navigationTitle("Impostazioni") // Titolo per la pagina delle impostazioni
-        }
+    public init(id: String, title: LocalizedStringKey, systemImage: String) {
+        self.id = id
+        self.title = title
+        self.systemImage = systemImage
     }
 }

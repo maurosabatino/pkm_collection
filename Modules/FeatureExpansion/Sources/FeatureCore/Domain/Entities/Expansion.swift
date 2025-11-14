@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - NumInfo
 
-struct NumInfo: Decodable, Hashable, Identifiable {
-    let id = UUID()
+public struct NumInfo: Decodable, Hashable, Identifiable {
+    public let id: UUID = UUID()
     
-    let master: Int
-    let regular: Int
+    public let master: Int
+    public let regular: Int
 
-    init(from decoder: Decoder) throws {
+   public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if let intValue = try? container.decode(Int.self) {
             self.master = intValue
@@ -32,7 +32,7 @@ struct NumInfo: Decodable, Hashable, Identifiable {
         case regular
     }
     
-    init( master: Int, regular: Int) {
+    public init(master: Int, regular: Int) {
         self.master = master
         self.regular = regular
     }
@@ -40,17 +40,17 @@ struct NumInfo: Decodable, Hashable, Identifiable {
 
 // MARK: - Expansion Entity
 
-struct Expansion: Decodable, Identifiable, Hashable {
-    let id: String
-    let series: String
-    let path: String
-    let name: String
-    let num: NumInfo
-    let hash: String
-    let abbr: String
-    let releaseDate: Date
-    let symbolUrl: String
-    let logoUrl: String
+public struct Expansion: Decodable, Identifiable, Hashable {
+    public let id: String
+    public let series: String
+    public let path: String
+    public let name: String
+    public let num: NumInfo
+    public let hash: String
+    public let abbr: String
+    public let releaseDate: Date
+    public let symbolUrl: String
+    public let logoUrl: String
 
     private enum CodingKeys: String, CodingKey {
         case id = "key"
@@ -65,7 +65,7 @@ struct Expansion: Decodable, Identifiable, Hashable {
         case logoUrl
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         self.id = try container.decode(String.self, forKey: .id)
@@ -82,7 +82,7 @@ struct Expansion: Decodable, Identifiable, Hashable {
         self.logoUrl = try container.decode(String.self, forKey: .logoUrl)
     }
 
-    init(
+    public init(
         id: String,
         series: String,
         path: String,

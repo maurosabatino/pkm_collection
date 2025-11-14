@@ -1,4 +1,5 @@
 import Foundation
+import CoreKit
 
 protocol FetchExpansionUseCase {
     func execute() async throws -> [Expansion]

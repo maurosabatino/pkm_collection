@@ -1,35 +1,35 @@
 import Foundation
 
 // MARK: - CardData (Main Structure)
-struct CardData: Codable, Identifiable {
+public struct CardData: Codable, Identifiable {
 
-    var id: String {
-        return ext?.tcgl.cardID ?? UUID().uuidString // Fallback a UUID se cardID non c'è
+    public var id: String {
+        ext?.tcgl.cardID ?? UUID().uuidString
     }
 
-    let name: String
-    let cardType: CardType
-    let lang: String
-    let foil: Foil? // Aggiunto il campo foil, reso opzionale
-    let size: Size
-    let back: Back
-    let regulationMark: String?
-    let setIcon: String
-    let collectorNumber: CollectorNumber
-    let rarity: Rarity?
-    let stage: Stage?
-    let hp: Int?
-    let types: [PokemonType]?
-    let weakness: Weakness?
-    let resistance: Resistance?
-    let retreat: Int?
-    let text: [TextElement]?
-    let abilities: [Ability]?
-    let rules: [String]?
-    let flavorText: String?
+    public let name: String
+    public let cardType: CardType
+    public let lang: String
+    public let foil: Foil?
+    public let size: Size
+    public let back: Back
+    public let regulationMark: String?
+    public let setIcon: String
+    public let collectorNumber: CollectorNumber
+    public let rarity: Rarity?
+    public let stage: Stage?
+    public let hp: Int?
+    public let types: [PokemonType]?
+    public let weakness: Weakness?
+    public let resistance: Resistance?
+    public let retreat: Int?
+    public let text: [TextElement]?
+    public let abilities: [Ability]?
+    public let rules: [String]?
+    public let flavorText: String?
 
-    let ext: Extension? // Reso opzionale, anche se presente nell'esempio
-    let images: Images? // Reso opzionale, anche se presente nell'esempio
+    public let ext: Extension?
+    public let images: Images?
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -55,16 +55,69 @@ struct CardData: Codable, Identifiable {
         case ext
         case images
     }
+
+    public init(
+        name: String,
+        cardType: CardType,
+        lang: String,
+        foil: Foil?,
+        size: Size,
+        back: Back,
+        regulationMark: String?,
+        setIcon: String,
+        collectorNumber: CollectorNumber,
+        rarity: Rarity?,
+        stage: Stage?,
+        hp: Int?,
+        types: [PokemonType]?,
+        weakness: Weakness?,
+        resistance: Resistance?,
+        retreat: Int?,
+        text: [TextElement]?,
+        abilities: [Ability]?,
+        rules: [String]?,
+        flavorText: String?,
+        ext: Extension?,
+        images: Images?
+    ) {
+        self.name = name
+        self.cardType = cardType
+        self.lang = lang
+        self.foil = foil
+        self.size = size
+        self.back = back
+        self.regulationMark = regulationMark
+        self.setIcon = setIcon
+        self.collectorNumber = collectorNumber
+        self.rarity = rarity
+        self.stage = stage
+        self.hp = hp
+        self.types = types
+        self.weakness = weakness
+        self.resistance = resistance
+        self.retreat = retreat
+        self.text = text
+        self.abilities = abilities
+        self.rules = rules
+        self.flavorText = flavorText
+        self.ext = ext
+        self.images = images
+    }
 }
 
 // MARK: - Foil
-struct Foil: Codable {
-    let type: FoilType
-    let mask: FoilMask
+public struct Foil: Codable {
+    public let type: FoilType
+    public let mask: FoilMask
+
+    public init(type: FoilType, mask: FoilMask) {
+        self.type = type
+        self.mask = mask
+    }
 }
 
 // MARK: - FoilType
-enum FoilType: String, Codable {
+public enum FoilType: String, Codable {
     // Valori già presenti/ipotizzati:
     case flatSilver = "FLAT_SILVER"
     case cosmos = "COSMOS"
@@ -86,7 +139,7 @@ enum FoilType: String, Codable {
 }
 
 // MARK: - FoilMask
-enum FoilMask: String, Codable {
+public enum FoilMask: String, Codable {
     case holo = "HOLO"
     case reverse = "REVERSE"
     case etched = "ETCHED"
@@ -95,13 +148,13 @@ enum FoilMask: String, Codable {
 }
 
 // MARK: - Back
-enum Back: String, Codable {
+public enum Back: String, Codable {
     case pokemon1999 = "POKEMON_1999"
   
 }
 
 // MARK: - CardType
-enum CardType: String, Codable {
+public enum CardType: String, Codable {
     case pokemon = "POKEMON"
     case trainer = "TRAINER"
     case energy = "ENERGY"
@@ -111,20 +164,39 @@ enum CardType: String, Codable {
 }
 
 // MARK: - CollectorNumber
-struct CollectorNumber: Codable {
-    let full, numerator, denominator: String?
-    let numeric: Int
+public struct CollectorNumber: Codable {
+    public let full, numerator, denominator: String?
+    public let numeric: Int
+
+    public init(full: String?, numerator: String?, denominator: String?, numeric: Int) {
+        self.full = full
+        self.numerator = numerator
+        self.denominator = denominator
+        self.numeric = numeric
+    }
 }
 
 // MARK: - Extension
-struct Extension: Codable {
-    let tcgl: TcglExtension
+public struct Extension: Codable {
+    public let tcgl: TcglExtension
+
+    public init(tcgl: TcglExtension) {
+        self.tcgl = tcgl
+    }
 }
 
 // MARK: - TcglExtension
-struct TcglExtension: Codable {
-    let cardID, longFormID, archetypeID, reldate: String
-    let key: String
+public struct TcglExtension: Codable {
+    public let cardID, longFormID, archetypeID, reldate: String
+    public let key: String
+
+    public init(cardID: String, longFormID: String, archetypeID: String, reldate: String, key: String) {
+        self.cardID = cardID
+        self.longFormID = longFormID
+        self.archetypeID = archetypeID
+        self.reldate = reldate
+        self.key = key
+    }
 
     enum CodingKeys: String, CodingKey {
         case cardID = "cardID"
@@ -136,28 +208,44 @@ struct TcglExtension: Codable {
 }
 
 // MARK: - Images
-struct Images: Codable {
-    let tcgl: TcglImages
+public struct Images: Codable {
+    public let tcgl: TcglImages
+
+    public init(tcgl: TcglImages) {
+        self.tcgl = tcgl
+    }
 }
 
 // MARK: - TcglImages
-struct TcglImages: Codable {
-    let tex: ImagePaths?
-    let png: ImagePaths?
-    let jpg: ImagePaths?
+public struct TcglImages: Codable {
+    public let tex: ImagePaths?
+    public let png: ImagePaths?
+    public let jpg: ImagePaths?
     
+    public init(tex: ImagePaths?, png: ImagePaths?, jpg: ImagePaths?) {
+        self.tex = tex
+        self.png = png
+        self.jpg = jpg
+    }
 }
 
 // MARK: - ImagePaths (tex, png, jpg hanno la stessa sottostruttura, ora con foil)
-struct ImagePaths: Codable {
-    let front: String
-    let back: String?
-    let foil: String? // Aggiunto l'URL per il foil
-    let etch: String?
+public struct ImagePaths: Codable {
+    public let front: String
+    public let back: String?
+    public let foil: String?
+    public let etch: String?
+
+    public init(front: String, back: String?, foil: String?, etch: String?) {
+        self.front = front
+        self.back = back
+        self.foil = foil
+        self.etch = etch
+    }
 }
 
 // MARK: - PokemonType (Energie)
-enum PokemonType: String, Codable {
+public enum PokemonType: String, Codable {
     case colorless = "COLORLESS"
     case grass = "GRASS"
     case fire = "FIRE"
@@ -173,13 +261,18 @@ enum PokemonType: String, Codable {
 }
 
 // MARK: - Rarity
-struct Rarity: Codable {
-    let designation: Designation
-    let icon: Icon
+public struct Rarity: Codable {
+    public let designation: Designation
+    public let icon: Icon
+
+    public init(designation: Designation, icon: Icon) {
+        self.designation = designation
+        self.icon = icon
+    }
 }
 
 // MARK: - Designation
-enum Designation: String, Codable {
+public enum Designation: String, Codable {
     case common = "COMMON"
     case uncommon = "UNCOMMON"
     case rare = "RARE"
@@ -213,7 +306,7 @@ enum Designation: String, Codable {
 }
 
 // MARK: - Icon
-enum Icon: String, Codable {
+public enum Icon: String, Codable {
     // Valori esistenti:
     case solidCircle = "SOLID_CIRCLE"
     case solidDiamond = "SOLID_DIAMOND"
@@ -233,14 +326,14 @@ enum Icon: String, Codable {
 }
 
 // MARK: - Size
-enum Size: String, Codable {
+public enum Size: String, Codable {
     case standard = "STANDARD"
     case jumbo = "JUMBO"
     case mini = "MINI"
 }
 
 // MARK: - Stage
-enum Stage: String, Codable {
+public enum Stage: String, Codable {
     case basic = "BASIC"
     case stage1 = "STAGE1"
     case stage2 = "STAGE2"
@@ -260,21 +353,33 @@ enum Stage: String, Codable {
 }
 
 // MARK: - TextElement (per Attacchi, Abilità, Regole integrate nel campo "text")
-struct TextElement: Codable {
-    let kind: TextKind
-    let name: String?
-    let text: String?
-    let cost: [PokemonType]?
-    let damage: Damage?
+public struct TextElement: Codable {
+    public let kind: TextKind
+    public let name: String?
+    public let text: String?
+    public let cost: [PokemonType]?
+    public let damage: Damage?
+
+    public init(kind: TextKind, name: String?, text: String?, cost: [PokemonType]?, damage: Damage?) {
+        self.kind = kind
+        self.name = name
+        self.text = text
+        self.cost = cost
+        self.damage = damage
+    }
 }
 
 // MARK: - Damage
-struct Damage: Codable {
-    let amount: Int
+public struct Damage: Codable {
+    public let amount: Int
+
+    public init(amount: Int) {
+        self.amount = amount
+    }
 }
 
 // MARK: - TextKind (Tipo di elemento testuale)
-enum TextKind: String, Codable {
+public enum TextKind: String, Codable {
     
     case ability = "ABILITY"
     case attack = "ATTACK"
@@ -285,28 +390,46 @@ enum TextKind: String, Codable {
 }
 
 // MARK: - Weakness
-struct Weakness: Codable {
-    let types: [PokemonType]
-    let `operator`: String
-    let amount: Int // Se l'amount può essere String, cambialo qui
+public struct Weakness: Codable {
+    public let types: [PokemonType]
+    public let `operator`: String
+    public let amount: Int
+
+    public init(types: [PokemonType], operator: String, amount: Int) {
+        self.types = types
+        self.`operator` = `operator`
+        self.amount = amount
+    }
 }
 
 // MARK: - Resistance
-struct Resistance: Codable {
-    let types: [PokemonType]
-    let `operator`: String
-    let amount: Int // Se l'amount può essere String, cambialo qui
+public struct Resistance: Codable {
+    public let types: [PokemonType]
+    public let `operator`: String
+    public let amount: Int
+
+    public init(types: [PokemonType], operator: String, amount: Int) {
+        self.types = types
+        self.`operator` = `operator`
+        self.amount = amount
+    }
 }
 
 // MARK: - Ability (se le abilità sono un campo separato)
-struct Ability: Codable {
-    let name: String
-    let text: String
-    let kind: AbilityKind
+public struct Ability: Codable {
+    public let name: String
+    public let text: String
+    public let kind: AbilityKind
+
+    public init(name: String, text: String, kind: AbilityKind) {
+        self.name = name
+        self.text = text
+        self.kind = kind
+    }
 }
 
 // MARK: - AbilityKind
-enum AbilityKind: String, Codable {
+public enum AbilityKind: String, Codable {
     case ability = "ABILITY"
     case pokemonPower = "POKEMON_POWER"
     case pokemonBody = "POKEMON_BODY"

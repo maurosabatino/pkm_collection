@@ -1,5 +1,6 @@
 import XCTest
 @testable import PKMCollection
+@testable import FeatureExpansion
 
 final class CardListStoreTests: XCTestCase {
     private struct StubUseCase: FetchCardListUseCase {

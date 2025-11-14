@@ -6,26 +6,36 @@
 //
 
 import SwiftUI
+import CoreKit
 
 struct ContentView: View {
-    @State private var selection: AppScreen? = .expansion
-    // Aggiungi un NavigationPath per gestire la navigazione nella colonna di dettaglio
+    @EnvironmentObject private var moduleRegistry: AppModuleRegistry
+    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
+    @State private var selection: ModuleEntryDescriptor?
     @State private var detailNavigationPath = NavigationPath()
 
-    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
-
-    // Accedi a ExpansionStore come EnvironmentObject
-    @EnvironmentObject var expansionStore: ExpansionStore
-
     var body: some View {
-        if prefersTabNavigation {
-            AppTabView(selection: $selection)
-        } else {
-            NavigationSplitView {
-                AppSidebarList(selection: $selection)
-            } detail: {
-                // Passa il binding al NavigationPath alla colonna di dettaglio
-                AppDetailColumn(screen: selection, navigationPath: $detailNavigationPath)
+        let entries = moduleRegistry.entries
+
+        Group {
+            if prefersTabNavigation {
+                AppTabView(entries: entries, selection: $selection, navigator: moduleRegistry.navigator)
+            } else {
+                NavigationSplitView {
+                    AppSidebarList(entries: entries, selection: $selection)
+                        .navigationTitle(AppStrings.appTitle)
+                } detail: {
+                    AppDetailColumn(
+                        selection: selection,
+                        navigationPath: $detailNavigationPath,
+                        navigator: moduleRegistry.navigator
+                    )
+                }
+            }
+        }
+        .onAppear {
+            if selection == nil {
+                selection = entries.first
             }
         }
     }
@@ -33,5 +43,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(ExpansionStore())
+        .environmentObject(AppModuleRegistry())
+        .environmentObject(ModuleNavigator())
 }

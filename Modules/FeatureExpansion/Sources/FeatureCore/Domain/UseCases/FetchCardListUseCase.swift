@@ -1,9 +1,5 @@
-//
-//  FetchCardListUseCase.swift
-//  PKM Collection
-//
-//  Created by Mauro on 15/06/25.
-//
+import Foundation
+import CoreKit
 
 protocol FetchCardListUseCase {
     func execute(path: String) async throws -> [CardData]

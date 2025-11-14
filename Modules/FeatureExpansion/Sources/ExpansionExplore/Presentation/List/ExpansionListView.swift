@@ -1,11 +1,12 @@
 import SwiftUI
 import CoreKit
 
-
 // MARK: - ExpansionListView
 public struct ExpansionListView: View {
     // Accesso allo store delle espansioni tramite EnvironmentObject.
     @EnvironmentObject var expansionStore: ExpansionStore
+
+    public init() {}
 
     public var body: some View {
         List {
@@ -35,13 +36,17 @@ public struct ExpansionListView: View {
             }
         }
         .listStyle(.plain)
-        .navigationTitle(AppStrings.expansionsTitle)
+        .navigationTitle(FeatureExpansionStrings.moduleTitle)
         .background(
             AppColors.backgroundPrimary
                 .ignoresSafeArea()
         )
         // Aggiunge la barra di ricerca.
-        .searchable(text: $expansionStore.searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: AppStrings.searchPlaceholder)
+        .searchable(
+            text: $expansionStore.searchText,
+            placement: .navigationBarDrawer(displayMode: .automatic),
+            prompt: FeatureExpansionStrings.searchExpansionsPlaceholder
+        )
         .onAppear {
             if expansionStore.expansions.isEmpty {
                 Task {

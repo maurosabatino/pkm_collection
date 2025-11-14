@@ -1,0 +1,44 @@
+import Foundation
+
+enum FeatureExpansionStrings {
+    private static let bundle = Bundle(for: BundleToken.self)
+
+    static var moduleTitle: String { localized("featureExpansion.title") }
+    static var tabLabel: String { localized("featureExpansion.tab.label") }
+    static var releaseDatePrefix: String { localized("featureExpansion.expansion.releaseDatePrefix") }
+    static var cardsPrefix: String { localized("featureExpansion.expansion.cardsPrefix") }
+    static var searchExpansionsPlaceholder: String { localized("featureExpansion.search.expansions.placeholder") }
+    static var searchCardsPlaceholder: String { localized("featureExpansion.search.cards.placeholder") }
+    static var expansionDetailsPrefix: String { localized("featureExpansion.details.title.prefix") }
+    static var displayModeLabel: String { localized("featureExpansion.displayMode.title") }
+    static var regularSetMode: String { localized("featureExpansion.displayMode.regular") }
+    static var masterSetMode: String { localized("featureExpansion.displayMode.master") }
+    static var loadingCards: String { localized("featureExpansion.loading.cards") }
+    static var errorLoadingCardsPrefix: String { localized("featureExpansion.error.loadingCardsPrefix") }
+    static var retry: String { localized("featureExpansion.action.retry") }
+    static var noCardsFound: String { localized("featureExpansion.empty.title") }
+    static var checkJsonOrLogic: String { localized("featureExpansion.empty.description") }
+    static var noFoil: String { localized("featureExpansion.card.noFoil") }
+
+    static func errorLoadingExpansions(_ error: String) -> String {
+        String(format: localized("featureExpansion.error.loadingExpansions"), locale: Locale.current, error)
+    }
+
+    static func errorLoadingCards(for expansionPath: String, error: String) -> String {
+        String(format: localized("featureExpansion.error.loadingCardsForSet"), locale: Locale.current, expansionPath, error)
+    }
+
+    static func jsonFileNotFound(_ fileName: String) -> String {
+        String(format: localized("featureExpansion.error.jsonNotFound"), locale: Locale.current, fileName)
+    }
+
+    static func cardsJsonFileNotFound(_ fileName: String) -> String {
+        String(format: localized("featureExpansion.error.cardsJsonNotFound"), locale: Locale.current, fileName)
+    }
+
+    private static func localized(_ key: String) -> String {
+        bundle.localizedString(forKey: key, value: nil, table: nil)
+    }
+
+    private final class BundleToken {}
+}

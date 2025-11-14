@@ -6,24 +6,24 @@
 //
 
 import SwiftUI
+import CoreKit
 
 struct AppSidebarList: View {
-    @Binding var selection: AppScreen?
-    @EnvironmentObject var expansionStore: ExpansionStore
+    let entries: [ModuleEntryDescriptor]
+    @Binding var selection: ModuleEntryDescriptor?
 
     var body: some View {
-        List(AppScreen.allCases, selection: $selection) { screen in
-            NavigationLink(value: screen) {
-                screen.label
+        List(entries, selection: $selection) { entry in
+            NavigationLink(value: entry) {
+                Label(entry.title, systemImage: entry.systemImage)
             }
         }
-        .navigationTitle("Pokémon Collection")
     }
 }
 
 #Preview {
     NavigationSplitView {
-        AppSidebarList(selection: .constant(.expansion))
+        AppSidebarList(entries: AppModuleRegistry().entries, selection: .constant(nil))
     } detail: {
         Text(verbatim: "Check out that sidebar!")
     }

@@ -1,11 +1,17 @@
 import SwiftUI
 
-struct FilterChip: View {
-    let title: String
-    let isSelected: Bool
-    let action: () -> Void
+public struct FilterChip: View {
+    private let title: String
+    private let isSelected: Bool
+    private let action: () -> Void
 
-    var body: some View {
+    public init(title: String, isSelected: Bool, action: @escaping () -> Void) {
+        self.title = title
+        self.isSelected = isSelected
+        self.action = action
+    }
+
+    public var body: some View {
         Button(action: action) {
             Text(title)
                 .font(.caption)
@@ -17,4 +23,3 @@ struct FilterChip: View {
         }
     }
 }
-

@@ -7,23 +7,30 @@
 
 
 import SwiftUI
+import CoreKit
 
 struct AppTabView: View {
-    @Binding var selection: AppScreen?
-    @EnvironmentObject var expansionStore: ExpansionStore
+    let entries: [ModuleEntryDescriptor]
+    @Binding var selection: ModuleEntryDescriptor?
+    let navigator: ModuleNavigator
 
     var body: some View {
         TabView(selection: $selection) {
-            ForEach(AppScreen.allCases) { screen in
-                // Ogni tab presenta la sua destinazione, che ora include la NavigationStack interna
-                screen.destination
-                    .tag(screen as AppScreen?)
-                    .tabItem { screen.label }
+            ForEach(entries) { entry in
+                entry.makeView(navigator: navigator)
+                    .tag(entry as ModuleEntryDescriptor?)
+                    .tabItem {
+                        Label(entry.title, systemImage: entry.systemImage)
+                    }
             }
         }
     }
 }
 
 #Preview {
-    AppTabView(selection: .constant(.expansion))
+    AppTabView(
+        entries: AppModuleRegistry().entries,
+        selection: .constant(nil),
+        navigator: ModuleNavigator()
+    )
 }
