@@ -7,6 +7,7 @@ PKMCollection è un'app iOS sviluppata in SwiftUI che permette di sfogliare ed e
 - Store e repository per la gestione dei dati dell'app.
 - Integrazione con Firebase Analytics per tracciare gli eventi.
 - Utilizzo di Kingfisher per la cache e il download delle immagini.
+- Tracking locale della collezione con persistenza offline delle carte possedute.
 - Assets e stringhe localizzate organizzati in cartelle dedicate.
 
 ## Requisiti
@@ -36,7 +37,7 @@ PKMCollection è un'app iOS sviluppata in SwiftUI che permette di sfogliare ed e
 ## Configurazione Firebase
 1. Crea un progetto su [Firebase Console](https://console.firebase.google.com).
 2. Registra un'app iOS con `com.maurosabatino.pkmcollection` (o aggiorna il bundle identifier in `Project.swift`).
-3. Scarica il file `GoogleService-Info.plist` e posizionalo in `PKMCollection/Resources/`.
+3. Scarica il file `GoogleService-Info.plist` e posizionalo in `App/Resources/`.
 4. Verifica che `FirebaseApp.configure()` sia chiamato in `PKMCollection/Sources/PKMCollectionApp.swift`.
 
 > ⚠️ Se modifichi il bundle identifier, ricorda di aggiornare anche il file Firebase di configurazione o impostare un nuovo `bundleId` nel manifest Tuist.
@@ -44,16 +45,24 @@ PKMCollection è un'app iOS sviluppata in SwiftUI che permette di sfogliare ed e
 ## Struttura del progetto
 ```
 PKMCollection/
-├─ Sources/            # Codice sorgente dell'app
-├─ Resources/          # Assets, stringhe, file Firebase
-├─ Tests/              # Unit test
-Project.swift          # Manifest Tuist del progetto
-Tuist/                 # Dipendenze Swift Package e configurazioni Tuist
+├─ App/
+│  ├─ Sources/         # Entry point, flow e root views
+│  └─ Resources/       # Assets, stringhe, GoogleService-Info.plist, JSON
+├─ Modules/
+│  ├─ CoreKit/         # Domain, data layer, stores, utilities
+│  ├─ FeatureExpansion/# Feature SwiftUI per esplorare le espansioni
+│  └─ UIComponents/    # Componenti riutilizzabili
+├─ Tests/
+│  ├─ Unit/            # Unit test (OwnedCards, Store, UseCase)
+│  └─ UITests/         # UI test end-to-end
+├─ Project.swift       # Manifest Tuist
+└─ Tuist/              # Dipendenze Swift Package e configurazioni Tuist
 ```
 
 ## Esecuzione e test
 - **Build**: `tuist build PKMCollection --platform iOS`
-- **Test**: `tuist test PKMCollectionTests --platform iOS`
+- **Unit test**: `tuist test PKMCollectionTests --platform iOS`
+- **UI test**: `tuist test PKMCollectionUITests --platform iOS`
 - **Aggiornare le dipendenze**: modifica `Tuist/Package.swift` e rilancia `tuist install`.
 
 ## Contribuire
@@ -67,3 +76,6 @@ Vedi anche il nostro [`Codice di condotta`](CODE_OF_CONDUCT.md).
 
 ## Licenza
 Il progetto è distribuido con licenza [MIT](LICENSE).
+
+## Roadmap
+Le idee di sviluppo in corso sono raccolte in [`ROADMAP.md`](ROADMAP.md). Contribuzioni e feedback sono sempre ben accetti!
