@@ -118,7 +118,6 @@ public struct Foil: Codable {
 
 // MARK: - FoilType
 public enum FoilType: String, Codable {
-    // Valori già presenti/ipotizzati:
     case flatSilver = "FLAT_SILVER"
     case cosmos = "COSMOS"
     case dots = "DOTS"
@@ -126,7 +125,6 @@ public enum FoilType: String, Codable {
     case gold = "GOLD"
     case etched = "ETCHED"
 
-    // NUOVI VALORI AGGIUNTI BASANDOSI SUL TUO OUTPUT E DOCUMENTAZIONE:
     case aceFoil = "ACE_FOIL"
     case crackedIce = "CRACKED_ICE"
     case rainbow = "RAINBOW"
@@ -135,7 +133,6 @@ public enum FoilType: String, Codable {
     case svHolo = "SV_HOLO" // Questo è il valore che causava l'errore!
     case svUltraScodix = "SV_ULTRA_SCODIX"
     case svUltra = "SV_ULTRA"
-    // Aggiungi altri tipi di foil che trovi nel dataset, es. "STARRY", "HOLOLIVE"
 }
 
 // MARK: - FoilMask
@@ -277,14 +274,14 @@ public enum Designation: String, Codable {
     case uncommon = "UNCOMMON"
     case rare = "RARE"
     case rareHolo = "RARE_HOLO"
-    case rareReverseHolo = "RARE_REVERSE_HOLOL" // Controlla la doc esatta per questo. Potrebbe essere solo RARE_REVERSE_HOLOL.
+    case rareReverseHolo = "RARE_REVERSE_HOLOL"
     case rareUltra = "RARE_ULTRA"
     case rareSecret = "RARE_SECRET"
     case rareRainbow = "RARE_RAINBOW"
     case rareShiny = "RARE_SHINY"
     case promo = "PROMO"
-    case rarePromo = "RARE_PROMO" // Esiste anche in alcuni dataset
-    case rareAmazing = "RARE_AMAZING" // Tipo raro "Amazing Rare"
+    case rarePromo = "RARE_PROMO"
+    case rareAmazing = "RARE_AMAZING"
     case rareShinyGx = "RARE_SHINY_GX"
     case rareHyper = "RARE_HYPER"
     case rarePrime = "RARE_PRIME"
@@ -294,9 +291,9 @@ public enum Designation: String, Codable {
     case illustrationRare = "ILLUSTRATION_RARE"
     case specialIllustrationRare = "SPECIAL_ILLUSTRATION_RARE"
     case doubleRare = "DOUBLE_RARE"
-    case ultraRare = "ULTRA_RARE" // A volte usato al posto di RARE_ULTRA
-    case hyperRare = "HYPER_RARE" // A volte usato al posto di RARE_RAINBOW
-    case goldRare = "GOLD_RARE" // A volte usato per carte gold
+    case ultraRare = "ULTRA_RARE"
+    case hyperRare = "HYPER_RARE"
+    case goldRare = "GOLD_RARE"
     case leaguePromo = "LEAGUE_PROMO"
     case staffPromo = "STAFF_PROMO"
     case tournamentPromo = "TOURNAMENT_PROMO"
@@ -352,7 +349,7 @@ public enum Stage: String, Codable {
     case baby = "BABY"
 }
 
-// MARK: - TextElement (per Attacchi, Abilità, Regole integrate nel campo "text")
+// MARK: - TextElement
 public struct TextElement: Codable {
     public let kind: TextKind
     public let name: String?
@@ -444,118 +441,4 @@ public enum AbilityKind: String, Codable {
     case ancientTrait = "ANCIENT_TRAIT"
 }
 
-/*
-// MARK: - Esempio di utilizzo per il decoding (con il nuovo JSON)
 
-let jsonStringWithFoil = """
-{
-    "name": "Pineco",
-    "card_type": "POKEMON",
-    "lang": "it-IT",
-    "foil": {
-      "type": "FLAT_SILVER",
-      "mask": "REVERSE"
-    },
-    "size": "STANDARD",
-    "back": "POKEMON_1999",
-    "regulation_mark": "G",
-    "set_icon": "SVI_IT",
-    "collector_number": {
-      "full": "001/198",
-      "numerator": "001",
-      "denominator": "198",
-      "numeric": 1
-    },
-    "rarity": {
-      "designation": "COMMON",
-      "icon": "SOLID_CIRCLE"
-    },
-    "stage": "BASIC",
-    "hp": 60,
-    "types": [
-      "GRASS"
-    ],
-    "weakness": {
-      "types": [
-        "FIRE"
-      ],
-      "operator": "×",
-      "amount": 2
-    },
-    "retreat": 2,
-    "text": [
-      {
-        "kind": "ATTACK",
-        "name": "Pressadifesa",
-        "text": "Durante il prossimo turno del tuo avversario, questo Pokémon subisce 30 danni in meno dagli attacchi, dopo aver applicato debolezza e resistenza.",
-        "cost": [
-          "COLORLESS",
-          "COLORLESS"
-        ],
-        "damage": {
-          "amount": 10
-        }
-      }
-    ],
-    "ext": {
-      "tcgl": {
-        "cardID": "sv1_1_ph",
-        "longFormID": "Pineco_sv1_1_ph_Common_FlatSilver_Reverse",
-        "archetypeID": "0x2d44991a",
-        "reldate": "2023-03-30 17:00:00+00:00",
-        "key": "sv1"
-      }
-    },
-    "images": {
-      "tcgl": {
-        "tex": {
-          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/sv1/sv1_it_001_std.png",
-          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/sv1/sv1_it_001_ph.foil.png"
-        },
-        "png": {
-          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/sv1/sv1_it_001_std.png",
-          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/sv1/sv1_it_001_ph.foil.png"
-        },
-        "jpg": {
-          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/it/sv1/sv1_it_001_std.jpg"
-        }
-      }
-    }
-  }
-"""
-
-do {
-    let jsonData = jsonStringWithFoil.data(using: .utf8)!
-    let decoder = JSONDecoder()
-    let card = try decoder.decode(CardData.self, from: jsonData)
-
-    print("Nome Pokémon: \(card.name)")
-    print("Tipo di carta: \(card.cardType.rawValue)")
-    print("Foil Type: \(card.foil?.type.rawValue ?? "N/A")")
-    print("Foil Mask: \(card.foil?.mask.rawValue ?? "N/A")")
-    print("URL immagine JPG (front): \(card.images?.tcgl.jpg?.front ?? "N/A")")
-    print("URL immagine JPG (foil): \(card.images?.tcgl.jpg?.foil ?? "N/A")")
-
-
-} catch {
-    print("Errore durante il decoding: \(error)")
-    if let decodingError = error as? DecodingError {
-        switch decodingError {
-        case .typeMismatch(let type, let context):
-            print("Type Mismatch for type \(type) in context: \(context.debugDescription)")
-            print("Coding Path: \(context.codingPath)")
-        case .valueNotFound(let type, let context):
-            print("Value Not Found for type \(type) in context: \(context.debugDescription)")
-            print("Coding Path: \(context.codingPath)")
-        case .keyNotFound(let key, let context):
-            print("Key Not Found: \(key.stringValue) in context: \(context.debugDescription)")
-            print("Coding Path: \(context.codingPath)")
-        case .dataCorrupted(let context):
-            print("Data Corrupted: \(context.debugDescription)")
-            print("Coding Path: \(context.codingPath)")
-        @unknown default:
-            print("Unknown decoding error: \(decodingError)")
-        }
-    }
-}
-*/

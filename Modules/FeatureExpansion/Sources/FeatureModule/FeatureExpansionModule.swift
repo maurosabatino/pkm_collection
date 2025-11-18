@@ -9,7 +9,6 @@ public final class FeatureExpansionModule: FeatureModule {
     private let expansionStore: ExpansionStore
     private let ownedCardsStore: OwnedCardsStore
 
-    // Designated initializer with explicit dependencies (no default arguments).
     init(
         expansionStore: ExpansionStore,
         ownedCardsStore: OwnedCardsStore
@@ -18,9 +17,6 @@ public final class FeatureExpansionModule: FeatureModule {
         self.ownedCardsStore = ownedCardsStore
     }
 
-    // Optional: public convenience initializer that constructs defaults on the main actor.
-    // This is safe for @MainActor initializers and avoids default-argument isolation issues.
-    // Note: This requires FeatureExpansionModule to be in the same module where ExpansionStore is visible.
     @MainActor
     public convenience init() {
         self.init(

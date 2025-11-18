@@ -25,7 +25,7 @@ struct ExpansionRowView: View {
                 errorColor: AppColors.error
             )
 
-            VStack(alignment: .leading, spacing: UIConstants.spacingSmall) { // Organizza il testo e il logo verticalmente.
+            VStack(alignment: .leading, spacing: UIConstants.spacingSmall) { 
                 Text(expansion.name)
                     .font(.title3.bold())
                     .foregroundColor(AppColors.textPrimary)

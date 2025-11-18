@@ -6,201 +6,271 @@
 //
 import SwiftUI
 import CoreKit
-import Kingfisher
 
 struct FullCardModalView: View {
     let card: CardViewModel
-    @Binding var isShowingModal: Bool // Binding per controllare la visibilità della modale
+    @Binding var isShowingModal: Bool
     @EnvironmentObject private var ownedCardsStore: OwnedCardsStore
-
-    // Stati per la rotazione 3D
-    @State private var rotationX: Double = 0
-    @State private var rotationY: Double = 0
-    @State private var initialRotationX: Double = 0
-    @State private var initialRotationY: Double = 0
-    
-    private let maxTilt: Double = 30
-    private func clamp(_ value: Double, min minV: Double, max maxV: Double) -> Double {
-        min(max(value, minV), maxV)
-    }
+    @State private var isShowingFullScreenImage = false
 
     var body: some View {
-        ZStack {
-            // Sfondo scuro semitrasparente
+        ZStack(alignment: .topTrailing) {
             AppColors.modalBackground
                 .ignoresSafeArea()
-                .onTapGesture {
-                    // Chiudi la modale se si tocca lo sfondo
-                    isShowingModal = false
+
+            VStack(spacing: 0) {
+                header
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: UIConstants.paddingLarge) {
+                        cardImageSection
+                        titleSection
+
+                        sectionContainer(title: "Dettagli carta") {
+                            let items = detailItems
+                            VStack(spacing: UIConstants.paddingMedium) {
+                                ForEach(Array(items.enumerated()), id: \.offset) { index, item in
+                                    CardDetailRow(title: item.title, value: item.value)
+                                    if index != items.count - 1 {
+                                        Divider()
+                                            .background(AppColors.textSecondary.opacity(0.15))
+                                    }
+                                }
+                            }
+                        }
+
+                        if let flavor = card.flavorText, !flavor.isEmpty {
+                            sectionContainer(title: "Descrizione") {
+                                Text(flavor)
+                                    .font(.body)
+                                    .foregroundColor(AppColors.textPrimary)
+                            }
+                        }
+
+                        movesSection
+                    }
+                    .padding(.horizontal, UIConstants.paddingLarge)
+                    .padding(.bottom, UIConstants.paddingLarge)
+                }
+            }
+        }
+        .fullScreenCover(isPresented: $isShowingFullScreenImage) {
+            FullScreenCardImageView(card: card, isPresented: $isShowingFullScreenImage)
+        }
+    }
+
+    private var header: some View {
+        HStack {
+            Menu {
+                Button {
+                    ownedCardsStore.toggleOwnership(for: card.id)
+                } label: {
+                    Label(ownedCardsStore.isOwned(cardId: card.id) ? "Rimuovi carta" : "Aggiungi carta", systemImage: ownedCardsStore.isOwned(cardId: card.id) ? "minus.circle" : "plus.circle")
                 }
 
-            VStack {
-                // Bottone di chiusura
-                HStack {
-                    Menu {
-                        Button {
-                            ownedCardsStore.toggleOwnership(for: card.id)
-                        } label: {
-                            Label(ownedCardsStore.isOwned(cardId: card.id) ? "Remove card" : "Add card", systemImage: ownedCardsStore.isOwned(cardId: card.id) ? "minus.circle" : "plus.circle")
-                        }
+                Button("Aggiungi copia") {
+                    ownedCardsStore.increment(cardId: card.id, step: 1)
+                }
 
-                        Button("Add copy") {
-                            ownedCardsStore.increment(cardId: card.id, step: 1)
-                        }
-
-                        if ownedCardsStore.isOwned(cardId: card.id) {
-                            Button("Remove copy", role: .destructive) {
-                                ownedCardsStore.increment(cardId: card.id, step: -1)
-                            }
-                        }
-                    } label: {
-                        Label {
-                            Text(ownedCardsStore.isOwned(cardId: card.id) ? "Owned x\(ownedCardsStore.quantity(for: card.id))" : "Add to collection")
-                                .font(.callout)
-                                .foregroundColor(.white)
-                        } icon: {
-                            Image(systemName: ownedCardsStore.isOwned(cardId: card.id) ? "checkmark.seal.fill" : "plus.circle.fill")
-                                .foregroundColor(ownedCardsStore.isOwned(cardId: card.id) ? AppColors.textBlue : AppColors.textSecondary)
-                        }
-                        .padding(.horizontal, UIConstants.paddingMedium)
-                        .padding(.vertical, UIConstants.paddingSmall)
-                        .background(AppColors.badgeBackground)
-                        .clipShape(Capsule())
-                        .contentShape(Rectangle())
-                        .padding(UIConstants.paddingMedium)
-                    }
-
-                    Spacer()
-
-                    Button {
-                        isShowingModal = false
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(AppColors.modalCloseButton)
-                            .padding(UIConstants.paddingMedium)
+                if ownedCardsStore.isOwned(cardId: card.id) {
+                    Button("Rimuovi copia", role: .destructive) {
+                        ownedCardsStore.increment(cardId: card.id, step: -1)
                     }
                 }
-                Spacer()
+            } label: {
+                Label {
+                    Text(ownedCardsStore.isOwned(cardId: card.id) ? "In collezione x\(ownedCardsStore.quantity(for: card.id))" : "Aggiungi alla collezione")
+                        .font(.callout)
+                        .foregroundColor(.white)
+                } icon: {
+                    Image(systemName: ownedCardsStore.isOwned(cardId: card.id) ? "checkmark.seal.fill" : "plus.circle.fill")
+                        .foregroundColor(ownedCardsStore.isOwned(cardId: card.id) ? AppColors.textBlue : AppColors.textSecondary)
+                }
+                .padding(.horizontal, UIConstants.paddingMedium)
+                .padding(.vertical, UIConstants.paddingSmall)
+                .background(AppColors.badgeBackground)
+                .clipShape(Capsule())
+                .contentShape(Rectangle())
+            }
 
-                // Immagine della carta ingrandita e effetti foil/etch
-                GeometryReader { geometry in
-                    let cardWidth = min(geometry.size.width, geometry.size.height / UIConstants.cardImageAspectRatio) * UIConstants.modalCardSizeMultiplier
-                    let cardHeight = cardWidth * UIConstants.cardImageAspectRatio
+            Spacer()
 
-                    ZStack { // ZStack per sovrapporre l'immagine base e gli effetti foil/etch
-                        // Immagine base della carta
-                        KFImage(card.imageUrl)
-                            .resizable()
-                            .placeholder {
-                                ProgressView()
-                                    .frame(width: cardWidth, height: cardHeight)
-                                    .background(AppColors.placeholder)
-                                    .cornerRadius(UIConstants.cornerRadiusLarge)
-                            }
-                            .onFailure { error in
-                                print("Error loading full card image: \(error.localizedDescription)")
-                            }
-                            .setProcessor(DownsamplingImageProcessor(size: CGSize(width: cardWidth, height: cardHeight)))
-                            .loadDiskFileSynchronously()
-                            .fade(duration: 0.25)
-                            .scaledToFit()
-                            .frame(width: cardWidth, height: cardHeight)
-                            .cornerRadius(UIConstants.cornerRadiusLarge)
-                            .shadow(color: AppColors.shadow, radius: UIConstants.modalShadowRadius, x: UIConstants.shadowOffsetX, y: UIConstants.shadowOffsetY)
-                            .allowsHitTesting(false)
+            Button {
+                isShowingModal = false
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(AppColors.modalCloseButton)
+            }
+        }
+        .padding(.horizontal, UIConstants.paddingLarge)
+        .padding(.top, UIConstants.paddingLarge)
+        .padding(.bottom, UIConstants.paddingMedium)
+    }
 
-                        // Effetto Foil (se disponibile)
-                        if let foilUrl = card.foilImageUrl {
-                            KFImage(foilUrl)
-                                .resizable()
-                                .setProcessor(DownsamplingImageProcessor(size: CGSize(width: cardWidth, height: cardHeight)))
-                                .loadDiskFileSynchronously()
-                                .fade(duration: 0.25)
-                                .scaledToFit()
-                                .frame(width: cardWidth, height: cardHeight)
-                                .cornerRadius(UIConstants.cornerRadiusLarge)
-                                .blendMode(.screen)
-                                .opacity(UIConstants.foilOverlayOpacity)
-                                .allowsHitTesting(false)
+    private var titleSection: some View {
+        VStack(alignment: .leading, spacing: UIConstants.paddingSmall) {
+            Text(card.name)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+
+            if !subtitleText.isEmpty {
+                Text(subtitleText)
+                    .font(.subheadline)
+                    .foregroundColor(AppColors.textSecondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var cardImageSection: some View {
+        VStack(alignment: .center, spacing: UIConstants.paddingSmall) {
+            GeometryReader { geo in
+                let availableWidth = geo.size.width
+                let targetWidth = min(max(availableWidth - 60, 0), 360)
+
+                Button {
+                    isShowingFullScreenImage = true
+                } label: {
+                    CardFoilImageView(card: card, width: targetWidth)
+                        .frame(maxWidth: .infinity)
+                        .overlay(alignment: .bottomTrailing) {
+                            Label("Apri a schermo intero", systemImage: "arrow.up.left.and.arrow.down.right")
+                                .font(.caption2)
+                                .padding(6)
+                                .background(AppColors.badgeBackground)
+                                .foregroundColor(AppColors.badgeText)
+                                .clipShape(Capsule())
+                                .padding(8)
                         }
+                }
+                .buttonStyle(.plain)
+                .frame(width: availableWidth)
+            }
+            .frame(height: 360 * UIConstants.cardImageAspectRatio)
 
-                        // Effetto Etch (se disponibile)
-                        if let etchUrl = card.etchImageUrl {
-                            KFImage(etchUrl)
-                                .resizable()
-                                .setProcessor(DownsamplingImageProcessor(size: CGSize(width: cardWidth, height: cardHeight)))
-                                .loadDiskFileSynchronously()
-                                .fade(duration: 0.25)
-                                .scaledToFit()
-                                .frame(width: cardWidth, height: cardHeight)
-                                .cornerRadius(UIConstants.cornerRadiusLarge)
-                                .blendMode(.overlay)
-                                .opacity(UIConstants.foilOverlayOpacity * 0.7)
-                                .allowsHitTesting(false)
-                        }
+            Text("Tocca la carta per ingrandirla.")
+                .font(.footnote)
+                .foregroundColor(AppColors.textSecondary)
+                .frame(maxWidth: .infinity)
+        }
+    }
 
-                        // Shine dinamico in base alla rotazione
-                        LinearGradient(
-                            gradient: Gradient(colors: [
-                                Color.white.opacity(0.0),
-                                Color.white.opacity(0.18),
-                                Color.white.opacity(0.0)
-                            ]),
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                        .frame(width: cardWidth, height: cardHeight)
-                        .cornerRadius(UIConstants.cornerRadiusLarge)
-                        .blendMode(.screen)
-                        .opacity(
-                            0.15 + 0.35 * min(abs(rotationX) + abs(rotationY), 60) / 60
-                        )
-                        .allowsHitTesting(false)
-                    }
-                    // Applica la rotazione 3D all'intero ZStack
-                    .contentShape(Rectangle())
-                    .animation(.interactiveSpring(response: 0.25, dampingFraction: 0.85), value: rotationX)
-                    .animation(.interactiveSpring(response: 0.25, dampingFraction: 0.85), value: rotationY)
-                    .rotation3DEffect(
-                        .degrees(rotationX),
-                        axis: (x: 1, y: 0, z: 0),
-                        perspective: 1
-                    )
-                    .rotation3DEffect(
-                        .degrees(rotationY),
-                        axis: (x: 0, y: 1, z: 0),
-                        perspective: 1
-                    )
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                let newY = initialRotationY + (value.translation.width * UIConstants.rotationSensitivity)
-                                let newX = initialRotationX - (value.translation.height * UIConstants.rotationSensitivity)
-                                rotationY = clamp(newY, min: -maxTilt, max: maxTilt)
-                                rotationX = clamp(newX, min: -maxTilt, max: maxTilt)
-                            }
-                            .onEnded { value in
-                                // Salva la rotazione finale come iniziale per il prossimo trascinamento
-                                initialRotationY = rotationY
-                                initialRotationX = rotationX
-                            }
-                    )
-                    .onTapGesture(count: 2) {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            rotationX = 0
-                            rotationY = 0
-                            initialRotationX = 0
-                            initialRotationY = 0
+    private var subtitleText: String {
+        var parts: [String] = []
+        if let stage = card.stageDisplay {
+            parts.append(stage)
+        }
+        let number = card.collectorNumberFull ?? "#\(card.collectorNumberNumeric)"
+        parts.append(number)
+        if let rarity = card.rarityDisplay {
+            parts.append(rarity)
+        }
+        return parts.joined(separator: " • ")
+    }
+
+    private var detailItems: [(title: String, value: String)] {
+        var items: [(title: String, value: String)] = []
+        items.append(("Numero carta", card.collectorNumberFull ?? "#\(card.collectorNumberNumeric)"))
+        items.append(("Tipo carta", card.cardTypeDisplay))
+        if let stage = card.stageDisplay {
+            items.append(("Stadio", stage))
+        }
+        if let hp = card.hpDisplay {
+            items.append(("Punti Salute", hp))
+        }
+        if let types = card.typeDisplay {
+            items.append(("Tipi", types))
+        }
+        if let rarity = card.rarityDisplay {
+            items.append(("Rarità", rarity))
+        }
+        items.append(("Foil", card.foilDescription ?? FeatureExpansionStrings.noFoil))
+        items.append(("Lingua", card.languageDisplay))
+        items.append(("Formato", card.sizeDisplay))
+        if let regulation = card.regulationMark {
+            items.append(("Regolamento", regulation))
+        }
+        if let weakness = card.weaknessDisplay {
+            items.append(("Debolezza", weakness))
+        }
+        if let resistance = card.resistanceDisplay {
+            items.append(("Resistenza", resistance))
+        }
+        if let retreat = card.retreatDisplay {
+            items.append(("Costo ritirata", retreat))
+        }
+        if ownedCardsStore.isOwned(cardId: card.id) {
+            let quantity = ownedCardsStore.quantity(for: card.id)
+            items.append(("Collezione", "x\(quantity) copie"))
+        } else {
+            items.append(("Collezione", "Non posseduta"))
+        }
+        items.append(("ID carta", card.id))
+        return items
+    }
+
+    private var movesSection: some View {
+        sectionContainer(title: "Mosse competitive") {
+            let moves = card.moves
+            if moves.isEmpty {
+                Text("Questa carta non include mosse o abilità nel dataset.")
+                    .font(.footnote)
+                    .foregroundColor(AppColors.textSecondary)
+            } else {
+                VStack(spacing: UIConstants.paddingMedium) {
+                    ForEach(Array(moves.enumerated()), id: \.element.id) { pair in
+                        CardMoveRow(move: pair.element)
+                        if pair.offset != moves.count - 1 {
+                            Divider()
+                                .background(AppColors.textSecondary.opacity(0.15))
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity) // Occupa lo spazio disponibile
-                Spacer()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func sectionContainer<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: UIConstants.paddingSmall) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(AppColors.textPrimary)
+            content()
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(AppColors.cardBackground)
+        .cornerRadius(UIConstants.cornerRadiusLarge)
+    }
+}
+private struct FullScreenCardImageView: View {
+    let card: CardViewModel
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            Color.black.ignoresSafeArea()
+
+            GeometryReader { geometry in
+                let width = min(geometry.size.width - 40, geometry.size.height / UIConstants.cardImageAspectRatio)
+                CardFoilImageView(card: card, width: max(width, 180))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }
+
+            Button {
+                isPresented = false
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.system(size: 34, weight: .bold))
+                    .foregroundColor(AppColors.modalCloseButton)
+                    .padding()
             }
         }
     }
 }
+
 
 // MARK: - Preview for FullCardModalView
 struct FullCardModalView_Previews: PreviewProvider {
