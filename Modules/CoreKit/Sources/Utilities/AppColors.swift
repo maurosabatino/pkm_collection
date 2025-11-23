@@ -10,24 +10,24 @@ public struct AppColors {}
 
 public extension AppColors {
     // Sfondi
-    static let backgroundPrimary = Color.blue.opacity(UIConstants.backgroundOpacityMedium)
-    static let cardBackground = Color.white
-    static let modalBackground = Color.black.opacity(UIConstants.modalBackgroundOpacity)
+    static let backgroundPrimary = Color(.systemBackground)
+    static let cardBackground = Color(.secondarySystemBackground)
+    static let modalBackground = Color(.systemBackground).opacity(0.95)
 
     // Testo
     static let textPrimary = Color.primary
     static let textSecondary = Color.secondary
-    static let textGray = Color.gray
-    static let textBlue = Color.blue
-    static let modalCloseButton = Color.white
+    static let textGray = Color(.tertiaryLabel)
+    static let textBlue = Color(.systemBlue)
+    static let modalCloseButton = Color(.secondaryLabel)
 
     // Elementi UI
-    static let shadow = Color.black.opacity(UIConstants.backgroundOpacityHigh)
-    static let progressTint = Color.green
-    static let placeholder = Color.gray.opacity(UIConstants.backgroundOpacityHigh)
-    static let error = Color.red
-    static let warning = Color.orange
+    static let shadow = Color(.label).opacity(0.18)
+    static let progressTint = Color(.systemGreen)
+    static let placeholder = Color(.tertiaryLabel)
+    static let error = Color(.systemRed)
+    static let warning = Color(.systemOrange)
     static let accent = Color.accentColor
-    static let badgeBackground = Color.black.opacity(0.7)
-    static let badgeText = Color.white
+    static let badgeBackground = Color(.systemGray5).opacity(0.7)
+    static let badgeText = Color(.label)
 }

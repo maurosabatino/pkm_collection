@@ -2,8 +2,10 @@ import SwiftUI
 import CoreKit
 
 // MARK: - ExpansionListView
+/// Elenco espansioni raggruppate per serie con navigazione verso dettaglio e catalogo carte.
 public struct ExpansionListView: View {
     @EnvironmentObject var expansionStore: ExpansionStore
+    @EnvironmentObject var ownedCardsStore: OwnedCardsStore
 
     public init() {}
 
@@ -18,6 +20,7 @@ public struct ExpansionListView: View {
                     ForEach(expansionStore.groupedAndFilteredExpansions[series]!.sorted(by: { $0.releaseDate > $1.releaseDate })) { expansion in
                         NavigationLink(value: expansion) {
                             ExpansionRowView(expansion: expansion)
+                                .environmentObject(ownedCardsStore)
                         }
                         .listRowBackground(
                             RoundedRectangle(cornerRadius: UIConstants.cornerRadiusMedium)
@@ -43,16 +46,7 @@ public struct ExpansionListView: View {
             placement: .navigationBarDrawer(displayMode: .automatic),
             prompt: FeatureExpansionStrings.searchExpansionsPlaceholder
         )
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink {
-                    CardCatalogView()
-                } label: {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                }
-                .accessibilityLabel(Text("Apri catalogo carte"))
-            }
-        }
+   
         .onAppear {
             if expansionStore.expansions.isEmpty {
                 Task {

@@ -13,7 +13,7 @@ let project = Project(
             name: "PKMCollection",
             destinations: [.iPhone, .iPad], 
             product: .app,
-            bundleId: "com.maurosabatino.pkmcollection",
+            bundleId: "com.maurosabatino.PKM-Collection",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchScreen": [
@@ -87,7 +87,7 @@ let project = Project(
             name: "PKMCollectionTests",
             shared: true,
             buildAction: BuildAction.buildAction(
-                targets: ["PKMCollection"]
+                targets: ["PKMCollection", "PKMCollectionTests"]
             ),
             testAction: TestAction.targets([
                 TestableTarget.testableTarget(target: "PKMCollectionTests")
@@ -99,7 +99,7 @@ let project = Project(
             name: "PKMCollectionUITests",
             shared: true,
             buildAction: BuildAction.buildAction(
-                targets: ["PKMCollection"]
+                targets: ["PKMCollection", "PKMCollectionUITests"]
             ),
             testAction: TestAction.targets([
                 TestableTarget.testableTarget(target: "PKMCollectionUITests")

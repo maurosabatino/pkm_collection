@@ -8,8 +8,10 @@ import SwiftUI
 import CoreKit
 import UIComponents
 
+/// Riga di elenco che mostra logo, nome e progressi di un'espansione.
 struct ExpansionRowView: View {
     let expansion: Expansion
+    @EnvironmentObject private var ownedCardsStore: OwnedCardsStore
 
     var body: some View {
         HStack(spacing: UIConstants.spacingMedium) {
@@ -35,15 +37,8 @@ struct ExpansionRowView: View {
                     .font(.caption)
                     .foregroundColor(AppColors.textGray)
 
-                HStack(alignment: .center) {
-                    Text(FeatureExpansionStrings.cardsPrefix + "\(expansion.num.regular) / \(expansion.num.master)")
-                        .font(.caption.bold())
-                        .foregroundColor(AppColors.textBlue)
-
-                    ProgressView(value: Double(expansion.num.regular), total: Double(expansion.num.master))
-                        .progressViewStyle(LinearProgressViewStyle(tint: AppColors.progressTint)) 
-                        .frame(width: UIConstants.progressBarWidth)
-                }
+                ExpansionProgressView(expansion: expansion)
+                    .environmentObject(ownedCardsStore)
             }
 
         }

@@ -7,6 +7,7 @@
 import SwiftUI
 import CoreKit
 
+/// Modale a schermo intero che mostra i dettagli completi di una carta con azioni di collezione.
 struct FullCardModalView: View {
     let card: CardViewModel
     @Binding var isShowingModal: Bool
@@ -255,6 +256,8 @@ struct FullCardModalView: View {
         .cornerRadius(UIConstants.cornerRadiusLarge)
     }
 }
+
+/// Visualizza la carta a schermo intero con possibilità di chiudere rapidamente.
 private struct FullScreenCardImageView: View {
     let card: CardViewModel
     @Binding var isPresented: Bool

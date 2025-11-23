@@ -23,6 +23,8 @@ final class CardCatalogStore: ObservableObject {
     private var availableExpansionsCache: [Expansion] = []
     private var latestShowOwnedOnly = false
     private var latestDisplayMode: CardDisplayMode = .regular
+    private var recomputeWorkItem: DispatchWorkItem?
+    private let filterQueue = DispatchQueue(label: "CardCatalogStore.filter", qos: .userInitiated)
 
     init(
         fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl(),
@@ -158,6 +160,7 @@ final class CardCatalogStore: ObservableObject {
 
     private func subscribeToChanges() {
         $searchText
+            .debounce(for: .milliseconds(200), scheduler: RunLoop.main)
             .combineLatest($selectedPokemonTypes, $selectedRarities)
             .sink { [weak self] _ in
                 self?.recomputeDisplayedCards()
@@ -186,59 +189,82 @@ final class CardCatalogStore: ObservableObject {
 
     private func recomputeDisplayedCards() {
         let query = searchText.foldedForSearch
+        let selectedTypes = selectedPokemonTypes
+        let selectedRarities = selectedRarities
+        let selectedExpansions = selectedExpansions
+        let sortOption = sortOption
+        let cards = allCards
 
-        let filtered = allCards.filter { item in
-            var matches = true
+        recomputeWorkItem?.cancel()
+        var workItem: DispatchWorkItem?
+        let newWorkItem = DispatchWorkItem { [weak self] in
+            let filtered = cards.filter { item in
+                var matches = true
 
-            if !query.isEmpty {
-                matches = item.card.name.foldedForSearch.contains(query)
-            }
-
-            if matches, !selectedPokemonTypes.isEmpty {
-                let cardTypes = Set(item.card.types ?? [])
-                matches = !cardTypes.isDisjoint(with: selectedPokemonTypes)
-            }
-
-            if matches, !selectedRarities.isEmpty, let rarity = item.card.rarity?.designation {
-                matches = selectedRarities.contains(rarity)
-            }
-
-            if matches, !selectedExpansions.isEmpty {
-                matches = selectedExpansions.contains(item.expansionPath)
-            }
-
-            return matches
-        }
-
-        let sorted = filtered.sorted { lhs, rhs in
-            switch sortOption {
-            case .collectorNumber:
-                return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
-            case .name:
-                return lhs.card.name.foldedForSearch < rhs.card.name.foldedForSearch
-            case .rarity:
-                let leftRank = rarityRank(lhs.card.rarity?.designation)
-                let rightRank = rarityRank(rhs.card.rarity?.designation)
-                if leftRank == rightRank {
-                    return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                if !query.isEmpty {
+                    matches = item.card.name.foldedForSearch.contains(query)
                 }
-                return leftRank < rightRank
-            case .releaseDate:
-                if lhs.expansionReleaseDate == rhs.expansionReleaseDate {
-                    return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+
+                if matches, !selectedTypes.isEmpty {
+                    let cardTypes = Set(item.card.types ?? [])
+                    matches = !cardTypes.isDisjoint(with: selectedTypes)
                 }
-                return lhs.expansionReleaseDate > rhs.expansionReleaseDate
+
+                if matches, !selectedRarities.isEmpty, let rarity = item.card.rarity?.designation {
+                    matches = selectedRarities.contains(rarity)
+                }
+
+                if matches, !selectedExpansions.isEmpty {
+                    matches = selectedExpansions.contains(item.expansionPath)
+                }
+
+                return matches
+            }
+
+            let sorted = filtered.sorted { lhs, rhs in
+                switch sortOption {
+                case .collectorNumber:
+                    return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                case .name:
+                    return lhs.card.name.foldedForSearch < rhs.card.name.foldedForSearch
+                case .rarity:
+                    let leftRank = self?.rarityRank(lhs.card.rarity?.designation) ?? Int.max
+                    let rightRank = self?.rarityRank(rhs.card.rarity?.designation) ?? Int.max
+                    if leftRank == rightRank {
+                        return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                    }
+                    return leftRank < rightRank
+                case .releaseDate:
+                    if lhs.expansionReleaseDate == rhs.expansionReleaseDate {
+                        return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                    }
+                    return lhs.expansionReleaseDate > rhs.expansionReleaseDate
+                }
+            }
+
+            let viewModels = sorted.map {
+                CardViewModel(
+                    cardData: $0.card,
+                    expansionName: $0.expansionName,
+                    expansionPath: $0.expansionPath
+                )
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                guard
+                    let self,
+                    let workItem,
+                    self.recomputeWorkItem === workItem,
+                    !workItem.isCancelled
+                else { return }
+                self.displayedCards = viewModels
+                self.savePreferences()
             }
         }
 
-        displayedCards = sorted.map {
-            CardViewModel(
-                cardData: $0.card,
-                expansionName: $0.expansionName,
-                expansionPath: $0.expansionPath
-            )
-        }
-        savePreferences()
+        workItem = newWorkItem
+        recomputeWorkItem = newWorkItem
+        filterQueue.async(execute: newWorkItem)
     }
 
     private func rarityRank(_ designation: Designation?) -> Int {

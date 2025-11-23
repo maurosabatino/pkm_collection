@@ -32,6 +32,7 @@ public struct CardViewModel: Identifiable, Hashable {
     public let weaknesses: [String]
     public let resistances: [String]
     public let retreatCost: Int?
+    public let rarityDesignation: Designation?
     public let moves: [CardMoveViewModel]
 
     public init(
@@ -52,6 +53,7 @@ public struct CardViewModel: Identifiable, Hashable {
         self.regulationMark = cardData.regulationMark
         self.expansionName = expansionName
         self.expansionPath = expansionPath
+        self.rarityDesignation = cardData.rarity?.designation
         self.rarityDisplay = cardData.rarity.map { Self.formatDisplayText($0.designation.rawValue) }
         self.stageDisplay = cardData.stage.map { Self.formatDisplayText($0.rawValue) }
         self.hpDisplay = cardData.hp.map { "\($0) HP" }

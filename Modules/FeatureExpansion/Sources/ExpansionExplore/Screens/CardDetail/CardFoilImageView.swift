@@ -2,6 +2,7 @@ import SwiftUI
 import CoreKit
 import UIComponents
 
+/// Rendering della carta con livelli foil/etch e shader animati.
 struct CardFoilImageView: View {
     let card: CardViewModel
     let width: CGFloat
@@ -137,6 +138,7 @@ struct CardFoilImageView: View {
     }
 }
 
+/// Overlay animato che simula le onde del foil.
 private struct FoilWavePatternOverlay: View {
     @State private var phase: CGFloat = 0
 
@@ -177,6 +179,7 @@ private struct FoilWavePatternOverlay: View {
     }
 }
 
+/// Collezione di onde colorate usata come pattern foil.
 private struct FoilWaveField: View {
     let phase: CGFloat
     let waveCount: Int
@@ -212,6 +215,7 @@ private struct FoilWaveField: View {
     }
 }
 
+/// Traccia una singola onda sinusoidale per il pattern foil.
 private struct FoilWaveShape: Shape {
     var phase: CGFloat
     var amplitude: CGFloat

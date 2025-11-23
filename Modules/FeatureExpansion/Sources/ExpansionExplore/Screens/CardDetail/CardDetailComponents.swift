@@ -1,6 +1,7 @@
 import SwiftUI
 import CoreKit
 
+/// Riga descrittiva per coppie titolo/valore nelle schede carta.
 struct CardDetailRow: View {
     let title: String
     let value: String
@@ -18,6 +19,7 @@ struct CardDetailRow: View {
     }
 }
 
+/// Rappresenta una mossa/abilità della carta con badge, costi ed effetto.
 struct CardMoveRow: View {
     let move: CardMoveViewModel
 
