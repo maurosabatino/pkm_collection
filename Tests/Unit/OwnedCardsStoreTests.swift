@@ -91,4 +91,23 @@ final class OwnedCardsStoreTests: XCTestCase {
         let existsAfter = await MainActor.run { store.isWishlist(cardId: "card-wish") }
         XCTAssertFalse(existsAfter)
     }
+
+    func testAggregatesCounts() async {
+        let persistence = InMemoryPersistence()
+        let store = await MainActor.run { OwnedCardsStore(persistence: persistence) }
+
+        await MainActor.run {
+            store.increment(cardId: "owned-1")
+            store.increment(cardId: "owned-dup", step: 2)
+            store.toggleWishlist(for: "wish-1")
+        }
+
+        let ownedCount = await MainActor.run { store.ownedCount(for: ["owned-1", "owned-dup", "missing"]) }
+        let duplicateCount = await MainActor.run { store.duplicateCount(for: ["owned-dup"]) }
+        let wishlistCount = await MainActor.run { store.wishlistCount(for: ["wish-1", "owned-1"]) }
+
+        XCTAssertEqual(ownedCount, 2)
+        XCTAssertEqual(duplicateCount, 1)
+        XCTAssertEqual(wishlistCount, 1)
+    }
 }

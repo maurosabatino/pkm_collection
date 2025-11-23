@@ -1,11 +1,18 @@
 import XCTest
 @testable import PKMCollection
 @testable import FeatureExpansion
+@testable import CoreKit
 
 final class CardListStoreTests: XCTestCase {
     private struct StubUseCase: FetchCardListUseCase {
         let data: [CardData]
         func execute(path: String) async throws -> [CardData] { data }
+    }
+
+    private final class InMemoryPersistence: OwnedCardsPersistence {
+        var storage: [OwnedCard] = []
+        func load() throws -> [OwnedCard] { storage }
+        func save(_ cards: [OwnedCard]) throws { storage = cards }
     }
 
     func testRegularModeReturnsSingleVariantPerCard() async {
@@ -394,5 +401,74 @@ final class CardListStoreTests: XCTestCase {
             XCTAssertFalse(store.isLoading)
             XCTAssertNotNil(store.error)
         }
+    }
+
+    func testProgressSnapshotCountsOwnedWishlistAndDuplicates() async {
+        let cards = [
+            CardData(
+                name: "Pikachu",
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "1/100", numerator: "1", denominator: "100", numeric: 1),
+                rarity: nil,
+                stage: .basic,
+                hp: 60,
+                types: [.lightning],
+                weakness: nil,
+                resistance: nil,
+                retreat: 1,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "pk", longFormID: "pk", archetypeID: "", reldate: "2024-01-01", key: "pk")),
+                images: Images(tcgl: TcglImages(tex: nil, png: ImagePaths(front: "https://example.com/pk.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            ),
+            CardData(
+                name: "Charizard",
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "2/100", numerator: "2", denominator: "100", numeric: 2),
+                rarity: nil,
+                stage: .basic,
+                hp: 160,
+                types: [.fire],
+                weakness: nil,
+                resistance: nil,
+                retreat: 2,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "cz", longFormID: "cz", archetypeID: "", reldate: "2024-01-01", key: "cz")),
+                images: Images(tcgl: TcglImages(tex: nil, png: ImagePaths(front: "https://example.com/cz.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            )
+        ]
+
+        let ownedStore = await MainActor.run { OwnedCardsStore(persistence: InMemoryPersistence()) }
+        await MainActor.run {
+            ownedStore.increment(cardId: "pk", step: 2) // 1 owned + 1 duplicate
+            ownedStore.toggleWishlist(for: "cz")
+        }
+
+        let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: cards)) }
+        await store.loadCards()
+
+        let snapshot = await MainActor.run { store.progressSnapshot(using: ownedStore) }
+        XCTAssertEqual(snapshot.totalCards, 2)
+        XCTAssertEqual(snapshot.ownedCards, 1)
+        XCTAssertEqual(snapshot.duplicateCards, 1)
+        XCTAssertEqual(snapshot.wishlistCards, 1)
+        XCTAssertEqual(snapshot.completionPercentage, 0.5, accuracy: 0.01)
     }
 }

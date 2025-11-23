@@ -27,12 +27,14 @@ struct ExpansionDetailView: View {
                 .font(.largeTitle)
                 .padding()
 
-            if cardListStore.displayedCards.isEmpty == false {
+            if !cardListStore.allCardData.isEmpty {
+                let snapshot = cardListStore.progressSnapshot(using: ownedCardsStore)
                 ExpansionCompletionView(
-                    owned: ownedCardsStore.ownedCount(for: cardListStore.displayedCards.map(\.id)),
-                    total: cardListStore.displayedCards.count,
-                    duplicates: ownedCardsStore.duplicateCount(for: cardListStore.displayedCards.map(\.id)),
-                    wishlist: ownedCardsStore.wishlistCount(for: cardListStore.displayedCards.map(\.id))
+                    owned: snapshot.ownedCards,
+                    total: snapshot.totalCards,
+                    duplicates: snapshot.duplicateCards,
+                    wishlist: snapshot.wishlistCards,
+                    completion: snapshot.completionPercentage
                 )
                 .padding(.horizontal)
             }
@@ -97,6 +99,7 @@ private struct ExpansionCompletionView: View {
     let total: Int
     let duplicates: Int
     let wishlist: Int
+    let completion: Double
 
     var body: some View {
         VStack(alignment: .leading, spacing: UIConstants.paddingSmall) {
@@ -112,6 +115,7 @@ private struct ExpansionCompletionView: View {
 
             ProgressView(value: total > 0 ? Double(owned) / Double(total) : 0)
                 .tint(AppColors.progressTint)
+                .accessibilityLabel("Completamento set \(Int((completion * 100).rounded()))%")
 
             HStack(spacing: UIConstants.paddingMedium) {
                 Label("\(duplicates)", systemImage: "plus.circle.on.circle")

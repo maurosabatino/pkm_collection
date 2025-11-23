@@ -45,7 +45,6 @@ final class CardListStore: ObservableObject {
     }
 
     private func recomputeDisplayedCards() {
-        var processedCards: [CardViewModel] = []
         let query = searchText.foldedForSearch
         let filteredBySearch = allCardData.filter { cardData in
             if query.isEmpty { return true }
@@ -55,30 +54,16 @@ final class CardListStore: ObservableObject {
             return nameMatch || foilTypeMatch || foilMaskMatch
         }
 
-        switch displayMode {
-        case .master:
-            processedCards = filteredBySearch
-                .map { CardViewModel(cardData: $0) }
-                .sorted {
-                    if $0.collectorNumberNumeric == $1.collectorNumberNumeric {
-                        return $0.name < $1.name
-                    }
-                    return $0.collectorNumberNumeric < $1.collectorNumberNumeric
+        let canonical = canonicalCards(from: filteredBySearch, mode: displayMode)
+            .map { CardViewModel(cardData: $0) }
+            .sorted {
+                if $0.collectorNumberNumeric == $1.collectorNumberNumeric {
+                    return $0.name < $1.name
                 }
-        case .regular:
-            let grouped = Dictionary(grouping: filteredBySearch) {
-                CardGroupKey(number: $0.collectorNumber.numeric, lang: $0.lang)
+                return $0.collectorNumberNumeric < $1.collectorNumberNumeric
             }
-            for (_, cardsForKey) in grouped.sorted(by: { $0.key.number < $1.key.number }) {
-                if let regularCard = cardsForKey.first(where: { $0.foil == nil }) {
-                    processedCards.append(CardViewModel(cardData: regularCard))
-                } else if let firstCard = cardsForKey.first {
-                    processedCards.append(CardViewModel(cardData: firstCard))
-                }
-            }
-        }
 
-        displayedCardsCache = processedCards
+        displayedCardsCache = canonical
     }
 
     func loadCards() async {
@@ -94,4 +79,48 @@ final class CardListStore: ObservableObject {
         }
         isLoading = false
     }
+
+    func progressSnapshot(using ownedStore: OwnedCardsStore) -> ProgressSnapshot {
+        let canonical = canonicalCards(from: allCardData, mode: displayMode)
+        let ids = canonical.map(\.id)
+        let owned = ownedStore.ownedCount(for: ids)
+        let wishlist = ownedStore.wishlistCount(for: ids)
+        let duplicates = ownedStore.duplicateCount(for: ids)
+        let total = canonical.count
+        let percentage = total > 0 ? Double(owned) / Double(total) : 0
+        return ProgressSnapshot(
+            totalCards: total,
+            ownedCards: owned,
+            wishlistCards: wishlist,
+            duplicateCards: duplicates,
+            completionPercentage: percentage
+        )
+    }
+
+    private func canonicalCards(from cards: [CardData], mode: CardDisplayMode) -> [CardData] {
+        switch mode {
+        case .master:
+            return cards
+        case .regular:
+            let grouped = Dictionary(grouping: cards) {
+                CardGroupKey(number: $0.collectorNumber.numeric, lang: $0.lang)
+            }
+            return grouped
+                .sorted(by: { $0.key.number < $1.key.number })
+                .compactMap { (_, cardsForKey) in
+                    if let regularCard = cardsForKey.first(where: { $0.foil == nil }) {
+                        return regularCard
+                    }
+                    return cardsForKey.first
+                }
+        }
+    }
+}
+
+struct ProgressSnapshot {
+    let totalCards: Int
+    let ownedCards: Int
+    let wishlistCards: Int
+    let duplicateCards: Int
+    let completionPercentage: Double
 }
