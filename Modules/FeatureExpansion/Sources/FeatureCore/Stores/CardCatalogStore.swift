@@ -10,22 +10,37 @@ final class CardCatalogStore: ObservableObject {
     @Published var searchText: String = ""
     @Published var selectedPokemonTypes: Set<PokemonType> = []
     @Published var selectedRarities: Set<Designation> = []
+    @Published var selectedExpansions: Set<String> = []
+    @Published var sortOption: CardSortOption = .collectorNumber
 
-    private var allCards: [CardData] = []
+    private var allCards: [CardWithExpansion] = []
     private let fetchCardListUseCase: FetchCardListUseCase
+    private let preferencesStorage: CardCatalogPreferencesPersisting
+    private var storedPreferences: CardCatalogPreferences
     private var cancellables: Set<AnyCancellable> = []
     private var availableTypesCache: [PokemonType] = []
     private var availableRaritiesCache: [Designation] = []
+    private var availableExpansionsCache: [Expansion] = []
+    private var latestShowOwnedOnly = false
+    private var latestDisplayMode: CardDisplayMode = .regular
 
-    init(fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl()) {
+    init(
+        fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl(),
+        preferencesStorage: CardCatalogPreferencesPersisting = UserDefaultsCardCatalogPreferences()
+    ) {
         self.fetchCardListUseCase = fetchCardListUseCase
+        self.preferencesStorage = preferencesStorage
+        self.storedPreferences = preferencesStorage.load() ?? CardCatalogPreferences()
 
-        $searchText
-            .combineLatest($selectedPokemonTypes, $selectedRarities)
-            .sink { [weak self] _ in
-                self?.recomputeDisplayedCards()
-            }
-            .store(in: &cancellables)
+        searchText = storedPreferences.searchText
+        selectedPokemonTypes = Set(storedPreferences.selectedPokemonTypes.compactMap(PokemonType.init(rawValue:)))
+        selectedRarities = Set(storedPreferences.selectedRarities.compactMap(Designation.init(rawValue:)))
+        selectedExpansions = Set(storedPreferences.selectedExpansions)
+        sortOption = CardSortOption(rawValue: storedPreferences.sortOption) ?? .collectorNumber
+        latestShowOwnedOnly = storedPreferences.showOwnedOnly
+        latestDisplayMode = CardDisplayMode(rawValue: storedPreferences.displayMode) ?? .regular
+
+        subscribeToChanges()
     }
 
     func loadCards(for expansions: [Expansion]) async {
@@ -39,10 +54,27 @@ final class CardCatalogStore: ObservableObject {
         error = nil
 
         do {
-            var aggregated: [CardData] = []
+            availableExpansionsCache = expansions
+            let defaultExpansionSelection = normalizedExpansionsSelection(from: expansions)
+            if selectedExpansions.isEmpty {
+                selectedExpansions = defaultExpansionSelection
+            } else {
+                let filteredSelection = selectedExpansions.intersection(defaultExpansionSelection)
+                selectedExpansions = filteredSelection.isEmpty ? defaultExpansionSelection : filteredSelection
+            }
+
+            var aggregated: [CardWithExpansion] = []
             for expansion in expansions {
                 let cards = try await fetchCardListUseCase.execute(path: expansion.path)
-                aggregated.append(contentsOf: cards)
+                let enriched = cards.map { card in
+                    CardWithExpansion(
+                        card: card,
+                        expansionPath: expansion.path,
+                        expansionName: expansion.name,
+                        expansionReleaseDate: expansion.releaseDate
+                    )
+                }
+                aggregated.append(contentsOf: enriched)
             }
             allCards = aggregated
             refreshAvailableFilters()
@@ -55,8 +87,17 @@ final class CardCatalogStore: ObservableObject {
         isLoading = false
     }
 
-    func applySample(cards: [CardData]) {
-        allCards = cards
+    func applySample(cards: [CardData], expansions: [Expansion] = [FeatureExpansionSamples.sampleExpansion]) {
+        availableExpansionsCache = expansions
+        selectedExpansions = normalizedExpansionsSelection(from: expansions)
+        allCards = zip(cards, expansions.cycledSequence()).map { card, expansion in
+            CardWithExpansion(
+                card: card,
+                expansionPath: expansion.path,
+                expansionName: expansion.name,
+                expansionReleaseDate: expansion.releaseDate
+            )
+        }
         refreshAvailableFilters()
         recomputeDisplayedCards()
     }
@@ -67,6 +108,20 @@ final class CardCatalogStore: ObservableObject {
         } else {
             selectedPokemonTypes.insert(type)
         }
+        recomputeDisplayedCards()
+    }
+
+    func toggleExpansion(path: String) {
+        if selectedExpansions.contains(path) {
+            selectedExpansions.remove(path)
+        } else {
+            selectedExpansions.insert(path)
+        }
+        recomputeDisplayedCards()
+    }
+
+    func setSortOption(_ option: CardSortOption) {
+        sortOption = option
         recomputeDisplayedCards()
     }
 
@@ -83,15 +138,48 @@ final class CardCatalogStore: ObservableObject {
         searchText = ""
         selectedPokemonTypes = []
         selectedRarities = []
+        selectedExpansions = normalizedExpansionsSelection(from: availableExpansionsCache)
         recomputeDisplayedCards()
     }
 
     var availablePokemonTypes: [PokemonType] { availableTypesCache }
     var availableRarities: [Designation] { availableRaritiesCache }
+    var availableExpansions: [Expansion] { availableExpansionsCache }
+
+    var viewPreferences: (showOwnedOnly: Bool, displayMode: CardDisplayMode) {
+        (latestShowOwnedOnly, latestDisplayMode)
+    }
+
+    func persistViewPreferences(showOwnedOnly: Bool, displayMode: CardDisplayMode) {
+        latestShowOwnedOnly = showOwnedOnly
+        latestDisplayMode = displayMode
+        savePreferences()
+    }
+
+    private func subscribeToChanges() {
+        $searchText
+            .combineLatest($selectedPokemonTypes, $selectedRarities)
+            .sink { [weak self] _ in
+                self?.recomputeDisplayedCards()
+            }
+            .store(in: &cancellables)
+
+        $selectedExpansions
+            .sink { [weak self] _ in
+                self?.recomputeDisplayedCards()
+            }
+            .store(in: &cancellables)
+
+        $sortOption
+            .sink { [weak self] _ in
+                self?.recomputeDisplayedCards()
+            }
+            .store(in: &cancellables)
+    }
 
     private func refreshAvailableFilters() {
-        let types = Set(allCards.compactMap { $0.types }.flatMap { $0 })
-        let rarities = Set(allCards.compactMap { $0.rarity?.designation })
+        let types = Set(allCards.compactMap { $0.card.types }.flatMap { $0 })
+        let rarities = Set(allCards.compactMap { $0.card.rarity?.designation })
         availableTypesCache = types.sorted { $0.rawValue < $1.rawValue }
         availableRaritiesCache = rarities.sorted { $0.rawValue < $1.rawValue }
     }
@@ -99,31 +187,116 @@ final class CardCatalogStore: ObservableObject {
     private func recomputeDisplayedCards() {
         let query = searchText.foldedForSearch
 
-        let filtered = allCards.filter { card in
+        let filtered = allCards.filter { item in
             var matches = true
 
             if !query.isEmpty {
-                matches = card.name.foldedForSearch.contains(query)
+                matches = item.card.name.foldedForSearch.contains(query)
             }
 
             if matches, !selectedPokemonTypes.isEmpty {
-                let cardTypes = Set(card.types ?? [])
+                let cardTypes = Set(item.card.types ?? [])
                 matches = !cardTypes.isDisjoint(with: selectedPokemonTypes)
             }
 
-            if matches, !selectedRarities.isEmpty, let rarity = card.rarity?.designation {
+            if matches, !selectedRarities.isEmpty, let rarity = item.card.rarity?.designation {
                 matches = selectedRarities.contains(rarity)
+            }
+
+            if matches, !selectedExpansions.isEmpty {
+                matches = selectedExpansions.contains(item.expansionPath)
             }
 
             return matches
         }
 
-        displayedCards = filtered.map { CardViewModel(cardData: $0) }
+        let sorted = filtered.sorted { lhs, rhs in
+            switch sortOption {
+            case .collectorNumber:
+                return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+            case .name:
+                return lhs.card.name.foldedForSearch < rhs.card.name.foldedForSearch
+            case .rarity:
+                let leftRank = rarityRank(lhs.card.rarity?.designation)
+                let rightRank = rarityRank(rhs.card.rarity?.designation)
+                if leftRank == rightRank {
+                    return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                }
+                return leftRank < rightRank
+            case .releaseDate:
+                if lhs.expansionReleaseDate == rhs.expansionReleaseDate {
+                    return lhs.card.collectorNumber.numeric < rhs.card.collectorNumber.numeric
+                }
+                return lhs.expansionReleaseDate > rhs.expansionReleaseDate
+            }
+        }
+
+        displayedCards = sorted.map {
+            CardViewModel(
+                cardData: $0.card,
+                expansionName: $0.expansionName,
+                expansionPath: $0.expansionPath
+            )
+        }
+        savePreferences()
     }
+
+    private func rarityRank(_ designation: Designation?) -> Int {
+        guard let designation else { return Int.max }
+        let order: [Designation] = [
+            .rareSecret, .rareRainbow, .goldRare, .hyperRare, .specialIllustrationRare,
+            .illustrationRare, .rareUltra, .ultraRare, .rareShiny, .rareShinyGx,
+            .rareShiny, .rareAmazing, .rarePrime, .rareLegend, .rareShining,
+            .rareBreak, .doubleRare, .rareHolo, .rareReverseHolo, .rare,
+            .uncommon, .common, .promo, .rarePromo, .leaguePromo, .staffPromo,
+            .tournamentPromo, .aceSpecRare, .shinyRare, .shinyUltraRare
+        ]
+        return order.firstIndex(of: designation) ?? order.count + 1
+    }
+
+    private func normalizedExpansionsSelection(from expansions: [Expansion]) -> Set<String> {
+        Set(expansions.map { $0.path })
+    }
+
+    private func savePreferences() {
+        let preferences = CardCatalogPreferences(
+            searchText: searchText,
+            selectedPokemonTypes: selectedPokemonTypes.map(\.rawValue),
+            selectedRarities: selectedRarities.map(\.rawValue),
+            selectedExpansions: Array(selectedExpansions),
+            sortOption: sortOption.rawValue,
+            showOwnedOnly: latestShowOwnedOnly,
+            displayMode: latestDisplayMode.rawValue
+        )
+        storedPreferences = preferences
+        preferencesStorage.save(preferences)
+    }
+}
+
+private struct CardWithExpansion {
+    let card: CardData
+    let expansionPath: String
+    let expansionName: String
+    let expansionReleaseDate: Date
 }
 
 private extension String {
     var foldedForSearch: String {
         folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+    }
+}
+
+private extension Array {
+    func cycledSequence() -> AnySequence<Element> {
+        AnySequence {
+            var iterator = makeIterator()
+            return AnyIterator {
+                if let next = iterator.next() {
+                    return next
+                }
+                iterator = makeIterator()
+                return iterator.next()
+            }
+        }
     }
 }

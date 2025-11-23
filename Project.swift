@@ -3,7 +3,7 @@ import ProjectDescription
 let project = Project(
     name: "PKMCollection",
     options: .options(
-        automaticSchemesOptions: .enabled(), 
+        automaticSchemesOptions: .disabled, 
         disableSynthesizedResourceAccessors: false
     ),
     targets: [
@@ -35,7 +35,6 @@ let project = Project(
                 .project(target: "CoreKit", path: "Modules/CoreKit"),
 
                 // External
-                .external(name: "Kingfisher"),
                 .external(name: "FirebaseAnalytics")
             ],
             settings: .settings(
@@ -56,7 +55,9 @@ let project = Project(
             infoPlist: .default,
             sources: ["Tests/Unit/**"],
             dependencies: [
-                .target(name: "PKMCollection")
+                .target(name: "PKMCollection"),
+                .project(target: "CoreKit", path: "Modules/CoreKit"),
+                .project(target: "FeatureExpansion", path: "Modules/FeatureExpansion")
             ]
         ),
 
@@ -71,6 +72,39 @@ let project = Project(
             dependencies: [
                 .target(name: "PKMCollection")
             ]
+        )
+    ],
+    schemes: [
+        Scheme.scheme(
+            name: "PKMCollection",
+            shared: true,
+            buildAction: BuildAction.buildAction(
+                targets: ["PKMCollection"]
+            ),
+            runAction: RunAction.runAction(configuration: .debug)
+        ),
+        Scheme.scheme(
+            name: "PKMCollectionTests",
+            shared: true,
+            buildAction: BuildAction.buildAction(
+                targets: ["PKMCollection"]
+            ),
+            testAction: TestAction.targets([
+                TestableTarget.testableTarget(target: "PKMCollectionTests")
+            ],
+            configuration: .debug,
+            options: TestActionOptions.options(coverage: true))
+        ),
+        Scheme.scheme(
+            name: "PKMCollectionUITests",
+            shared: true,
+            buildAction: BuildAction.buildAction(
+                targets: ["PKMCollection"]
+            ),
+            testAction: TestAction.targets([
+                TestableTarget.testableTarget(target: "PKMCollectionUITests")
+            ],
+            configuration: .debug)
         )
     ]
 )

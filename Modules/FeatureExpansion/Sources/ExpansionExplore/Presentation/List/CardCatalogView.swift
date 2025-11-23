@@ -1,6 +1,5 @@
 import SwiftUI
 import CoreKit
-import UIComponents
 
 struct CardCatalogView: View {
     @EnvironmentObject private var expansionStore: ExpansionStore
@@ -8,12 +7,16 @@ struct CardCatalogView: View {
     @StateObject private var catalogStore: CardCatalogStore
 
     @State private var selectedCard: CardViewModel?
-    @State private var displayMode: CardDisplayMode = .regular
-    @State private var showOwnedOnly = false
+    @State private var displayMode: CardDisplayMode
+    @State private var showOwnedOnly: Bool
     @State private var isFilterSheetPresented = false
 
     init(store: CardCatalogStore? = nil) {
-        _catalogStore = StateObject(wrappedValue: store ?? CardCatalogStore())
+        let resolvedStore = store ?? CardCatalogStore()
+        _catalogStore = StateObject(wrappedValue: resolvedStore)
+        let preferences = resolvedStore.viewPreferences
+        _displayMode = State(initialValue: preferences.displayMode)
+        _showOwnedOnly = State(initialValue: preferences.showOwnedOnly)
     }
 
     private var cardsToDisplay: [CardViewModel] {
@@ -93,11 +96,15 @@ struct CardCatalogView: View {
                 await catalogStore.loadCards(for: expansionStore.expansions)
             }
         }
-        .onChange(of: expansionStore.expansions) { expansions in
-            guard !expansions.isEmpty else { return }
-            Task {
-                await catalogStore.loadCards(for: expansions)
-            }
+        .task(id: expansionStore.expansions) {
+            guard !expansionStore.expansions.isEmpty else { return }
+            await catalogStore.loadCards(for: expansionStore.expansions)
+        }
+        .task(id: showOwnedOnly) {
+            catalogStore.persistViewPreferences(showOwnedOnly: showOwnedOnly, displayMode: displayMode)
+        }
+        .task(id: displayMode) {
+            catalogStore.persistViewPreferences(showOwnedOnly: showOwnedOnly, displayMode: displayMode)
         }
     }
 }
@@ -128,21 +135,7 @@ struct CardCatalogGrid: View {
     @ViewBuilder
     private func cardTile(for card: CardViewModel) -> some View {
         VStack(spacing: UIConstants.paddingSmall) {
-            CachedImageView(
-                url: card.imageUrl,
-                size: CGSize(
-                    width: UIConstants.cardGridMinimumItemSize,
-                    height: UIConstants.cardGridMinimumItemSize * UIConstants.cardImageAspectRatio
-                ),
-                cornerRadius: UIConstants.cornerRadiusSmall,
-                shadowRadius: UIConstants.shadowRadius,
-                placeholderColor: AppColors.placeholder,
-                errorColor: AppColors.error
-            )
-            .frame(
-                width: UIConstants.cardGridMinimumItemSize,
-                height: UIConstants.cardGridMinimumItemSize * UIConstants.cardImageAspectRatio
-            )
+            CardThumbnailView(card: card, width: UIConstants.cardGridMinimumItemSize)
             .overlay(alignment: .topTrailing) {
                 Button {
                     ownedCardsStore.toggleOwnership(for: card.id)
@@ -182,6 +175,14 @@ struct CardCatalogGrid: View {
                 .background(AppColors.textBlue.opacity(UIConstants.backgroundOpacityLow))
                 .cornerRadius(UIConstants.cornerRadiusSmall)
 
+            if let expansionName = card.expansionName {
+                Text(expansionName)
+                    .font(.caption2)
+                    .foregroundColor(AppColors.textSecondary)
+                    .lineLimit(UIConstants.lineLimitSingle)
+                    .padding(.horizontal, UIConstants.paddingSmall)
+            }
+
             if displayMode == .master, let foilDescription = card.foilDescription {
                 Text(foilDescription)
                     .font(.caption2)
@@ -207,6 +208,67 @@ struct CardCatalogGrid: View {
                 }
             }
         }
+    }
+}
+
+private struct CardThumbnailView: View {
+    let card: CardViewModel
+    let width: CGFloat
+
+    private let borderInset: CGFloat = 6
+
+    var body: some View {
+        let height = width * UIConstants.cardImageAspectRatio
+        let innerWidth = width - (borderInset * 2)
+
+        ZStack {
+            RoundedRectangle(cornerRadius: UIConstants.cornerRadiusLarge, style: .continuous)
+                .fill(Self.cardStockGradient)
+                .overlay(
+                    RoundedRectangle(cornerRadius: UIConstants.cornerRadiusLarge, style: .continuous)
+                        .stroke(Self.cardEdgeGradient, lineWidth: 1.4)
+                )
+                .shadow(color: AppColors.shadow.opacity(0.35), radius: 12, x: 0, y: 8)
+                .overlay(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.35),
+                            Color.clear
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                    .blendMode(.softLight)
+                )
+
+            CardFoilImageView(card: card, width: innerWidth)
+                .padding(borderInset)
+        }
+        .frame(width: width, height: height)
+        .contentShape(RoundedRectangle(cornerRadius: UIConstants.cornerRadiusLarge, style: .continuous))
+    }
+
+    private static var cardStockGradient: LinearGradient {
+        LinearGradient(
+            colors: [
+                Color(red: 0.99, green: 0.96, blue: 0.86),
+                Color(red: 0.95, green: 0.88, blue: 0.74)
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+
+    private static var cardEdgeGradient: LinearGradient {
+        LinearGradient(
+            colors: [
+                Color.white.opacity(0.9),
+                Color.yellow.opacity(0.6),
+                Color.orange.opacity(0.4)
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
     }
 }
 
@@ -238,6 +300,26 @@ private struct CardCatalogFiltersView: View {
                             store.toggleRarity(rarity)
                         }
                     }
+                }
+
+                Section(FeatureExpansionStrings.filterExpansionsTitle) {
+                    if store.availableExpansions.isEmpty {
+                        Text(FeatureExpansionStrings.filtersUnavailable)
+                            .foregroundColor(AppColors.textSecondary)
+                    } else {
+                        WrapTagsView(items: store.availableExpansions, isSelected: { store.selectedExpansions.contains($0.path) }) { expansion in
+                            store.toggleExpansion(path: expansion.path)
+                        }
+                    }
+                }
+
+                Section(FeatureExpansionStrings.sortTitle) {
+                    Picker(FeatureExpansionStrings.sortTitle, selection: $store.sortOption) {
+                        ForEach(CardSortOption.allCases) { option in
+                            Text(option.title).tag(option)
+                        }
+                    }
+                    .pickerStyle(.inline)
                 }
 
                 Section {
@@ -299,6 +381,8 @@ private struct WrapTagsView<Item: Hashable>: View {
             return type.rawValue.replacingOccurrences(of: "_", with: " ").capitalized
         case let rarity as Designation:
             return rarity.rawValue.replacingOccurrences(of: "_", with: " ").capitalized
+        case let expansion as Expansion:
+            return expansion.name
         default:
             return String(describing: item)
         }

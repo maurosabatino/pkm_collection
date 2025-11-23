@@ -1,346 +1,584 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "featureExpansion.action.retry" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Retry"
+  "sourceLanguage": "en",
+  "strings": {
+    "featureExpansion.action.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Riprova"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riprova"
           }
         }
       }
     },
-    "featureExpansion.card.noFoil" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Foil"
+    "featureExpansion.card.noFoil": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Foil"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessun foil"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun foil"
           }
         }
       }
     },
-    "featureExpansion.details.title.prefix" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expansion Details: "
+    "featureExpansion.details.title.prefix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expansion Details: "
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dettagli espansione: "
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dettagli espansione: "
           }
         }
       }
     },
-    "featureExpansion.displayMode.master" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Master Set"
+    "featureExpansion.displayMode.master": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Master Set"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Set completo"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set completo"
           }
         }
       }
     },
-    "featureExpansion.displayMode.regular" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Regular Set"
+    "featureExpansion.displayMode.regular": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regular Set"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Set regolare"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set regolare"
           }
         }
       }
     },
-    "featureExpansion.displayMode.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Display Mode"
+    "featureExpansion.displayMode.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display Mode"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modalità di visualizzazione"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modalità di visualizzazione"
           }
         }
       }
     },
-    "featureExpansion.empty.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check the JSON file or the loading logic."
+    "featureExpansion.empty.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check the JSON file or the loading logic."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Controlla il file JSON o la logica di caricamento."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla il file JSON o la logica di caricamento."
           }
         }
       }
     },
-    "featureExpansion.empty.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No cards found"
+    "featureExpansion.empty.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cards found"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessuna carta trovata"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna carta trovata"
           }
         }
       }
     },
-    "featureExpansion.error.cardsJsonNotFound" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JSON file '%@.json' for cards not found in bundle."
+    "featureExpansion.error.cardsJsonNotFound": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON file '%@.json' for cards not found in bundle."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "File JSON \"%@.json\" per le carte non trovato nel bundle."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File JSON \"%@.json\" per le carte non trovato nel bundle."
           }
         }
       }
     },
-    "featureExpansion.error.jsonNotFound" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JSON file '%@.json' not found in bundle."
+    "featureExpansion.error.jsonNotFound": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JSON file '%@.json' not found in bundle."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "File JSON \"%@.json\" non trovato nel bundle."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File JSON \"%@.json\" non trovato nel bundle."
           }
         }
       }
     },
-    "featureExpansion.error.loadingCardsForSet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error loading cards for %@: %@"
+    "featureExpansion.error.loadingCardsForSet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error loading cards for %@: %@"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Errore nel caricamento delle carte per %@: %@"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Errore nel caricamento delle carte per %@: %@"
           }
         }
       }
     },
-    "featureExpansion.error.loadingCardsPrefix" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error loading cards: "
+    "featureExpansion.error.loadingCardsPrefix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error loading cards: "
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Errore nel caricamento delle carte: "
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Errore nel caricamento delle carte: "
           }
         }
       }
     },
-    "featureExpansion.error.loadingExpansions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error loading expansions: %@"
+    "featureExpansion.error.loadingExpansions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error loading expansions: %@"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Errore nel caricamento delle espansioni: %@"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Errore nel caricamento delle espansioni: %@"
           }
         }
       }
     },
-    "featureExpansion.expansion.cardsPrefix" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cards: "
+    "featureExpansion.expansion.cardsPrefix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards: "
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carte: "
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carte: "
           }
         }
       }
     },
-    "featureExpansion.expansion.releaseDatePrefix" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Release Date: "
+    "featureExpansion.expansion.releaseDatePrefix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Release Date: "
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data di uscita: "
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data di uscita: "
           }
         }
       }
     },
-    "featureExpansion.loading.cards" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading cards..."
+    "featureExpansion.loading.cards": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading cards..."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Caricamento carte..."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caricamento carte..."
           }
         }
       }
     },
-    "featureExpansion.search.cards.placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search Cards"
+    "featureExpansion.search.cards.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search Cards"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cerca carte"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca carte"
           }
         }
       }
     },
-    "featureExpansion.search.expansions.placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search Expansions"
+    "featureExpansion.search.expansions.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search Expansions"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cerca espansioni"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca espansioni"
           }
         }
       }
     },
-    "featureExpansion.tab.label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expansions"
+    "featureExpansion.tab.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expansions"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espansioni"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espansioni"
           }
         }
       }
     },
-    "featureExpansion.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pokémon Expansions"
+    "featureExpansion.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pokémon Expansions"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espansioni Pokémon"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espansioni Pokémon"
+          }
+        }
+      }
+    },
+    "featureExpansion.catalog.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card Catalog"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catalogo Carte"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filters"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtri"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.types": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Types"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipi"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.rarities": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rarities"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rarità"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.clear": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.apply": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apply"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Applica"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filters unavailable"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtri non disponibili"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.showOwnedOnly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show owned only"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo possedute"
+          }
+        }
+      }
+    },
+    "featureExpansion.filters.expansions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expansions"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espansioni"
+          }
+        }
+      }
+    },
+    "featureExpansion.sort.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sort by"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordina per"
+          }
+        }
+      }
+    },
+    "featureExpansion.sort.number": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collector number"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero carta"
+          }
+        }
+      }
+    },
+    "featureExpansion.sort.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome"
+          }
+        }
+      }
+    },
+    "featureExpansion.sort.rarity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rarity"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rarità"
+          }
+        }
+      }
+    },
+    "featureExpansion.sort.release": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Release date"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data di uscita"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

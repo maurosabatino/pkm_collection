@@ -19,6 +19,8 @@ public struct CardViewModel: Identifiable, Hashable {
     public let sizeDisplay: String
     public let languageDisplay: String
     public let regulationMark: String?
+    public let expansionName: String?
+    public let expansionPath: String?
     public let rarityDisplay: String?
     public let stageDisplay: String?
     public let hpDisplay: String?
@@ -29,7 +31,11 @@ public struct CardViewModel: Identifiable, Hashable {
     public let flavorText: String?
     public let moves: [CardMoveViewModel]
 
-    public init(cardData: CardData) {
+    public init(
+        cardData: CardData,
+        expansionName: String? = nil,
+        expansionPath: String? = nil
+    ) {
         self.id = cardData.id
         self.name = cardData.name
         self.imageUrl = URL(string: cardData.images?.tcgl.png?.front ?? "")
@@ -41,6 +47,8 @@ public struct CardViewModel: Identifiable, Hashable {
         self.sizeDisplay = Self.formatDisplayText(cardData.size.rawValue)
         self.languageDisplay = cardData.lang.uppercased()
         self.regulationMark = cardData.regulationMark
+        self.expansionName = expansionName
+        self.expansionPath = expansionPath
         self.rarityDisplay = cardData.rarity.map { Self.formatDisplayText($0.designation.rawValue) }
         self.stageDisplay = cardData.stage.map { Self.formatDisplayText($0.rawValue) }
         self.hpDisplay = cardData.hp.map { "\($0) HP" }

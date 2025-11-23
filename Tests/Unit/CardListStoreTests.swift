@@ -34,8 +34,7 @@ final class CardListStoreTests: XCTestCase {
             images: Images(tcgl: TcglImages(tex: nil, png: ImagePaths(front: "https://example.com/pikachu.png", back: nil, foil: nil, etch: nil), jpg: nil))
         )
 
-        var foilCard = baseCard
-        foilCard = CardData(
+        let foilCard = CardData(
             name: baseCard.name,
             cardType: baseCard.cardType,
             lang: baseCard.lang,
@@ -61,7 +60,7 @@ final class CardListStoreTests: XCTestCase {
         )
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: [baseCard, foilCard])) }
-        await MainActor.run { store.allCardData = [baseCard, foilCard] }
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         XCTAssertEqual(displayed.count, 1)
@@ -97,13 +96,47 @@ final class CardListStoreTests: XCTestCase {
         }
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: cards)) }
-        await MainActor.run {
-            store.allCardData = cards
-            store.searchText = "char"
-        }
+        await MainActor.run { store.searchText = "char" }
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         XCTAssertEqual(displayed.map { $0.name }, ["Charmander"])
+    }
+
+    func testSearchIsCaseAndDiacriticInsensitive() async {
+        let cards = [
+            CardData(
+                name: "Éevee",
+                cardType: .pokemon,
+                lang: "en",
+                foil: nil,
+                size: .standard,
+                back: .pokemon1999,
+                regulationMark: nil,
+                setIcon: "",
+                collectorNumber: CollectorNumber(full: "4/100", numerator: "4", denominator: "100", numeric: 4),
+                rarity: nil,
+                stage: .basic,
+                hp: 50,
+                types: [.colorless],
+                weakness: nil,
+                resistance: nil,
+                retreat: 1,
+                text: nil,
+                abilities: nil,
+                rules: nil,
+                flavorText: nil,
+                ext: Extension(tcgl: TcglExtension(cardID: "eevee", longFormID: "eevee", archetypeID: "", reldate: "2024-01-01", key: "eevee")),
+                images: Images(tcgl: TcglImages(tex: nil, png: ImagePaths(front: "https://example.com/eevee.png", back: nil, foil: nil, etch: nil), jpg: nil))
+            )
+        ]
+
+        let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: cards)) }
+        await MainActor.run { store.searchText = "eevee" }
+        await store.loadCards()
+
+        let displayed = await MainActor.run { store.displayedCards }
+        XCTAssertEqual(displayed.map { $0.name }, ["Éevee"])
     }
     
     func testMasterModeShowsAllVariantsSorted() async {
@@ -181,10 +214,8 @@ final class CardListStoreTests: XCTestCase {
         )
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: [foil, base, other])) }
-        await MainActor.run {
-            store.allCardData = [foil, base, other]
-            store.displayMode = .master
-        }
+        await MainActor.run { store.displayMode = .master }
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         XCTAssertEqual(displayed.map { $0.name }, ["Bulbasaur", "Pikachu", "Pikachu"]) // 10, 25, 25
@@ -217,10 +248,7 @@ final class CardListStoreTests: XCTestCase {
         )
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: [foilOnly])) }
-        await MainActor.run {
-            store.allCardData = [foilOnly]
-            store.displayMode = .regular
-        }
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         XCTAssertEqual(displayed.count, 1)
@@ -254,10 +282,8 @@ final class CardListStoreTests: XCTestCase {
         )
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: [accented])) }
-        await MainActor.run {
-            store.allCardData = [accented]
-            store.searchText = "pokemon" // senza accenti
-        }
+        await MainActor.run { store.searchText = "pokemon" } // senza accenti
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         XCTAssertEqual(displayed.map { $0.name }, ["Pókémon"])
@@ -314,10 +340,7 @@ final class CardListStoreTests: XCTestCase {
         )
 
         let store = await MainActor.run { CardListStore(expansionPath: "test", fetchCardListUseCase: StubUseCase(data: [en, it])) }
-        await MainActor.run {
-            store.allCardData = [en, it]
-            store.displayMode = .regular
-        }
+        await store.loadCards()
 
         let displayed = await MainActor.run { store.displayedCards }
         // Due voci distinte, una per lingua
@@ -336,7 +359,7 @@ final class CardListStoreTests: XCTestCase {
         await MainActor.run { XCTAssertFalse(store.isLoading) }
         await MainActor.run { store.error = NSError(domain: "test", code: 1) }
 
-        await MainActor.run {
+        _ = await MainActor.run {
             Task { await store.loadCards() }
         }
 
@@ -361,7 +384,7 @@ final class CardListStoreTests: XCTestCase {
 
         let store = await MainActor.run { CardListStore(expansionPath: "x", fetchCardListUseCase: FailingStub()) }
 
-        await MainActor.run {
+        _ = await MainActor.run {
             Task { await store.loadCards() }
         }
 

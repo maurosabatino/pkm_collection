@@ -1,6 +1,6 @@
 import SwiftUI
 import CoreKit
-import Kingfisher
+import UIComponents
 
 struct CardFoilImageView: View {
     let card: CardViewModel
@@ -13,32 +13,38 @@ struct CardFoilImageView: View {
         return baseLayers(width: width, height: height, cornerRadius: cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(Color.white.opacity(0.08))
+                    .fill(Color.white.opacity(0.05))
                     .blendMode(.screen)
             )
             .overlay(
-            FoilWavePatternOverlay()
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-                .blendMode(.colorDodge)
-                .allowsHitTesting(false)
-        )
-        .overlay(
-            FoilIridescenceOverlay()
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-                .blendMode(.softLight)
-                .allowsHitTesting(false)
-        )
-        .overlay(
-            FoilNoiseOverlay()
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-                .blendMode(.plusLighter)
-                .allowsHitTesting(false)
-        )
+                FoilWavePatternOverlay()
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                    .blendMode(.colorDodge)
+                    .allowsHitTesting(false)
+            )
+            .overlay(
+                FoilSpecularSweepOverlay()
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                    .blendMode(.screen)
+                    .allowsHitTesting(false)
+            )
+            .overlay(
+                FoilIridescenceOverlay()
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                    .blendMode(.softLight)
+                    .allowsHitTesting(false)
+            )
+            .overlay(
+                FoilNoiseOverlay()
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                    .blendMode(.plusLighter)
+                    .allowsHitTesting(false)
+            )
             .overlay(
                 LinearGradient(
                     colors: [
-                        Color.white.opacity(0.15),
-                        Color.white.opacity(0.04),
+                        Color.white.opacity(0.09),
+                        Color.white.opacity(0.025),
                         Color.white.opacity(0.0)
                     ],
                     startPoint: .topLeading,
@@ -53,13 +59,13 @@ struct CardFoilImageView: View {
                     .strokeBorder(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(0.55),
-                                Color.white.opacity(0.2)
+                                Color.white.opacity(0.4),
+                                Color.white.opacity(0.12)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ),
-                        lineWidth: 0.8
+                        lineWidth: 0.75
                     )
                     .blendMode(.overlay)
                     .allowsHitTesting(false)
@@ -79,58 +85,54 @@ struct CardFoilImageView: View {
     }
 
     private func baseImage(width: CGFloat, height: CGFloat, cornerRadius: CGFloat) -> some View {
-        KFImage(card.imageUrl)
-            .resizable()
-            .placeholder {
-                ProgressView()
-                    .frame(width: width, height: height)
-                    .background(AppColors.placeholder)
-                    .cornerRadius(cornerRadius)
-            }
-            .onFailure { error in
-                print("Error loading card image: \(error.localizedDescription)")
-            }
-            .setProcessor(DownsamplingImageProcessor(size: CGSize(width: width, height: height)))
-            .loadDiskFileSynchronously()
-            .fade(duration: 0.3)
-            .scaledToFit()
-            .frame(width: width, height: height)
-            .cornerRadius(cornerRadius)
-            .shadow(color: AppColors.shadow, radius: UIConstants.modalShadowRadius, x: UIConstants.shadowOffsetX, y: UIConstants.shadowOffsetY)
-            .allowsHitTesting(false)
+        CachedImageView(
+            url: card.imageUrl,
+            size: CGSize(width: width, height: height),
+            cornerRadius: cornerRadius,
+            shadowRadius: UIConstants.modalShadowRadius,
+            placeholderColor: AppColors.placeholder,
+            errorColor: AppColors.error
+        )
+        .scaledToFit()
+        .frame(width: width, height: height)
+        .allowsHitTesting(false)
     }
 
     @ViewBuilder
     private func foilOverlay(width: CGFloat, height: CGFloat, cornerRadius: CGFloat) -> some View {
         if let foilUrl = card.foilImageUrl {
-            KFImage(foilUrl)
-                .resizable()
-                .setProcessor(DownsamplingImageProcessor(size: CGSize(width: width, height: height)))
-                .loadDiskFileSynchronously()
-                .fade(duration: 0.25)
-                .scaledToFit()
-                .frame(width: width, height: height)
-                .cornerRadius(cornerRadius)
-                .blendMode(.plusLighter)
-                .opacity(0.45)
-                .allowsHitTesting(false)
+            CachedImageView(
+                url: foilUrl,
+                size: CGSize(width: width, height: height),
+                cornerRadius: cornerRadius,
+                shadowRadius: nil,
+                placeholderColor: .clear,
+                errorColor: .clear
+            )
+            .scaledToFit()
+            .frame(width: width, height: height)
+            .blendMode(.plusLighter)
+            .opacity(0.34)
+            .allowsHitTesting(false)
         }
     }
 
     @ViewBuilder
     private func etchOverlay(width: CGFloat, height: CGFloat, cornerRadius: CGFloat) -> some View {
         if let etchUrl = card.etchImageUrl {
-            KFImage(etchUrl)
-                .resizable()
-                .setProcessor(DownsamplingImageProcessor(size: CGSize(width: width, height: height)))
-                .loadDiskFileSynchronously()
-                .fade(duration: 0.25)
-                .scaledToFit()
-                .frame(width: width, height: height)
-                .cornerRadius(cornerRadius)
-                .blendMode(.hardLight)
-                .opacity(0.3)
-                .allowsHitTesting(false)
+            CachedImageView(
+                url: etchUrl,
+                size: CGSize(width: width, height: height),
+                cornerRadius: cornerRadius,
+                shadowRadius: nil,
+                placeholderColor: .clear,
+                errorColor: .clear
+            )
+            .scaledToFit()
+            .frame(width: width, height: height)
+            .blendMode(.hardLight)
+            .opacity(0.22)
+            .allowsHitTesting(false)
         }
     }
 }
@@ -142,28 +144,31 @@ private struct FoilWavePatternOverlay: View {
         ZStack {
             FoilWaveField(
                 phase: phase,
-                waveCount: 18,
+                waveCount: 12,
                 colors: [
-                    Color(red: 0.9, green: 0.75, blue: 1.0),
-                    Color(red: 0.5, green: 0.85, blue: 1.0)
+                    Color(red: 0.92, green: 0.82, blue: 0.98),
+                    Color(red: 0.65, green: 0.85, blue: 1.0)
                 ],
-                lineWidth: 1.1
+                lineWidth: 0.8
             )
             .blendMode(.screen)
+            .opacity(0.8)
 
             FoilWaveField(
-                phase: phase * 0.9,
-                waveCount: 14,
+                phase: phase * 0.85,
+                waveCount: 8,
                 colors: [
-                    Color(red: 1.0, green: 0.9, blue: 0.65),
-                    Color(red: 0.95, green: 0.6, blue: 0.75)
+                    Color(red: 1.0, green: 0.92, blue: 0.72),
+                    Color(red: 0.95, green: 0.7, blue: 0.82)
                 ],
-                lineWidth: 1.4
+                lineWidth: 0.9
             )
             .rotationEffect(.degrees(32))
             .blendMode(.plusLighter)
+            .opacity(0.6)
         }
-        .opacity(0.55)
+        .opacity(0.32)
+        .blur(radius: 9)
         .onAppear {
             withAnimation(.linear(duration: 10).repeatForever(autoreverses: false)) {
                 phase = .pi * 4
@@ -185,8 +190,8 @@ private struct FoilWaveField: View {
 
             ZStack {
                 ForEach(0..<waveCount, id: \.self) { index in
-                    let amplitude = spacing * (0.25 + CGFloat(index % 3) * 0.08)
-                    let frequency = 1.1 + CGFloat(index % 4) * 0.15
+                    let amplitude = spacing * (0.12 + CGFloat(index % 3) * 0.05)
+                    let frequency = 0.8 + CGFloat(index % 4) * 0.12
                     let offsetPhase = phase + CGFloat(index) * 0.4
 
                     FoilWaveShape(
@@ -198,7 +203,7 @@ private struct FoilWaveField: View {
                         LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing),
                         lineWidth: lineWidth
                     )
-                    .opacity(0.25 + Double(index % 4) * 0.08)
+                    .opacity(0.18 + Double(index % 4) * 0.05)
                     .frame(height: amplitude * 2 + spacing * 0.3)
                     .offset(y: -height / 2 + spacing * CGFloat(index))
                 }
@@ -216,7 +221,7 @@ private struct FoilWaveShape: Shape {
         var path = Path()
         let width = rect.width
         let midY = rect.midY
-        let step: CGFloat = max(2, width / 80)
+        let step: CGFloat = max(3, width / 60)
 
         path.move(to: CGPoint(x: 0, y: midY))
         for x in stride(from: 0, through: width, by: step) {
@@ -234,32 +239,88 @@ private struct FoilWaveShape: Shape {
     }
 }
 
+private struct FoilSpecularSweepOverlay: View {
+    @State private var travel: CGFloat = -1.1
+
+    var body: some View {
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
+            let diagonal = hypot(width, height)
+            let bandThickness = max(width, height) * 0.28
+
+            ZStack {
+                specularBand(
+                    length: diagonal * 1.1,
+                    thickness: bandThickness,
+                    tilt: 16,
+                    colors: [
+                        Color.white.opacity(0.0),
+                        Color.white.opacity(0.45),
+                        Color.white.opacity(0.05)
+                    ],
+                    baseOpacity: 0.38
+                )
+                .offset(x: travel * width * 0.95, y: -height * 0.18)
+
+                specularBand(
+                    length: diagonal * 0.9,
+                    thickness: bandThickness * 0.75,
+                    tilt: -22,
+                    colors: [
+                        Color(red: 1.0, green: 0.95, blue: 0.82).opacity(0.0),
+                        Color(red: 1.0, green: 0.95, blue: 0.82).opacity(0.55),
+                        Color(red: 0.9, green: 0.8, blue: 1.0).opacity(0.1)
+                    ],
+                    baseOpacity: 0.28
+                )
+                .offset(x: (travel + 0.45) * width * 0.7, y: height * 0.22)
+            }
+            .onAppear {
+                withAnimation(.linear(duration: 5.5).repeatForever(autoreverses: false)) {
+                    travel = 1.25
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func specularBand(length: CGFloat, thickness: CGFloat, tilt: Double, colors: [Color], baseOpacity: Double) -> some View {
+        RoundedRectangle(cornerRadius: thickness / 2, style: .continuous)
+            .fill(LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing))
+            .frame(width: thickness, height: length)
+            .rotationEffect(.degrees(tilt))
+            .blur(radius: 18)
+            .opacity(baseOpacity)
+    }
+}
+
 private struct FoilIridescenceOverlay: View {
     @State private var shift: CGFloat = -0.7
 
     var body: some View {
         GeometryReader { geometry in
-            let diameter = max(geometry.size.width, geometry.size.height) * 1.6
+            let diameter = max(geometry.size.width, geometry.size.height) * 1.4
 
             Circle()
                 .fill(
                     AngularGradient(
                         gradient: Gradient(colors: [
-                            Color(red: 1.0, green: 0.85, blue: 0.65),
-                            Color(red: 0.65, green: 0.8, blue: 1.0),
-                            Color(red: 0.95, green: 0.65, blue: 0.9),
-                            Color(red: 1.0, green: 0.85, blue: 0.65)
+                            Color(red: 0.98, green: 0.9, blue: 0.75),
+                            Color(red: 0.7, green: 0.85, blue: 1.0),
+                            Color(red: 0.95, green: 0.75, blue: 0.9),
+                            Color(red: 0.98, green: 0.9, blue: 0.75)
                         ]),
                         center: .center
                     )
                 )
                 .frame(width: diameter, height: diameter)
-                .offset(x: shift * diameter * 0.25, y: shift * diameter * 0.1)
-                .blur(radius: 50)
-                .opacity(0.28)
+                .offset(x: shift * diameter * 0.18, y: shift * diameter * 0.08)
+                .blur(radius: 38)
+                .opacity(0.16)
                 .onAppear {
-                    withAnimation(.linear(duration: 8).repeatForever(autoreverses: true)) {
-                        shift = 0.8
+                    withAnimation(.linear(duration: 9).repeatForever(autoreverses: true)) {
+                        shift = 0.6
                     }
                 }
         }
@@ -272,9 +333,9 @@ private struct FoilNoiseOverlay: View {
     var body: some View {
         GeometryReader { geometry in
             let gradient = Gradient(colors: [
-                Color.white.opacity(0.25),
-                Color(red: 1.0, green: 0.9, blue: 0.7).opacity(0.3),
-                Color.white.opacity(0.1)
+                Color.white.opacity(0.18),
+                Color(red: 1.0, green: 0.94, blue: 0.78).opacity(0.22),
+                Color.white.opacity(0.08)
             ])
 
             Rectangle()
@@ -288,10 +349,11 @@ private struct FoilNoiseOverlay: View {
                 .mask(
                     NoiseTexture()
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .opacity(flicker ? 0.35 : 0.15)
+                        .opacity(flicker ? 0.25 : 0.1)
                 )
+                .opacity(0.24)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 1.8).repeatForever(autoreverses: true)) {
+                    withAnimation(.easeInOut(duration: 2.6).repeatForever(autoreverses: true)) {
                         flicker.toggle()
                     }
                 }
@@ -300,7 +362,7 @@ private struct FoilNoiseOverlay: View {
 }
 
 private struct NoiseTexture: View {
-    private let dots: [CGPoint] = (0..<120).map { _ in
+    private let dots: [CGPoint] = (0..<90).map { _ in
         CGPoint(x: Double.random(in: 0...1), y: Double.random(in: 0...1))
     }
 
@@ -311,8 +373,8 @@ private struct NoiseTexture: View {
                     let rect = CGRect(
                         x: point.x * geometry.size.width,
                         y: point.y * geometry.size.height,
-                        width: 2.0,
-                        height: 2.0
+                        width: 1.6,
+                        height: 1.6
                     )
                     path.addRoundedRect(in: rect, cornerSize: CGSize(width: 1, height: 1))
                 }

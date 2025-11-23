@@ -19,10 +19,16 @@ enum FeatureExpansionStrings {
     static var filtersTitle: String { localized("featureExpansion.filters.title") }
     static var filterTypesTitle: String { localized("featureExpansion.filters.types") }
     static var filterRaritiesTitle: String { localized("featureExpansion.filters.rarities") }
+    static var filterExpansionsTitle: String { localized("featureExpansion.filters.expansions") }
     static var filtersClear: String { localized("featureExpansion.filters.clear") }
     static var filtersApply: String { localized("featureExpansion.filters.apply") }
     static var filtersUnavailable: String { localized("featureExpansion.filters.unavailable") }
     static var showOwnedOnly: String { localized("featureExpansion.filters.showOwnedOnly") }
+    static var sortTitle: String { localized("featureExpansion.sort.title") }
+    static var sortByNumber: String { localized("featureExpansion.sort.number") }
+    static var sortByName: String { localized("featureExpansion.sort.name") }
+    static var sortByRarity: String { localized("featureExpansion.sort.rarity") }
+    static var sortByReleaseDate: String { localized("featureExpansion.sort.release") }
     static var errorLoadingCardsPrefix: String { localized("featureExpansion.error.loadingCardsPrefix") }
     static var retry: String { localized("featureExpansion.action.retry") }
     static var noCardsFound: String { localized("featureExpansion.empty.title") }
