@@ -29,6 +29,9 @@ public struct CardViewModel: Identifiable, Hashable {
     public let resistanceDisplay: String?
     public let retreatDisplay: String?
     public let flavorText: String?
+    public let weaknesses: [String]
+    public let resistances: [String]
+    public let retreatCost: Int?
     public let moves: [CardMoveViewModel]
 
     public init(
@@ -59,6 +62,9 @@ public struct CardViewModel: Identifiable, Hashable {
         }
         self.weaknessDisplay = Self.describe(weakness: cardData.weakness)
         self.resistanceDisplay = Self.describe(resistance: cardData.resistance)
+        self.weaknesses = cardData.weakness.map { $0.types.map { Self.formatDisplayText($0.rawValue) } } ?? []
+        self.resistances = cardData.resistance.map { $0.types.map { Self.formatDisplayText($0.rawValue) } } ?? []
+        self.retreatCost = cardData.retreat
         self.retreatDisplay = cardData.retreat.map { value in
             value == 1 ? "1 energia" : "\(value) energie"
         }

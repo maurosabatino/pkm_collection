@@ -75,4 +75,20 @@ final class OwnedCardsStoreTests: XCTestCase {
 
         XCTAssertFalse(isOwned)
     }
+
+    func testWishlistToggleKeepsEntryWithoutQuantity() async {
+        let persistence = InMemoryPersistence()
+        let store = await MainActor.run { OwnedCardsStore(persistence: persistence) }
+
+        await MainActor.run { store.toggleWishlist(for: "card-wish") }
+        let isWish = await MainActor.run { store.isWishlist(cardId: "card-wish") }
+        let isOwned = await MainActor.run { store.isOwned(cardId: "card-wish") }
+
+        XCTAssertTrue(isWish)
+        XCTAssertFalse(isOwned)
+
+        await MainActor.run { store.toggleWishlist(for: "card-wish") }
+        let existsAfter = await MainActor.run { store.isWishlist(cardId: "card-wish") }
+        XCTAssertFalse(existsAfter)
+    }
 }

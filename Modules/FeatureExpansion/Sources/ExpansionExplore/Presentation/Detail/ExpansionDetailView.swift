@@ -27,6 +27,16 @@ struct ExpansionDetailView: View {
                 .font(.largeTitle)
                 .padding()
 
+            if cardListStore.displayedCards.isEmpty == false {
+                ExpansionCompletionView(
+                    owned: ownedCardsStore.ownedCount(for: cardListStore.displayedCards.map(\.id)),
+                    total: cardListStore.displayedCards.count,
+                    duplicates: ownedCardsStore.duplicateCount(for: cardListStore.displayedCards.map(\.id)),
+                    wishlist: ownedCardsStore.wishlistCount(for: cardListStore.displayedCards.map(\.id))
+                )
+                .padding(.horizontal)
+            }
+
             Picker(FeatureExpansionStrings.displayModeLabel, selection: $cardListStore.displayMode) {
                 Text(FeatureExpansionStrings.regularSetMode).tag(CardDisplayMode.regular)
                 Text(FeatureExpansionStrings.masterSetMode).tag(CardDisplayMode.master)
@@ -79,6 +89,42 @@ struct ExpansionDetailView: View {
                 }
             ))
         }
+    }
+}
+
+private struct ExpansionCompletionView: View {
+    let owned: Int
+    let total: Int
+    let duplicates: Int
+    let wishlist: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: UIConstants.paddingSmall) {
+            HStack {
+                Text("Progressi set")
+                    .font(.headline)
+                    .foregroundColor(AppColors.textPrimary)
+                Spacer()
+                Text("\(owned)/\(total)")
+                    .font(.subheadline)
+                    .foregroundColor(AppColors.textSecondary)
+            }
+
+            ProgressView(value: total > 0 ? Double(owned) / Double(total) : 0)
+                .tint(AppColors.progressTint)
+
+            HStack(spacing: UIConstants.paddingMedium) {
+                Label("\(duplicates)", systemImage: "plus.circle.on.circle")
+                    .foregroundColor(AppColors.textSecondary)
+                Label("\(wishlist)", systemImage: "bookmark")
+                    .foregroundColor(AppColors.textSecondary)
+            }
+            .font(.footnote)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(AppColors.cardBackground)
+        .cornerRadius(UIConstants.cornerRadiusLarge)
     }
 }
 

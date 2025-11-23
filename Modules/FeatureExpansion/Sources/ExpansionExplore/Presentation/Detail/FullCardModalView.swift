@@ -76,6 +76,14 @@ struct FullCardModalView: View {
                         ownedCardsStore.increment(cardId: card.id, step: -1)
                     }
                 }
+
+                Divider()
+
+                Button {
+                    ownedCardsStore.toggleWishlist(for: card.id)
+                } label: {
+                    Label(ownedCardsStore.isWishlist(cardId: card.id) ? "Rimuovi da wishlist" : "Aggiungi a wishlist", systemImage: ownedCardsStore.isWishlist(cardId: card.id) ? "bookmark.slash" : "bookmark")
+                }
             } label: {
                 Label {
                     Text(ownedCardsStore.isOwned(cardId: card.id) ? "In collezione x\(ownedCardsStore.quantity(for: card.id))" : "Aggiungi alla collezione")
@@ -203,6 +211,8 @@ struct FullCardModalView: View {
         if ownedCardsStore.isOwned(cardId: card.id) {
             let quantity = ownedCardsStore.quantity(for: card.id)
             items.append(("Collezione", "x\(quantity) copie"))
+        } else if ownedCardsStore.isWishlist(cardId: card.id) {
+            items.append(("Collezione", "In wishlist"))
         } else {
             items.append(("Collezione", "Non posseduta"))
         }
