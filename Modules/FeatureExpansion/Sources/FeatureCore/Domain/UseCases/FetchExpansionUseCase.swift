@@ -8,7 +8,7 @@ protocol FetchExpansionUseCase {
 struct FetchExpansionUseCaseImpl: FetchExpansionUseCase {
     private let repository: ExpansionRepository
 
-    init(repository: ExpansionRepository = DefaultExpansionRepository(fileName: "set-it-IT")) {
+    init(repository: ExpansionRepository = DatabaseExpansionRepository()) {
         self.repository = repository
     }
 

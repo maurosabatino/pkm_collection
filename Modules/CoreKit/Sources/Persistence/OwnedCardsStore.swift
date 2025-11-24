@@ -6,7 +6,7 @@ public final class OwnedCardsStore: ObservableObject {
 
     private let persistence: OwnedCardsPersistence
 
-    public init(persistence: OwnedCardsPersistence = FileOwnedCardsPersistence()) {
+    public init(persistence: OwnedCardsPersistence = MigratingOwnedCardsPersistence()) {
         self.persistence = persistence
         loadFromDisk()
     }

@@ -8,7 +8,7 @@ protocol FetchCardListUseCase {
 struct FetchCardListUseCaseImpl: FetchCardListUseCase {
     private let repository: CardListRepository
 
-    init(repository: CardListRepository = DefaultCardListRepository()) {
+    init(repository: CardListRepository = DatabaseCardListRepository()) {
         self.repository = repository
     }
 

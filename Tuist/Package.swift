@@ -26,5 +26,9 @@ let package = Package(
             url: "https://github.com/firebase/firebase-ios-sdk.git",
             from: "8.0.0"
         ),
+        .package(
+            url: "https://github.com/groue/GRDB.swift.git",
+            from: "7.8.0"
+        ),
     ]
 )

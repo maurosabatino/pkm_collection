@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - NumInfo
 
-public struct NumInfo: Decodable, Hashable, Identifiable {
+public struct NumInfo: Codable, Hashable, Identifiable {
     public let id: UUID = UUID()
     
     public let master: Int
@@ -36,11 +36,17 @@ public struct NumInfo: Decodable, Hashable, Identifiable {
         self.master = master
         self.regular = regular
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(master, forKey: .master)
+        try container.encode(regular, forKey: .regular)
+    }
 }
 
 // MARK: - Expansion Entity
 
-public struct Expansion: Decodable, Identifiable, Hashable {
+public struct Expansion: Codable, Identifiable, Hashable {
     public let id: String
     public let series: String
     public let path: String
@@ -104,5 +110,19 @@ public struct Expansion: Decodable, Identifiable, Hashable {
         self.releaseDate = releaseDate
         self.symbolUrl = symbolUrl
         self.logoUrl = logoUrl
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(series, forKey: .series)
+        try container.encode(path, forKey: .path)
+        try container.encode(name, forKey: .name)
+        try container.encode(num, forKey: .num)
+        try container.encode(hash, forKey: .hash)
+        try container.encode(abbr, forKey: .abbr)
+        try container.encode(releaseDate, forKey: .releaseDate)
+        try container.encode(symbolUrl, forKey: .symbolUrl)
+        try container.encode(logoUrl, forKey: .logoUrl)
     }
 }

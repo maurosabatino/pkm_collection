@@ -14,7 +14,8 @@ let project = Project(
             resources: ["Resources/**"],
             dependencies: [
                 .project(target: "CoreKit", path: "../CoreKit"),
-                .project(target: "UIComponents", path: "../UIComponents")
+                .project(target: "UIComponents", path: "../UIComponents"),
+                .external(name: "GRDB")
             ]
         ),
         .target(
