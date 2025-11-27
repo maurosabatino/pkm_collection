@@ -54,38 +54,31 @@ public final class DatabaseManager {
             try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true)
         }
 
+        // Always refresh from bundled archive to avoid WAL dependencies and stale data.
         let candidates = ["cards.db", "cards.sqlite"]
-        let existing = candidates
-            .compactMap { name -> URL? in
-                let url = directoryURL.appendingPathComponent(name)
-                return fileManager.fileExists(atPath: url.path) ? url : nil
-            }
-            .first
-
-        var archiveURL = existing
-
-        if archiveURL == nil {
-            let bundled = candidates.compactMap { name -> URL? in
-                let ext = URL(fileURLWithPath: name).pathExtension
-                let base = URL(fileURLWithPath: name).deletingPathExtension().lastPathComponent
-                return ResourceLocator.url(forResource: base, withExtension: ext, subdirectory: "db")
-            }.first
-
-            if let bundled {
-                let destination = directoryURL.appendingPathComponent(bundled.lastPathComponent)
-                if fileManager.fileExists(atPath: destination.path) {
-                    try? fileManager.removeItem(at: destination)
-                }
-                try? fileManager.copyItem(at: bundled, to: destination)
-                archiveURL = destination
-            }
+        guard let bundled = candidates.compactMap({ name -> URL? in
+            let ext = URL(fileURLWithPath: name).pathExtension
+            let base = URL(fileURLWithPath: name).deletingPathExtension().lastPathComponent
+            return ResourceLocator.url(forResource: base, withExtension: ext, subdirectory: "db")
+        }).first else {
+            return nil
         }
 
-        guard let archiveURL else { return nil }
+        let archiveURL = directoryURL.appendingPathComponent(bundled.lastPathComponent)
+        // Clean old copies and WAL/SHM if present.
+        try? fileManager.removeItem(at: archiveURL)
+        try? fileManager.removeItem(at: archiveURL.appendingPathExtension("wal"))
+        try? fileManager.removeItem(at: archiveURL.appendingPathExtension("shm"))
+        try fileManager.copyItem(at: bundled, to: archiveURL)
 
         var config = Configuration()
-        config.readonly = true
-        return try DatabaseQueue(path: archiveURL.path, configuration: config)
+        // Open read-write to allow forcing DELETE journal mode (no WAL file required).
+        config.readonly = false
+        let queue = try DatabaseQueue(path: archiveURL.path, configuration: config)
+        try? queue.write { db in
+            try db.execute(sql: "PRAGMA journal_mode=DELETE;")
+        }
+        return queue
     }
 
     private static func migrate(_ dbQueue: DatabaseQueue) throws {
@@ -111,7 +104,6 @@ public final class DatabaseManager {
 
             try db.create(table: "cards", ifNotExists: true) { t in
                 t.column("id", .text).primaryKey()
-                t.column("lang", .text)
                 t.column("expansion_id", .text).notNull().indexed()
                 t.column("name", .text).notNull()
                 t.column("collector_number", .text)

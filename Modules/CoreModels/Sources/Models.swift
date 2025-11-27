@@ -348,6 +348,14 @@ public struct TcglExtension: Codable {
     public let archetypeID: String
     public let reldate: String
     public let key: String
+
+    public init(cardID: String, longFormID: String, archetypeID: String, reldate: String, key: String) {
+        self.cardID = cardID
+        self.longFormID = longFormID
+        self.archetypeID = archetypeID
+        self.reldate = reldate
+        self.key = key
+    }
 }
 
 public struct Images: Codable {
@@ -375,6 +383,13 @@ public struct ImagePaths: Codable {
     public let back: String?
     public let foil: String?
     public let etch: String?
+
+    public init(front: String, back: String?, foil: String?, etch: String?) {
+        self.front = front
+        self.back = back
+        self.foil = foil
+        self.etch = etch
+    }
 }
 
 public enum PokemonType: String, Codable {
@@ -395,6 +410,11 @@ public enum PokemonType: String, Codable {
 public struct Rarity: Codable {
     public let designation: Designation
     public let icon: Icon
+
+    public init(designation: Designation, icon: Icon) {
+        self.designation = designation
+        self.icon = icon
+    }
 }
 
 public enum Designation: String, Codable {

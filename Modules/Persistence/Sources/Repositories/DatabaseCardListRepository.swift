@@ -4,18 +4,17 @@ import GRDB
 
 public final class DatabaseCardListRepository: CardListRepository {
     private let fallback: CardListRepository
-    private let expansionRepository: ExpansionRepository
     private let archiveQueue: DatabaseQueue?
     private var cache: [String: [CardData]] = [:]
+    private let localizationHasImages: Bool
 
     public init(
         fallback: CardListRepository = DefaultCardListRepository(),
-        expansionRepository: ExpansionRepository = DatabaseExpansionRepository(),
         databaseManager: DatabaseManager? = DatabaseManager.shared
     ) {
         self.fallback = fallback
-        self.expansionRepository = expansionRepository
         self.archiveQueue = databaseManager?.cardArchiveQueue ?? databaseManager?.dbQueue
+        self.localizationHasImages = Self.hasLocalizationImages(queue: archiveQueue)
     }
 
     public func fetchCardList(path: String, language: String) async throws -> [CardData] {
@@ -32,53 +31,61 @@ public final class DatabaseCardListRepository: CardListRepository {
         }
 
         let existing: [CardData] = try await archiveQueue.read { db in
-            try CardRecord
-                .filter(Column("expansion_id") == path)
-                .filter(CardRecord.Columns.lang == language)
-                .fetchAll(db)
-                .compactMap { $0.toModel() }
-        }
-
-        if !existing.isEmpty {
-            return existing
-        }
-
-        let fetched = try await fallback.fetchCardList(path: path, language: language)
-        let expansions = try? await expansionRepository.fetchExpansions(language: language)
-
-        try await archiveQueue.write { db in
-            try upsertExpansionIfNeeded(path: path, language: language, expansions: expansions ?? [], db: db)
-            for card in fetched {
-                try CardRecord(card: card, expansionId: path).insert(db, onConflict: .replace)
+            let imageFront = localizationHasImages ? "COALESCE(cl.image_front, cv.image_front)" : "cv.image_front"
+            let imageFoil = localizationHasImages ? "COALESCE(cl.image_foil, cv.image_foil)" : "cv.image_foil"
+            let imageEtch = localizationHasImages ? "COALESCE(cl.image_etch, cv.image_etch)" : "cv.image_etch"
+            let sql = """
+            WITH pref AS (
+                SELECT print_id, MIN(variant) AS variant
+                FROM card_variants
+                GROUP BY print_id
+            )
+            SELECT cp.id,
+                   cl.lang,
+                   cp.expansion_id AS expansionId,
+                   cl.name,
+                   cp.collector_number AS collectorNumber,
+                   cp.rarity,
+                   cp.types,
+                   cp.stage,
+                   cp.hp,
+                   json_extract(cp.json_data, '$.card_type') AS cardType,
+                   \(imageFront) AS imageUrl,
+                   \(imageFoil) AS foilUrl,
+                   \(imageEtch) AS etchUrl,
+                   cp.tcgl_card_id AS dataHash,
+                   cp.regulation_mark AS regulationMark
+            FROM card_prints cp
+            JOIN pref p ON p.print_id = cp.id
+            JOIN card_variants cv ON cv.print_id = cp.id AND cv.variant = p.variant
+            JOIN card_localizations cl ON cl.variant_id = cv.id
+            WHERE cp.expansion_id = ?
+              AND cl.lang = ?
+              AND \(imageFront) IS NOT NULL
+              AND \(imageFront) != ''
+            ORDER BY cp.collector_number
+            """
+            let rows = try Row.fetchAll(db, sql: sql, arguments: [path, language])
+            return rows.compactMap { row in
+                do {
+                    return try CardRecord(row: row).toModel()
+                } catch {
+                    print("[db] skipping card row decode error: \(error) for expansion \(path)")
+                    return nil
+                }
             }
         }
-        cache[cacheKey] = fetched
-        return fetched
+
+        cache[cacheKey] = existing
+        return existing
     }
 
-    private func upsertExpansionIfNeeded(path: String, language: String, expansions: [Expansion], db: Database) throws {
-        if try ExpansionRecord
-            .filter(ExpansionRecord.Columns.id == path)
-            .filter(ExpansionRecord.Columns.lang == language)
-            .fetchOne(db) != nil {
-            return
-        }
-
-        // Remove conflicting base-id rows (e.g., "exp-base" vs "exp-base.it-IT") for same language.
-        if let base = path.split(separator: ".").first, base != path {
-            try ExpansionRecord
-                .filter(ExpansionRecord.Columns.id == String(base))
-                .filter(ExpansionRecord.Columns.lang == language)
-                .deleteAll(db)
-        }
-
-        if let expansion = expansions.first(where: { $0.path == path || $0.id == path }) {
-            let record = ExpansionRecord(expansion: expansion, lang: language, overrideId: path)
-            try record.insert(db, onConflict: .replace)
-            return
-        }
-
-        let placeholder = ExpansionRecord.placeholder(id: path, lang: language)
-        try placeholder.insert(db, onConflict: .replace)
+    private static func hasLocalizationImages(queue: DatabaseQueue?) -> Bool {
+        guard let queue else { return false }
+        return (try? queue.read { db in
+            let rows = try Row.fetchAll(db, sql: "PRAGMA table_info(card_localizations)")
+            let columns = rows.compactMap { $0["name"] as String? }
+            return columns.contains("image_front")
+        }) ?? false
     }
 }

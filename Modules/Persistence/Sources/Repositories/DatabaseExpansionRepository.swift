@@ -20,23 +20,31 @@ public struct DatabaseExpansionRepository: ExpansionRepository {
         }
 
         let existing: [Expansion] = try await archiveQueue.read { db in
-            try ExpansionRecord
-                .filter(ExpansionRecord.Columns.lang == language)
-                .fetchAll(db)
-                .compactMap { $0.toModel() }
+            let sql = """
+            SELECT e.id,
+                   el.lang,
+                   el.name,
+                   e.series_id AS seriesId,
+                   e.abbr,
+                   e.release_date AS releaseDate,
+                   e.logo_url AS logoUrl,
+                   e.symbol_url AS symbolUrl,
+                   e.num_master AS numMaster,
+                   e.num_regular AS numRegular,
+                   e.hash
+            FROM expansions e
+            JOIN expansion_localizations el ON el.expansion_id = e.id
+            WHERE el.lang = ?
+            """
+            return try ExpansionRecord.fetchAll(db, sql: sql, arguments: [language]).map { $0.toModel() }
         }
 
         if !existing.isEmpty {
             return existing.sorted { $0.releaseDate > $1.releaseDate }
         }
 
+        // Fallback to remote if db missing (unlikely with bundled archive)
         let fetched = try await fallback.fetchExpansions(language: language)
-        try await archiveQueue.write { db in
-            for expansion in fetched {
-                let record = ExpansionRecord(expansion: expansion, lang: language, overrideId: expansion.path)
-                try record.insert(db, onConflict: .replace)
-            }
-        }
         return fetched.sorted { $0.releaseDate > $1.releaseDate }
     }
 }

@@ -536,6 +536,9 @@ def create_schema(conn: sqlite3.Connection) -> None:
             lang TEXT NOT NULL,
             name TEXT NOT NULL,
             text_json BLOB,
+            image_front TEXT,
+            image_foil TEXT,
+            image_etch TEXT,
             UNIQUE(variant_id, lang),
             FOREIGN KEY(variant_id) REFERENCES card_variants(id)
         );
@@ -610,8 +613,12 @@ def safe_int(value: Any) -> int | None:
 
 def first_image(card: dict[str, Any], key: str) -> str | None:
     images = (card.get("images") or {}).get("tcgl") or {}
-    tex = images.get("tex") or {}
-    return tex.get(key)
+    for fmt in ("tex", "png", "jpg"):
+        src = images.get(fmt) or {}
+        val = src.get(key)
+        if val:
+            return val
+    return None
 
 
 def build_card_id(card: dict[str, Any], expansion_id: str) -> str:
@@ -762,6 +769,9 @@ def iter_card_localization(card: dict[str, Any], variant_id_value: str, lang: st
         lang,
         card.get("name", ""),
         json.dumps(card.get("text") or [], ensure_ascii=False).encode("utf-8"),
+        first_image(card, "front"),
+        first_image(card, "foil"),
+        first_image(card, "etch"),
     )
 
 
@@ -1038,8 +1048,8 @@ def build_database_for_languages(
                     conn.executemany(
                         """
                         INSERT OR REPLACE INTO card_localizations
-                        (variant_id, lang, name, text_json)
-                        VALUES (?, ?, ?, ?)
+                        (variant_id, lang, name, text_json, image_front, image_foil, image_etch)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
                         """,
                         loc_rows,
                     )

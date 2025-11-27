@@ -26,7 +26,13 @@ let project = Project(
                 "App/Sources/**"
             ],
             resources: [
-                "App/Resources/**"
+                .glob(
+                    pattern: "App/Resources/**",
+                    excluding: [
+                        "App/Resources/db/cards.db-shm",
+                        "App/Resources/db/cards.db-wal"
+                    ]
+                )
             ],
             dependencies: [
                 // Internal
