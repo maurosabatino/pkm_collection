@@ -69,3 +69,15 @@ Derived/
 ### Tuist managed dependencies ###
 Tuist/.build
 .vscode
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.python-version
+
+# Virtualenvs
+.venv/
+venv/

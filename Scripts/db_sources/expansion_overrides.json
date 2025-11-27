@@ -1,0 +1,808 @@
+{
+  "me1": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Mega Evolution",
+      "fr-FR": "Méga-Évolution",
+      "it-IT": "Megaevoluzione",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "me2": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Mega Evolution—Phantasmal Flames",
+      "fr-FR": "Méga-Évolution – Flammes Fantasmagoriques",
+      "it-IT": "Megaevoluzione - Fiamme Spettrali",
+      "de-DE": "Mega-Entwicklung – Fatale Flammen",
+      "es-ES": "Megaevolución-Fuegos Fantasmales",
+      "pt-BR": "Megaevolução — Fogo Fantasmagórico",
+      "es-419": "Megaevoluzione - Fiamme Spettrali"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "me2-5": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "me2-5",
+      "fr-FR": "me2-5",
+      "it-IT": "me2-5",
+      "de-DE": "me2-5",
+      "es-ES": "me2-5",
+      "pt-BR": "me2-5",
+      "es-419": "me2-5"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "mealt": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "mealt",
+      "fr-FR": "mealt",
+      "it-IT": "mealt",
+      "de-DE": "mealt",
+      "es-ES": "mealt",
+      "pt-BR": "mealt",
+      "es-419": "mealt"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "mebsp": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Mega Evolution Series Black Star Promo Cards",
+      "fr-FR": "Série Méga-Évolution – Cartes promo Étoile Noire",
+      "it-IT": "Carte promozionali stella nera serie Megaevoluzione",
+      "de-DE": "Serie Mega-Entwicklung: Black Star-Promokarten",
+      "es-ES": "Promos con símbolo de estrella negra de Megaevolución",
+      "pt-BR": "Cartas promocionais Estrela Preta da série Megaevolução",
+      "es-419": "Carte promozionali stella nera serie Megaevoluzione"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "mee": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "mee",
+      "fr-FR": "mee",
+      "it-IT": "mee",
+      "de-DE": "mee",
+      "es-ES": "mee",
+      "pt-BR": "mee",
+      "es-419": "mee"
+    },
+    "seriesId": "me",
+    "seriesNames": {
+      "en-US": "Mega Evolution",
+      "it-IT": "Megaevoluzione",
+      "fr-FR": "Méga-Évolution",
+      "de-DE": "Mega-Entwicklung",
+      "es-ES": "Megaevolución",
+      "pt-BR": "Megaevolução",
+      "es-419": "Megaevoluzione"
+    }
+  },
+  "rsv10-5": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Scarlet & Violet—White Flare",
+      "fr-FR": "Écarlate et Violet – Flamme Blanche",
+      "it-IT": "Scarlatto e Violetto - Fuoco Bianco",
+      "de-DE": "Karmesin & Purpur – Weiße Flammen",
+      "es-ES": "Escarlata y Púrpura-Llama Blanca",
+      "pt-BR": "Escarlate e Violeta — Fogo Branco",
+      "es-419": "Scarlatto e Violetto - Fuoco Bianco"
+    },
+    "seriesId": null
+  },
+  "sv1": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet",
+      "fr-FR": "Écarlate et Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Scarlatto e Violetto"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv10": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Destined Rivals",
+      "fr-FR": "Écarlate et Violet – Rivalités Destinées",
+      "it-IT": "Scarlatto e Violetto - Rivali Predestinati",
+      "de-DE": "Karmesin & Purpur – Ewige Rivalen",
+      "es-ES": "Escarlata y Púrpura-Rivales Predestinados",
+      "pt-BR": "Escarlate e Violeta — Rivais Predestinados",
+      "es-419": "Scarlatto e Violetto - Rivali Predestinati"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv2": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Paldea Evolved",
+      "fr-FR": "Écarlate et Violet – Évolutions à Paldea",
+      "it-IT": "Scarlatto e Violetto - Evoluzioni a Paldea",
+      "de-DE": "Karmesin & Purpur – Entwicklungen in Paldea",
+      "es-ES": "Escarlata y Púrpura-Evoluciones en Paldea",
+      "pt-BR": "Escarlate e Violeta — Evoluções em Paldea",
+      "es-419": "Scarlatto e Violetto - Evoluzioni a Paldea"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv3": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Obsidian Flames",
+      "fr-FR": "Écarlate et Violet – Flammes Obsidiennes",
+      "it-IT": "Scarlatto e Violetto - Ossidiana Infuocata",
+      "de-DE": "Karmesin & Purpur – Obsidianflammen",
+      "es-ES": "Escarlata y Púrpura-Llamas Obsidianas",
+      "pt-BR": "Escarlate e Violeta — Obsidiana em Chamas",
+      "es-419": "Scarlatto e Violetto - Ossidiana Infuocata"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv3-5": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—151",
+      "fr-FR": "Écarlate et Violet – 151",
+      "it-IT": "Scarlatto e Violetto - 151",
+      "de-DE": "Karmesin & Purpur – 151",
+      "es-ES": "Escarlata y Púrpura-151",
+      "pt-BR": "Escarlate e Violeta — 151",
+      "es-419": "Scarlatto e Violetto - 151"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv4": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Paradox Rift",
+      "fr-FR": "Écarlate et Violet – Faille Paradoxe",
+      "it-IT": "Scarlatto e Violetto - Paradosso Temporale",
+      "de-DE": "Karmesin & Purpur – Paradoxrift",
+      "es-ES": "Escarlata y Púrpura-Brecha Paradójica",
+      "pt-BR": "Escarlate e Violeta — Fenda Paradoxal",
+      "es-419": "Scarlatto e Violetto - Paradosso Temporale"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv4-5": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Paldean Fates",
+      "fr-FR": "Écarlate et Violet – Destinées de Paldea",
+      "it-IT": "Scarlatto e Violetto - Destino di Paldea",
+      "de-DE": "Karmesin & Purpur – Paldeas Schicksale",
+      "es-ES": "Escarlata y Púrpura-Destinos de Paldea",
+      "pt-BR": "Escarlate e Violeta — Destinos de Paldea",
+      "es-419": "Scarlatto e Violetto - Destino di Paldea"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv5": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Temporal Forces",
+      "fr-FR": "Écarlate et Violet – Forces Temporelles",
+      "it-IT": "Scarlatto e Violetto - Cronoforze",
+      "de-DE": "Karmesin & Purpur – Gewalten der Zeit",
+      "es-ES": "Escarlata y Púrpura-Fuerzas Temporales",
+      "pt-BR": "Escarlate e Violeta — Forças Temporais",
+      "es-419": "Scarlatto e Violetto - Cronoforze"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv6": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Twilight Masquerade",
+      "fr-FR": "Écarlate et Violet –Mascarade Crépusculaire",
+      "it-IT": "Scarlatto e Violetto - Crepuscolo Mascherato",
+      "de-DE": "Karmesin & Purpur – Maskerade im Zwielicht",
+      "es-ES": "Escarlata y Púrpura-Mascarada Crepuscular",
+      "pt-BR": "Escarlate e Violeta — Máscaras do Crepúsculo-",
+      "es-419": "Scarlatto e Violetto - Crepuscolo Mascherato"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv6-5": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Shrouded Fable",
+      "fr-FR": "Écarlate et Violet – Fable Nébuleuse",
+      "it-IT": "Scarlatto e Violetto - Segreto Fiabesco",
+      "de-DE": "Karmesin & Purpur – Nebel der Sagen",
+      "es-ES": "Escarlata y Púrpura-Fábula Sombría",
+      "pt-BR": "Escarlate e Violeta — Fábulas Nebulosas",
+      "es-419": "Scarlatto e Violetto - Segreto Fiabesco"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv7": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Stellar Crown",
+      "fr-FR": "Écarlate et Violet – Couronne Stellaire",
+      "it-IT": "Scarlatto e Violetto - Corona Astrale",
+      "de-DE": "Karmesin & Purpur – Stellarkrone",
+      "es-ES": "Escarlata y Púrpura-Corona Astral",
+      "pt-BR": "Escarlate e Violeta — Coroa Estelar",
+      "es-419": "Scarlatto e Violetto - Corona Astrale"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv8": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Surging Sparks",
+      "fr-FR": "Écarlate et Violet – Étincelles Déferlantes",
+      "it-IT": "Scarlatto e Violetto - Scintille Folgoranti",
+      "de-DE": "Karmesin & Purpur – Stürmische Funken",
+      "es-ES": "Escarlata y Púrpura-Chispas Fulgurantes",
+      "pt-BR": "Escarlate e Violeta — Fagulhas Impetuosas",
+      "es-419": "Scarlatto e Violetto - Scintille Folgoranti"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv8-5": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Prismatic Evolutions",
+      "fr-FR": "Écarlate et Violet – Évolutions Prismatiques",
+      "it-IT": "Scarlatto e Violetto - Evoluzioni Prismatiche",
+      "de-DE": "Karmesin & Purpur – Prismatische Entwicklungen",
+      "es-ES": "Escarlata y Púrpura-Evoluciones Prismáticas",
+      "pt-BR": "Escarlate e Violeta — Evoluções Prismáticas",
+      "es-419": "Scarlatto e Violetto - Evoluzioni Prismatiche"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sv9": {
+    "releaseDate": null,
+    "logoUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "symbolUrl": {
+      "en-US": "",
+      "it-IT": "",
+      "de-DE": "",
+      "fr-FR": "",
+      "es-ES": "",
+      "pt-BR": "",
+      "es-419": ""
+    },
+    "names": {
+      "en-US": "Scarlet & Violet—Journey Together",
+      "fr-FR": "Écarlate et Violet – Aventures Ensemble",
+      "it-IT": "Scarlatto e Violetto - Avventure Insieme",
+      "de-DE": "Karmesin & Purpur – Reisegefährten",
+      "es-ES": "Escarlata y Púrpura-Juntos de Aventuras",
+      "pt-BR": "Escarlate e Violeta — Amigos de Jornada",
+      "es-419": "Scarlatto e Violetto - Avventure Insieme"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "svalt": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "svalt",
+      "fr-FR": "svalt",
+      "it-IT": "svalt",
+      "de-DE": "svalt",
+      "es-ES": "svalt",
+      "pt-BR": "svalt",
+      "es-419": "svalt"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "svbsp": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Scarlet & Violet Series Black Star Promo Cards",
+      "fr-FR": "Série Écarlate et Violet – Cartes promo Étoile Noire",
+      "it-IT": "Carte promozionali stella nera serie  Scarlatto e Violetto",
+      "de-DE": "Serie Karmesin & Purpur: Black Star Promos",
+      "es-ES": "Promos con símbolo de estrella negra de Escarlata y Púrpura",
+      "pt-BR": "Cartas promocionais Estrela Preta da série Escarlate e Violeta",
+      "es-419": "Carte promozionali stella nera serie  Scarlatto e Violetto"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "sve": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "sve",
+      "fr-FR": "sve",
+      "it-IT": "sve",
+      "de-DE": "sve",
+      "es-ES": "sve",
+      "pt-BR": "sve",
+      "es-419": "sve"
+    },
+    "seriesId": "sv",
+    "seriesNames": {
+      "en-US": "Scarlet & Violet",
+      "it-IT": "Scarlatto e Violetto",
+      "fr-FR": "Écarlate et Violet",
+      "de-DE": "Karmesin & Purpur",
+      "es-ES": "Escarlata y Púrpura",
+      "pt-BR": "Escarlate e Violeta",
+      "es-419": "Escarlata y Púrpura"
+    }
+  },
+  "zsv10-5": {
+    "releaseDate": null,
+    "logoUrl": {},
+    "symbolUrl": {},
+    "names": {
+      "en-US": "Scarlet & Violet—Black Bolt",
+      "fr-FR": "Écarlate et Violet – Foudre Noire",
+      "it-IT": "Scarlatto e Violetto - Luce Nera",
+      "de-DE": "Karmesin & Purpur – Schwarze Blitze",
+      "es-ES": "Escarlata y Púrpura-Fulgor Negro",
+      "pt-BR": "Escarlate e Violeta — Raio Preto",
+      "es-419": "Scarlatto e Violetto - Luce Nera"
+    },
+    "seriesId": null
+  }
+}

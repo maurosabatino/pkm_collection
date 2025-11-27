@@ -6,7 +6,7 @@ import XCTest
 final class CardListStoreTests: XCTestCase {
     private struct StubUseCase: FetchCardListUseCase {
         let data: [CardData]
-        func execute(path: String) async throws -> [CardData] { data }
+        func execute(path: String, language: String) async throws -> [CardData] { data }
     }
 
     private final class InMemoryPersistence: OwnedCardsPersistence {
@@ -356,7 +356,7 @@ final class CardListStoreTests: XCTestCase {
 
     func testLoadCardsTogglesIsLoadingAndClearsErrorOnSuccess() async {
         struct SlowSuccessStub: FetchCardListUseCase {
-            func execute(path: String) async throws -> [CardData] {
+            func execute(path: String, language: String) async throws -> [CardData] {
                 try? await Task.sleep(nanoseconds: 30_000_000)
                 return []
             }
@@ -386,7 +386,7 @@ final class CardListStoreTests: XCTestCase {
     func testLoadCardsSetsErrorOnFailure() async {
         enum StubErr: Error { case boom }
         struct FailingStub: FetchCardListUseCase {
-            func execute(path: String) async throws -> [CardData] { throw StubErr.boom }
+            func execute(path: String, language: String) async throws -> [CardData] { throw StubErr.boom }
         }
 
         let store = await MainActor.run { CardListStore(expansionPath: "x", fetchCardListUseCase: FailingStub()) }

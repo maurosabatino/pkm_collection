@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreKit
+import CoreModels
 import UIComponents
 
 /// Rendering della carta con livelli foil/etch e shader animati.
@@ -392,63 +393,7 @@ private struct NoiseTexture: View {
 #if DEBUG
 struct CardFoilImageView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleCard = CardViewModel(
-            cardData: CardData(
-                name: "Preview Pikachu",
-                cardType: .pokemon,
-                lang: "en",
-                foil: Foil(type: .rainbow, mask: .holo),
-                size: .standard,
-                back: .pokemon1999,
-                regulationMark: "F",
-                setIcon: "",
-                collectorNumber: CollectorNumber(full: "12/100", numerator: "12", denominator: "100", numeric: 12),
-                rarity: nil,
-                stage: .basic,
-                hp: 70,
-                types: [.lightning],
-                weakness: nil,
-                resistance: nil,
-                retreat: 1,
-                text: nil,
-                abilities: nil,
-                rules: nil,
-                flavorText: "Un Pikachu radioso apparso solo per il preview.",
-                ext: Extension(
-                    tcgl: TcglExtension(
-                        cardID: UUID().uuidString,
-                        longFormID: "preview",
-                        archetypeID: "preview",
-                        reldate: "2024-01-01",
-                        key: "preview"
-                    )
-                ),
-                images: Images(
-                    tcgl: TcglImages(
-                        tex: ImagePaths(
-                            front: "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/me2/me2_en_125_std.png",
-                            back: nil,
-                            foil: "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/me2/me2_en_125_std.foil.png",
-                            etch: "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/me2/me2_en_125_std.etch.png"
-                        ),
-                        png: ImagePaths(
-                            front: "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/me2/me2_en_125_std.png",
-                            back: nil,
-                            foil: "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/me2/me2_en_125_std.foil.png",
-                            etch: "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/me2/me2_en_125_std.etch.png"
-                        ),
-                        jpg: nil
-                    )
-                )
-            )
-        )
-
-        return ZStack {
-            Color.black.ignoresSafeArea()
-            CardFoilImageView(card: sampleCard, width: 340)
-                .padding()
-        }
-        .previewDisplayName("CardFoilImageView")
+        EmptyView()
     }
 }
 #endif

@@ -1,0 +1,127 @@
+{
+  "me1": {
+    "limitless_code": "MEG",
+    "limitless_name": "Mega Evolution",
+    "score": 1.0
+  },
+  "me2": {
+    "limitless_code": "PFL",
+    "limitless_name": "Phantasmal Flames",
+    "score": 0.5
+  },
+  "me2-5": {
+    "limitless_code": null,
+    "limitless_name": null,
+    "score": 0.0
+  },
+  "mealt": {
+    "limitless_code": null,
+    "limitless_name": null,
+    "score": 0.0
+  },
+  "mebsp": {
+    "limitless_code": "MEG",
+    "limitless_name": "Mega Evolution",
+    "score": 0.286
+  },
+  "mee": {
+    "limitless_code": null,
+    "limitless_name": null,
+    "score": 0.0
+  },
+  "rsv10-5": {
+    "limitless_code": "WHT",
+    "limitless_name": "White Flare",
+    "score": 0.5
+  },
+  "sv1": {
+    "limitless_code": "SVI",
+    "limitless_name": "Scarlet & Violet",
+    "score": 1.0
+  },
+  "sv10": {
+    "limitless_code": "DRI",
+    "limitless_name": "Destined Rivals",
+    "score": 0.5
+  },
+  "sv2": {
+    "limitless_code": "PAL",
+    "limitless_name": "Paldea Evolved",
+    "score": 0.5
+  },
+  "sv3": {
+    "limitless_code": "OBF",
+    "limitless_name": "Obsidian Flames",
+    "score": 0.5
+  },
+  "sv3-5": {
+    "limitless_code": "SVI",
+    "limitless_name": "Scarlet & Violet",
+    "score": 0.667
+  },
+  "sv4": {
+    "limitless_code": "PAR",
+    "limitless_name": "Paradox Rift",
+    "score": 0.5
+  },
+  "sv4-5": {
+    "limitless_code": "PAF",
+    "limitless_name": "Paldean Fates",
+    "score": 0.5
+  },
+  "sv5": {
+    "limitless_code": "TEF",
+    "limitless_name": "Temporal Forces",
+    "score": 0.5
+  },
+  "sv6": {
+    "limitless_code": "TWM",
+    "limitless_name": "Twilight Masquerade",
+    "score": 0.5
+  },
+  "sv6-5": {
+    "limitless_code": "SFA",
+    "limitless_name": "Shrouded Fable",
+    "score": 0.5
+  },
+  "sv7": {
+    "limitless_code": "SCR",
+    "limitless_name": "Stellar Crown",
+    "score": 0.5
+  },
+  "sv8": {
+    "limitless_code": "SSP",
+    "limitless_name": "Surging Sparks",
+    "score": 0.5
+  },
+  "sv8-5": {
+    "limitless_code": "PRE",
+    "limitless_name": "Prismatic Evolutions",
+    "score": 0.5
+  },
+  "sv9": {
+    "limitless_code": "JTG",
+    "limitless_name": "Journey Together",
+    "score": 0.5
+  },
+  "svalt": {
+    "limitless_code": null,
+    "limitless_name": null,
+    "score": 0.0
+  },
+  "svbsp": {
+    "limitless_code": "SVI",
+    "limitless_name": "Scarlet & Violet",
+    "score": 0.286
+  },
+  "sve": {
+    "limitless_code": null,
+    "limitless_name": null,
+    "score": 0.0
+  },
+  "zsv10-5": {
+    "limitless_code": "BLK",
+    "limitless_name": "Black Bolt",
+    "score": 0.5
+  }
+}

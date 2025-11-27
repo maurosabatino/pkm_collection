@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Alakazam",
+    "card_type": "POKEMON",
+    "lang": "it-IT",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_IT",
+    "collector_number": {
+      "full": "009",
+      "numerator": "009",
+      "numeric": 9
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Si evolve da Kadabra",
+    "hp": 140,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Pesca Psichica",
+        "text": "Una sola volta durante il tuo turno, quando giochi questo Pokémon dalla tua mano per far evolvere uno dei tuoi Pokémon, puoi usare questa abilità. Pesca tre carte."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Mano Potente",
+        "text": "Metti due segnalini danno sul Pokémon attivo del tuo avversario per ogni carta che hai in mano.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_1",
+        "longFormID": "Alakazam_mebsp_9_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xf47205f1",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_009_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_009_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/it/mealt/mebsp_it_009_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Riolu",
+    "card_type": "POKEMON",
+    "lang": "it-IT",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_IT",
+    "collector_number": {
+      "full": "010",
+      "numerator": "010",
+      "numeric": 10
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "PSYCHIC"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Pugnalata Rapida",
+        "text": "Durante il tuo prossimo turno, questo Pokémon non può usare Pugnalata Rapida.",
+        "cost": [
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 30
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_2",
+        "longFormID": "Riolu_mebsp_10_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x23ecf303",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_010_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_010_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/it/mealt/mebsp_it_010_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Bulbasaur",
+    "card_type": "POKEMON",
+    "lang": "it-IT",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEG_IT",
+    "collector_number": {
+      "full": "133/132",
+      "numerator": "133",
+      "denominator": "132",
+      "numeric": 133
+    },
+    "rarity": {
+      "designation": "ILLUSTRATION_RARE",
+      "icon": "GOLD_STAR"
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "GRASS"
+    ],
+    "weakness": {
+      "types": [
+        "FIRE"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Legafermo",
+        "text": "Durante il prossimo turno del tuo avversario, il Pokémon difensore non può ritirarsi.",
+        "cost": [
+          "GRASS"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_3",
+        "longFormID": "Bulbasaur_me1_133_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xcf909c72",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/me1_it_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/me1_it_133_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/me1_it_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/me1_it_133_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/it/mealt/me1_it_133_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Charcadet",
+    "card_type": "POKEMON",
+    "lang": "it-IT",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_IT",
+    "collector_number": {
+      "full": "022",
+      "numerator": "022",
+      "numeric": 22
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Radunaforze",
+        "text": "Cerca nel tuo mazzo fino a due carte Energia base, mostrale e aggiungile alle carte che hai in mano. Poi rimischia il tuo mazzo.",
+        "cost": [
+          "FIRE"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Ceffone",
+        "cost": [
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_4",
+        "longFormID": "Charcadet_mebsp_22_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xedf0944f",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/it/mealt/mebsp_it_022_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/it/mealt/mebsp_it_022_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/it/mealt/mebsp_it_022_alt.jpg"
+        }
+      }
+    }
+  }
+]

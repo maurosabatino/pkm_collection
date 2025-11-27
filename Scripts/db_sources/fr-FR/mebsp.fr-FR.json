@@ -1,0 +1,2258 @@
+[
+  {
+    "name": "Méganium",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "001",
+      "numerator": "001",
+      "numeric": 1
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Macronium",
+    "hp": 160,
+    "types": [
+      "GRASS"
+    ],
+    "weakness": {
+      "types": [
+        "FIRE"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Luxuriance",
+        "text": "Chaque Énergie {G} de base attachée à tous vos Pokémon fournit 2 Énergies {G}. L'effet de Luxuriance n'est pas cumulable."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Lance-Soleil",
+        "cost": [
+          "GRASS",
+          "GRASS",
+          "COLORLESS",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 140
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_1",
+        "longFormID": "Meganium_mebsp_1_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x96a96f81",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_001_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_001_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_001_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_001_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_001_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Lézargus",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "002",
+      "numerator": "002",
+      "numeric": 2
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Arrozard",
+    "hp": 150,
+    "types": [
+      "WATER"
+    ],
+    "weakness": {
+      "types": [
+        "LIGHTNING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Réduire à Rien",
+        "text": "Choisissez l'un des Pokémon en jeu (les vôtres ou ceux de votre adversaire) auxquels il reste le moins de PV, à l'exception de ce Pokémon. Ce Pokémon-là est mis K.O.",
+        "cost": [
+          "WATER"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Tir Aquatique",
+        "text": "Défaussez une Énergie de ce Pokémon.",
+        "cost": [
+          "WATER"
+        ],
+        "damage": {
+          "amount": 110
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_2",
+        "longFormID": "Inteleon_mebsp_2_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x0eaa1f61",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_002_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_002_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_002_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_002_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_002_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Alakazam",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "003",
+      "numerator": "003",
+      "numeric": 3
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Kadabra",
+    "hp": 140,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Pioche Psy",
+        "text": "Une fois pendant votre tour, lorsque vous jouez ce Pokémon de votre main pour faire évoluer l'un de vos Pokémon, vous pouvez utiliser ce talent. Piochez 3 cartes."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Main Puissante",
+        "text": "Placez 2 marqueurs de dégâts sur le Pokémon Actif de votre adversaire pour chaque carte dans votre main.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_3",
+        "longFormID": "Alakazam_mebsp_3_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0xf47205f1",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_003_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_003_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_003_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_003_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_003_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Séléroc",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "004",
+      "numerator": "004",
+      "numeric": 4
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 110,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "GRASS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Cycle Lunaire",
+        "text": "Une fois pendant votre tour, si vous avez Solaroc en jeu, vous pouvez défausser une carte Énergie {F} de base de votre main pour utiliser ce talent. Piochez 3 cartes. Vous ne pouvez utiliser qu'un talent Cycle Lunaire par tour."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Rayon Gemme",
+        "cost": [
+          "FIGHTING",
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 50
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_4",
+        "longFormID": "Lunatone_mebsp_4_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0xaab34b68",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_004_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_004_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_004_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_004_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_004_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Baudrive",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "005",
+      "numerator": "005",
+      "numeric": 5
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Tirer",
+        "text": "Lancez une pièce. Si c'est face, envoyez l'un des Pokémon de Banc de votre adversaire sur le Poste Actif.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_5",
+        "longFormID": "Drifloon_mebsp_5_std_Rare_Cosmos_Holo",
+        "archetypeID": "0xf375f3e8",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_005_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_005_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_005_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_005_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_005_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Grodrive",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "006",
+      "numerator": "006",
+      "numeric": 6
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Baudrive",
+    "hp": 110,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Vent Perturbant",
+        "text": "Le Pokémon Actif de votre adversaire est maintenant Confus.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Retour Ballon",
+        "text": "Ajoutez à votre main ce Pokémon et toutes les cartes qui lui sont attachées.",
+        "cost": [
+          "PSYCHIC",
+          "PSYCHIC"
+        ],
+        "damage": {
+          "amount": 110
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_6",
+        "longFormID": "Drifblim_mebsp_6_std_Rare_Cosmos_Holo",
+        "archetypeID": "0x0457f7f0",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_006_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_006_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_006_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_006_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_006_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Psykokwak",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "007",
+      "numerator": "007",
+      "numeric": 7
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "WATER"
+    ],
+    "weakness": {
+      "types": [
+        "LIGHTNING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Moiteur",
+        "text": "Les Pokémon en jeu (les vôtres et ceux de votre adversaire) perdent tout talent qui demande au Pokémon l'utilisant de se mettre K.O."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Collision",
+        "cost": [
+          "COLORLESS",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 20
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_7",
+        "longFormID": "Psyduck_mebsp_7_std_Rare_Cosmos_Holo",
+        "archetypeID": "0x1b13a75f",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_007_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_007_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_007_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_007_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_007_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Akwakwak",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "008",
+      "numerator": "008",
+      "numeric": 8
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Psykokwak",
+    "hp": 120,
+    "types": [
+      "WATER"
+    ],
+    "weakness": {
+      "types": [
+        "LIGHTNING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Moiteur",
+        "text": "Les Pokémon en jeu (les vôtres et ceux de votre adversaire) perdent tout talent qui demande au Pokémon l'utilisant de se mettre K.O."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Hydrocanon",
+        "text": "Cette attaque inflige 20 dégâts supplémentaires pour chaque Énergie {W} attachée à ce Pokémon.",
+        "cost": [
+          "COLORLESS",
+          "COLORLESS",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 60,
+          "suffix": "+"
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_8",
+        "longFormID": "Golduck_mebsp_8_std_Rare_Cosmos_Holo",
+        "archetypeID": "0x0d9e46a6",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_008_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_008_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_008_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_008_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_008_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Alakazam",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "009",
+      "numerator": "009",
+      "numeric": 9
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Kadabra",
+    "hp": 140,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Pioche Psy",
+        "text": "Une fois pendant votre tour, lorsque vous jouez ce Pokémon de votre main pour faire évoluer l'un de vos Pokémon, vous pouvez utiliser ce talent. Piochez 3 cartes."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Main Puissante",
+        "text": "Placez 2 marqueurs de dégâts sur le Pokémon Actif de votre adversaire pour chaque carte dans votre main.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_9",
+        "longFormID": "Alakazam_mebsp_9_std_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xf47205f1",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_009_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_009_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_009_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_009_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_009_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Riolu",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "010",
+      "numerator": "010",
+      "numeric": 10
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "PSYCHIC"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Poignard Accélérateur",
+        "text": "Pendant votre prochain tour, ce Pokémon ne peut pas utiliser Poignard Accélérateur.",
+        "cost": [
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 30
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_10",
+        "longFormID": "Riolu_mebsp_10_std_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x23ecf303",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_010_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_010_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_010_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_010_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_010_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Méga-Latias-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "011",
+      "numerator": "011",
+      "numeric": 11
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "MEGA_EVOLUTION",
+      "EX_LOWER"
+    ],
+    "stage": "BASIC",
+    "hp": 280,
+    "types": [
+      "DRAGON"
+    ],
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Bombarder",
+        "text": "Vous pouvez échanger ce Pokémon contre l'un de vos Pokémon de Banc.",
+        "cost": [
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 40
+        }
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Impulsion Illusoire",
+        "text": "Défaussez toutes les Énergies de ce Pokémon.",
+        "cost": [
+          "FIRE",
+          "PSYCHIC",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 300
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Méga-Évolutions ex",
+        "text": "Lorsque votre Pokémon-ex Méga-Évolution est mis K.O., votre adversaire récupère 3 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_11",
+        "longFormID": "MegaLatiasex_mebsp_11_std_DoubleRare_SvUltra_Etched",
+        "archetypeID": "0x0980cf6b",
+        "reldate": "2025-10-09 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_011_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_011_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_011_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_011_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_011_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_011_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_011_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Méga-Lucario-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "012",
+      "numerator": "012",
+      "numeric": 12
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "MEGA_EVOLUTION",
+      "EX_LOWER"
+    ],
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Riolu",
+    "hp": 340,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "PSYCHIC"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Coup Aura",
+        "text": "Attachez jusqu'à 3 cartes Énergie {F} de base de votre pile de défausse à vos Pokémon de Banc comme il vous plaît.",
+        "cost": [
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 130
+        }
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Méga Vaillant",
+        "text": "Pendant votre prochain tour, ce Pokémon ne peut pas utiliser Méga Vaillant.",
+        "cost": [
+          "FIGHTING",
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 270
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Méga-Évolutions ex",
+        "text": "Lorsque votre Pokémon-ex Méga-Évolution est mis K.O., votre adversaire récupère 3 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_12",
+        "longFormID": "MegaLucarioex_mebsp_12_std_DoubleRare_SvUltra_Etched",
+        "archetypeID": "0xd3f44807",
+        "reldate": "2025-11-06 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_012_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_012_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_012_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_012_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_012_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_012_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_012_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Méga-Florizarre-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "013",
+      "numerator": "013",
+      "numeric": 13
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "MEGA_EVOLUTION",
+      "EX_LOWER"
+    ],
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Herbizarre",
+    "hp": 380,
+    "types": [
+      "GRASS"
+    ],
+    "weakness": {
+      "types": [
+        "FIRE"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 4,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Transfert Solaire",
+        "text": "Autant de fois que vous le voulez pendant votre tour, vous pouvez utiliser ce talent. Déplacez une Énergie {G} de base de l'un de vos Pokémon vers un autre de vos Pokémon."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Rejet de Jungle",
+        "text": "Soignez 30 dégâts de ce Pokémon.",
+        "cost": [
+          "GRASS",
+          "GRASS",
+          "GRASS",
+          "GRASS"
+        ],
+        "damage": {
+          "amount": 240
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Méga-Évolutions ex",
+        "text": "Lorsque votre Pokémon-ex Méga-Évolution est mis K.O., votre adversaire récupère 3 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_13",
+        "longFormID": "MegaVenusaurex_mebsp_13_std_DoubleRare_SvUltra_Etched",
+        "archetypeID": "0x1242d178",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_013_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_013_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_013_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_013_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_013_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_013_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_013_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Malvalame",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "014",
+      "numerator": "014",
+      "numeric": 14
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Charbambin",
+    "hp": 140,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Tranche Infernale",
+        "text": "Défaussez 4 cartes Énergie {R} de base de votre main. Si vous ne pouvez pas défausser 4 cartes de cette façon, cette attaque ne fait rien.",
+        "cost": [
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 220
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_14",
+        "longFormID": "Ceruledge_mebsp_14_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x9f8871a0",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_014_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_014_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_014_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_014_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_014_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Zacian",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "015",
+      "numerator": "015",
+      "numeric": 15
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 130,
+    "types": [
+      "PSYCHIC"
+    ],
+    "weakness": {
+      "types": [
+        "METAL"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Brèche Frontière",
+        "text": "S'il reste 3 cartes Récompense ou moins à votre adversaire, cette attaque inflige 90 dégâts supplémentaires.",
+        "cost": [
+          "PSYCHIC",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 50,
+          "suffix": "+"
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_15",
+        "longFormID": "Zacian_mebsp_15_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x3c99ccb2",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_015_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_015_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_015_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_015_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_015_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Libégon",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "016",
+      "numerator": "016",
+      "numeric": 16
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Vibraninf",
+    "hp": 150,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "GRASS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Battements Sableux",
+        "text": "Une fois pendant votre tour, lorsque vous jouez ce Pokémon de votre main pour faire évoluer l'un de vos Pokémon, vous pouvez utiliser ce talent. Vous pouvez également utiliser ce talent si ce Pokémon est sur le Poste Actif et est mis K.O. par les dégâts d'une attaque de l'un des Pokémon de votre adversaire. Défaussez les 2 cartes du dessus du deck de votre adversaire."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Vent Glacial",
+        "cost": [
+          "FIGHTING",
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 130
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_16",
+        "longFormID": "Flygon_mebsp_16_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x91d46e90",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_016_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_016_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_016_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_016_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_016_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Salarsen",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_HOLO",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "017",
+      "numerator": "017",
+      "numeric": 17
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Toxizap",
+    "hp": 140,
+    "types": [
+      "DARKNESS"
+    ],
+    "weakness": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Déferlante Sinistre",
+        "text": "Une fois pendant votre tour, vous pouvez utiliser ce talent. Cherchez dans votre deck une carte Énergie {D} de base, puis attachez-la à l'un de vos Pokémon {D} de Banc. Mélangez ensuite votre deck. Si vous avez attaché de l'Énergie à un Pokémon de cette façon, placez 2 marqueurs de dégâts sur ce Pokémon-là."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Gifle Douce",
+        "cost": [
+          "DARKNESS",
+          "DARKNESS",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 100
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_17",
+        "longFormID": "Toxtricity_mebsp_17_std_RareHolo_SvHolo_Holo",
+        "archetypeID": "0x57e74af2",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_017_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_017_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_017_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_017_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_017_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Doudouvet",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "018",
+      "numerator": "018",
+      "numeric": 18
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 60,
+    "types": [
+      "PSYCHIC"
+    ],
+    "weakness": {
+      "types": [
+        "METAL"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Collecte",
+        "text": "Piochez une carte.",
+        "cost": [
+          "COLORLESS"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_18",
+        "longFormID": "Cottonee_mebsp_18_std_RareHolo_Cosmos_Holo",
+        "archetypeID": "0x716afb7b",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_018_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_018_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_018_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_018_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_018_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Farfaduvet",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "019",
+      "numerator": "019",
+      "numeric": 19
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Doudouvet",
+    "hp": 90,
+    "types": [
+      "PSYCHIC"
+    ],
+    "weakness": {
+      "types": [
+        "METAL"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Soin Douillet",
+        "text": "Soignez tous les dégâts de l'un de vos Pokémon de Banc.",
+        "cost": [
+          "COLORLESS"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Demi-Tour",
+        "text": "Échangez ce Pokémon contre l'un de vos Pokémon de Banc.",
+        "cost": [
+          "PSYCHIC"
+        ],
+        "damage": {
+          "amount": 50
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_19",
+        "longFormID": "Whimsicott_mebsp_19_std_RareHolo_Cosmos_Holo",
+        "archetypeID": "0xec3bf948",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_019_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_019_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_019_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_019_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_019_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Farfuret",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "020",
+      "numerator": "020",
+      "numeric": 20
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "DARKNESS"
+    ],
+    "weakness": {
+      "types": [
+        "GRASS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Creusogriffes",
+        "cost": [
+          "DARKNESS"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Griffe",
+        "cost": [
+          "DARKNESS",
+          "DARKNESS"
+        ],
+        "damage": {
+          "amount": 30
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_20",
+        "longFormID": "Sneasel_mebsp_20_std_RareHolo_Cosmos_Holo",
+        "archetypeID": "0xa3efc35c",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_020_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_020_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_020_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_020_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_020_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Dimoret",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "COSMOS",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "021",
+      "numerator": "021",
+      "numeric": 21
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Farfuret",
+    "hp": 90,
+    "types": [
+      "DARKNESS"
+    ],
+    "weakness": {
+      "types": [
+        "GRASS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Griffe Représailles",
+        "text": "S'il reste 50 PV ou moins à ce Pokémon, cette attaque inflige 170 dégâts supplémentaires.",
+        "cost": [
+          "DARKNESS",
+          "DARKNESS"
+        ],
+        "damage": {
+          "amount": 20,
+          "suffix": "+"
+        }
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Coupe",
+        "cost": [
+          "DARKNESS",
+          "DARKNESS"
+        ],
+        "damage": {
+          "amount": 60
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_21",
+        "longFormID": "Weavile_mebsp_21_std_RareHolo_Cosmos_Holo",
+        "archetypeID": "0xbd634bba",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_021_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_021_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_021_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_021_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_021_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Charbambin",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "022",
+      "numerator": "022",
+      "numeric": 22
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Pouvoir Collecté",
+        "text": "Cherchez dans votre deck jusqu'à 2 cartes Énergie de base, montrez-les, puis ajoutez-les à votre main. Mélangez ensuite votre deck.",
+        "cost": [
+          "FIRE"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Coup Tranchant",
+        "cost": [
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_22",
+        "longFormID": "Charcadet_mebsp_22_std_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xedf0944f",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_022_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_022_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_022_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_022_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_022_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Méga-Dracaufeu X-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "023",
+      "numerator": "023",
+      "numeric": 23
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "MEGA_EVOLUTION",
+      "EX_LOWER"
+    ],
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Reptincel",
+    "hp": 360,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Inferno X",
+        "text": "Défaussez autant d'Énergies {R} que vous le voulez parmi vos Pokémon. Cette attaque inflige 90 dégâts pour chaque carte défaussée de cette façon.",
+        "cost": [
+          "FIRE",
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 90,
+          "suffix": "×"
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Méga-Évolutions ex",
+        "text": "Lorsque votre Pokémon-ex Méga-Évolution est mis K.O., votre adversaire récupère 3 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_23",
+        "longFormID": "MegaCharizardXex_mebsp_23_std_UltraRare_SvUltra_Etched",
+        "archetypeID": "0xe64106d6",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_023_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_023_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_023_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_023_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_023_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_023_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_023_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Plumeline-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "024",
+      "numerator": "024",
+      "numeric": 24
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "EX_LOWER"
+    ],
+    "stage": "BASIC",
+    "hp": 190,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Turbo Dynamique",
+        "text": "Autant de fois que vous le voulez pendant votre tour, si vous avez au moins un Pokémon-ex Méga-Évolution {R} en jeu, vous pouvez utiliser ce talent. Attachez une carte Énergie {R} de base de votre main à l'un de vos Pokémon {R} de Banc."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Aile de Feu",
+        "cost": [
+          "FIRE",
+          "FIRE",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 110
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Pokémon-ex",
+        "text": "Lorsque votre Pokémon-ex est mis K.O., l'adversaire récupère 2 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_24",
+        "longFormID": "Oricorioex_mebsp_24_std_UltraRare_SvUltra_Etched",
+        "archetypeID": "0xc2f4f167",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_024_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_024_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_024_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_024_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_024_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_024_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_024_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Méga-Kangourex-ex",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SV_ULTRA",
+      "mask": "ETCHED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "025",
+      "numerator": "025",
+      "numeric": 25
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "tags": [
+      "MEGA_EVOLUTION",
+      "EX_LOWER"
+    ],
+    "stage": "BASIC",
+    "hp": 300,
+    "types": [
+      "COLORLESS"
+    ],
+    "weakness": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 3,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Course Fructueuse",
+        "text": "Une fois pendant votre tour, si ce Pokémon est sur le Poste Actif, vous pouvez utiliser ce talent. Piochez 2 cartes. Vous ne pouvez utiliser qu'un talent Course Fructueuse par tour."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Combo en Rafale",
+        "text": "Lancez une pièce jusqu'à obtenir un côté pile. Cette attaque inflige 50 dégâts supplémentaires pour chaque côté face.",
+        "cost": [
+          "COLORLESS",
+          "COLORLESS",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 200,
+          "suffix": "+"
+        }
+      },
+      {
+        "kind": "RULE_BOX",
+        "name": "Règle des Méga-Évolutions ex",
+        "text": "Lorsque votre Pokémon-ex Méga-Évolution est mis K.O., votre adversaire récupère 3 cartes Récompense."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_25",
+        "longFormID": "MegaKangaskhanex_mebsp_25_std_DoubleRare_SvUltra_Etched",
+        "archetypeID": "0x29b8f04b",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_025_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_025_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_025_std.etch.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_025_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_025_std.foil.png",
+          "etch": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_025_std.etch.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_025_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Meloetta",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "026",
+      "numerator": "026",
+      "numeric": 26
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 90,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Mélodie Relaxante",
+        "text": "Soignez 120 dégâts de l'un de vos Pokémon {P} de Banc.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Coup Magique",
+        "cost": [
+          "PSYCHIC",
+          "COLORLESS"
+        ],
+        "damage": {
+          "amount": 50
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_26",
+        "longFormID": "Meloetta_mebsp_26_std_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x6c8de7b9",
+        "reldate": "2025-10-23 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_026_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_026_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_026_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_026_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_026_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Spectrum",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "027",
+      "numerator": "027",
+      "numeric": 27
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE1",
+    "stage_text": "Évolution de : Fantominus",
+    "hp": 100,
+    "types": [
+      "DARKNESS"
+    ],
+    "weakness": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Tir Effrayant",
+        "cost": [
+          "DARKNESS"
+        ],
+        "damage": {
+          "amount": 40
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_27",
+        "longFormID": "Haunter_mebsp_27_std_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x4351ac82",
+        "reldate": "2025-10-23 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_027_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_027_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_027_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_027_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_027_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Fanfare de Fête",
+    "card_type": "TRAINER",
+    "subtype": "STADIUM",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "STAMPED",
+      "mask": "STAMPED"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "028",
+      "numerator": "028",
+      "numeric": 28
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "text": [
+      {
+        "kind": "TEXT_BOX",
+        "text": "Une fois pendant le tour de chaque personne, cette personne-là peut soigner 10 dégâts de chacun de ses Pokémon. Si des dégâts sont ainsi soignés, son tour se termine."
+      },
+      {
+        "kind": "REMINDER",
+        "text": "Vous ne pouvez jouer qu'une carte Stade pendant votre tour. Placez-la à côté du Poste Actif et défaussez-la si un autre Stade entre en jeu. Un Stade de même nom ne peut pas être joué."
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mebsp_28",
+        "longFormID": "CelebratoryFanfare_mebsp_28_std_Rare_Stamped_Stamped",
+        "archetypeID": "0x31fbace4",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mebsp"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_028_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mebsp/mebsp_fr_028_std.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_028_std.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mebsp/mebsp_fr_028_std.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mebsp/mebsp_fr_028_std.jpg"
+        }
+      }
+    }
+  }
+]

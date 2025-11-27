@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreKit
+import Persistence
 
 /// Griglia di carte con header opzionale scrollabile e azioni di proprietà.
 struct CardCatalogGrid<Header: View>: View {

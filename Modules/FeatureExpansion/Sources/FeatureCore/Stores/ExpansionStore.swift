@@ -1,10 +1,15 @@
 import SwiftUI
+import Combine
 import CoreKit
+import CoreModels
+import Persistence
 
 @MainActor
-final class ExpansionStore: ObservableObject {
-    @Published var expansions: [Expansion] = []
-    @Published var searchText = ""
+public final class ExpansionStore: ObservableObject {
+    @Published public var expansions: [Expansion] = []
+    @Published public var searchText = ""
+    private let languageSettings: LanguageSettings
+    private var cancellables: Set<AnyCancellable> = []
 
     var groupedAndFilteredExpansions: [String: [Expansion]] {
         let filteredExpansions = expansions.filter { expansion in
@@ -22,16 +27,31 @@ final class ExpansionStore: ObservableObject {
 
     private let fetchExpansionUseCase: FetchExpansionUseCase
 
-    init(fetchExpansionUseCase: FetchExpansionUseCase = FetchExpansionUseCaseImpl()) {
+    public init(
+        fetchExpansionUseCase: FetchExpansionUseCase = FetchExpansionUseCaseImpl(),
+        languageSettings: LanguageSettings = .shared
+    ) {
         self.fetchExpansionUseCase = fetchExpansionUseCase
+        self.languageSettings = languageSettings
+        subscribeToLanguageChanges()
         Task { await load() }
     }
 
-    func load() async {
+    public func load() async {
         do {
-            expansions = try await fetchExpansionUseCase.execute()
+            let language = languageSettings.language.rawValue
+            expansions = try await fetchExpansionUseCase.execute(language: language)
         } catch {
             print(FeatureExpansionStrings.errorLoadingExpansions(error.localizedDescription))
         }
+    }
+
+    private func subscribeToLanguageChanges() {
+        languageSettings.$language
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                Task { await self?.load() }
+            }
+            .store(in: &cancellables)
     }
 }

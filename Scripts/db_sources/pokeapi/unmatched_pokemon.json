@@ -1,0 +1,1318 @@
+[
+  {
+    "print_id": "me2_13",
+    "expansion_id": "me2",
+    "collector": "013/094",
+    "name_en": "Mega Charizard X ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "me2_48",
+    "expansion_id": "me2",
+    "collector": "048/094",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "me2_102",
+    "expansion_id": "me2",
+    "collector": "102/094",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "me2_109",
+    "expansion_id": "me2",
+    "collector": "109/094",
+    "name_en": "Mega Charizard X ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "me2_125",
+    "expansion_id": "me2",
+    "collector": "125/094",
+    "name_en": "Mega Charizard X ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "me2_130",
+    "expansion_id": "me2",
+    "collector": "130/094",
+    "name_en": "Mega Charizard X ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "mebsp_23",
+    "expansion_id": "mebsp",
+    "collector": "023",
+    "name_en": "Mega Charizard X ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_9",
+    "expansion_id": "sv10",
+    "collector": "009/182",
+    "name_en": "Mow Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_15",
+    "expansion_id": "sv10",
+    "collector": "015/182",
+    "name_en": "Team Rocket's Blipbug",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_19",
+    "expansion_id": "sv10",
+    "collector": "019/182",
+    "name_en": "Team Rocket's Tarountula",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_20",
+    "expansion_id": "sv10",
+    "collector": "020/182",
+    "name_en": "Team Rocket's Spidops",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_26",
+    "expansion_id": "sv10",
+    "collector": "026/182",
+    "name_en": "Teal Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_31",
+    "expansion_id": "sv10",
+    "collector": "031/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_37",
+    "expansion_id": "sv10",
+    "collector": "037/182",
+    "name_en": "Team Rocket's Houndour",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_38",
+    "expansion_id": "sv10",
+    "collector": "038/182",
+    "name_en": "Team Rocket's Houndoom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_43",
+    "expansion_id": "sv10",
+    "collector": "043/182",
+    "name_en": "Heat Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_44",
+    "expansion_id": "sv10",
+    "collector": "044/182",
+    "name_en": "Hearthflame Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_51",
+    "expansion_id": "sv10",
+    "collector": "051/182",
+    "name_en": "Team Rocket's Articuno",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_61",
+    "expansion_id": "sv10",
+    "collector": "061/182",
+    "name_en": "Wash Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_67",
+    "expansion_id": "sv10",
+    "collector": "067/182",
+    "name_en": "Wellspring Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_70",
+    "expansion_id": "sv10",
+    "collector": "070/182",
+    "name_en": "Team Rocket's Zapdos",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_72",
+    "expansion_id": "sv10",
+    "collector": "072/182",
+    "name_en": "Team Rocket's Mareep",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_73",
+    "expansion_id": "sv10",
+    "collector": "073/182",
+    "name_en": "Team Rocket's Flaaffy",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_74",
+    "expansion_id": "sv10",
+    "collector": "074/182",
+    "name_en": "Team Rocket's Ampharos",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_79",
+    "expansion_id": "sv10",
+    "collector": "079/182",
+    "name_en": "Team Rocket's Drowzee",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_80",
+    "expansion_id": "sv10",
+    "collector": "080/182",
+    "name_en": "Team Rocket's Hypno",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_81",
+    "expansion_id": "sv10",
+    "collector": "081/182",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_82",
+    "expansion_id": "sv10",
+    "collector": "082/182",
+    "name_en": "Team Rocket's Wobbuffet",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_85",
+    "expansion_id": "sv10",
+    "collector": "085/182",
+    "name_en": "Team Rocket's Chingling",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_87",
+    "expansion_id": "sv10",
+    "collector": "087/182",
+    "name_en": "Team Rocket's Mimikyu",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_88",
+    "expansion_id": "sv10",
+    "collector": "088/182",
+    "name_en": "Team Rocket's Dottler",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_89",
+    "expansion_id": "sv10",
+    "collector": "089/182",
+    "name_en": "Team Rocket's Orbeetle",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_94",
+    "expansion_id": "sv10",
+    "collector": "094/182",
+    "name_en": "Team Rocket's Larvitar",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_95",
+    "expansion_id": "sv10",
+    "collector": "095/182",
+    "name_en": "Team Rocket's Pupitar",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_96",
+    "expansion_id": "sv10",
+    "collector": "096/182",
+    "name_en": "Team Rocket's Tyranitar",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_111",
+    "expansion_id": "sv10",
+    "collector": "111/182",
+    "name_en": "Cornerstone Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_112",
+    "expansion_id": "sv10",
+    "collector": "112/182",
+    "name_en": "Team Rocket's Ekans",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_113",
+    "expansion_id": "sv10",
+    "collector": "113/182",
+    "name_en": "Team Rocket's Arbok",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_114",
+    "expansion_id": "sv10",
+    "collector": "114/182",
+    "name_en": "Team Rocket's Nidoran♀",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_115",
+    "expansion_id": "sv10",
+    "collector": "115/182",
+    "name_en": "Team Rocket's Nidorina",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_116",
+    "expansion_id": "sv10",
+    "collector": "116/182",
+    "name_en": "Team Rocket's Nidoqueen",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_117",
+    "expansion_id": "sv10",
+    "collector": "117/182",
+    "name_en": "Team Rocket's Nidoran♂",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_118",
+    "expansion_id": "sv10",
+    "collector": "118/182",
+    "name_en": "Team Rocket's Nidorino",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_119",
+    "expansion_id": "sv10",
+    "collector": "119/182",
+    "name_en": "Team Rocket's Nidoking ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_120",
+    "expansion_id": "sv10",
+    "collector": "120/182",
+    "name_en": "Team Rocket's Zubat",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_121",
+    "expansion_id": "sv10",
+    "collector": "121/182",
+    "name_en": "Team Rocket's Golbat",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_122",
+    "expansion_id": "sv10",
+    "collector": "122/182",
+    "name_en": "Team Rocket's Crobat ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_123",
+    "expansion_id": "sv10",
+    "collector": "123/182",
+    "name_en": "Team Rocket's Grimer",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_124",
+    "expansion_id": "sv10",
+    "collector": "124/182",
+    "name_en": "Team Rocket's Muk",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_125",
+    "expansion_id": "sv10",
+    "collector": "125/182",
+    "name_en": "Team Rocket's Koffing",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_126",
+    "expansion_id": "sv10",
+    "collector": "126/182",
+    "name_en": "Team Rocket's Weezing",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_127",
+    "expansion_id": "sv10",
+    "collector": "127/182",
+    "name_en": "Team Rocket's Murkrow",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_128",
+    "expansion_id": "sv10",
+    "collector": "128/182",
+    "name_en": "Team Rocket's Sneasel",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_147",
+    "expansion_id": "sv10",
+    "collector": "147/182",
+    "name_en": "Team Rocket's Rattata",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_148",
+    "expansion_id": "sv10",
+    "collector": "148/182",
+    "name_en": "Team Rocket's Raticate",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_149",
+    "expansion_id": "sv10",
+    "collector": "149/182",
+    "name_en": "Team Rocket's Meowth",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_150",
+    "expansion_id": "sv10",
+    "collector": "150/182",
+    "name_en": "Team Rocket's Persian ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_153",
+    "expansion_id": "sv10",
+    "collector": "153/182",
+    "name_en": "Team Rocket's Porygon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_154",
+    "expansion_id": "sv10",
+    "collector": "154/182",
+    "name_en": "Team Rocket's Porygon2",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_155",
+    "expansion_id": "sv10",
+    "collector": "155/182",
+    "name_en": "Team Rocket's Porygon-Z",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_187",
+    "expansion_id": "sv10",
+    "collector": "187/182",
+    "name_en": "Team Rocket's Spidops",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_191",
+    "expansion_id": "sv10",
+    "collector": "191/182",
+    "name_en": "Team Rocket's Houndoom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_198",
+    "expansion_id": "sv10",
+    "collector": "198/182",
+    "name_en": "Team Rocket's Orbeetle",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_199",
+    "expansion_id": "sv10",
+    "collector": "199/182",
+    "name_en": "Team Rocket's Weezing",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_200",
+    "expansion_id": "sv10",
+    "collector": "200/182",
+    "name_en": "Team Rocket's Murkrow",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_202",
+    "expansion_id": "sv10",
+    "collector": "202/182",
+    "name_en": "Team Rocket's Raticate",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_203",
+    "expansion_id": "sv10",
+    "collector": "203/182",
+    "name_en": "Team Rocket's Meowth",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_208",
+    "expansion_id": "sv10",
+    "collector": "208/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_213",
+    "expansion_id": "sv10",
+    "collector": "213/182",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_216",
+    "expansion_id": "sv10",
+    "collector": "216/182",
+    "name_en": "Team Rocket's Nidoking ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_217",
+    "expansion_id": "sv10",
+    "collector": "217/182",
+    "name_en": "Team Rocket's Crobat ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_219",
+    "expansion_id": "sv10",
+    "collector": "219/182",
+    "name_en": "Team Rocket's Persian ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_229",
+    "expansion_id": "sv10",
+    "collector": "229/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_231",
+    "expansion_id": "sv10",
+    "collector": "231/182",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_233",
+    "expansion_id": "sv10",
+    "collector": "233/182",
+    "name_en": "Team Rocket's Nidoking ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_234",
+    "expansion_id": "sv10",
+    "collector": "234/182",
+    "name_en": "Team Rocket's Crobat ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_240",
+    "expansion_id": "sv10",
+    "collector": "240/182",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv10_242",
+    "expansion_id": "sv10",
+    "collector": "242/182",
+    "name_en": "Team Rocket's Crobat ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_28",
+    "expansion_id": "sv2",
+    "collector": "028/193",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_41",
+    "expansion_id": "sv2",
+    "collector": "041/193",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_108",
+    "expansion_id": "sv2",
+    "collector": "108/193",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_128",
+    "expansion_id": "sv2",
+    "collector": "128/193",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_129",
+    "expansion_id": "sv2",
+    "collector": "129/193",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_130",
+    "expansion_id": "sv2",
+    "collector": "130/193",
+    "name_en": "Paldean Clodsire ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_218",
+    "expansion_id": "sv2",
+    "collector": "218/193",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_221",
+    "expansion_id": "sv2",
+    "collector": "221/193",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv2_244",
+    "expansion_id": "sv2",
+    "collector": "244/193",
+    "name_en": "Paldean Clodsire ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3_126",
+    "expansion_id": "sv3",
+    "collector": "126/197",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3_127",
+    "expansion_id": "sv3",
+    "collector": "127/197",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3_128",
+    "expansion_id": "sv3",
+    "collector": "128/197",
+    "name_en": "Paldean Clodsire",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3_129",
+    "expansion_id": "sv3",
+    "collector": "129/197",
+    "name_en": "Paldean Clodsire",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3-5_29",
+    "expansion_id": "sv3-5",
+    "collector": "029/165",
+    "name_en": "Nidoran♀",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3-5_32",
+    "expansion_id": "sv3-5",
+    "collector": "032/165",
+    "name_en": "Nidoran♂",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv3-5_83",
+    "expansion_id": "sv3-5",
+    "collector": "083/165",
+    "name_en": "Farfetch'd",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_13",
+    "expansion_id": "sv4-5",
+    "collector": "013/091",
+    "name_en": "Heat Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_58",
+    "expansion_id": "sv4-5",
+    "collector": "058/091",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_59",
+    "expansion_id": "sv4-5",
+    "collector": "059/091",
+    "name_en": "Paldean Clodsire ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_111",
+    "expansion_id": "sv4-5",
+    "collector": "111/091",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_120",
+    "expansion_id": "sv4-5",
+    "collector": "120/091",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_172",
+    "expansion_id": "sv4-5",
+    "collector": "172/091",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_180",
+    "expansion_id": "sv4-5",
+    "collector": "180/091",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv4-5_219",
+    "expansion_id": "sv4-5",
+    "collector": "219/091",
+    "name_en": "Paldean Clodsire ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_24",
+    "expansion_id": "sv6",
+    "collector": "024/167",
+    "name_en": "Teal Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_25",
+    "expansion_id": "sv6",
+    "collector": "025/167",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_40",
+    "expansion_id": "sv6",
+    "collector": "040/167",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_64",
+    "expansion_id": "sv6",
+    "collector": "064/167",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_99",
+    "expansion_id": "sv6",
+    "collector": "099/167",
+    "name_en": "Hisuian Growlithe",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_100",
+    "expansion_id": "sv6",
+    "collector": "100/167",
+    "name_en": "Hisuian Arcanine",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_112",
+    "expansion_id": "sv6",
+    "collector": "112/167",
+    "name_en": "Cornerstone Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_132",
+    "expansion_id": "sv6",
+    "collector": "132/167",
+    "name_en": "Farfetch'd",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_141",
+    "expansion_id": "sv6",
+    "collector": "141/167",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_181",
+    "expansion_id": "sv6",
+    "collector": "181/167",
+    "name_en": "Hisuian Growlithe",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_190",
+    "expansion_id": "sv6",
+    "collector": "190/167",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_192",
+    "expansion_id": "sv6",
+    "collector": "192/167",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_194",
+    "expansion_id": "sv6",
+    "collector": "194/167",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_199",
+    "expansion_id": "sv6",
+    "collector": "199/167",
+    "name_en": "Cornerstone Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_202",
+    "expansion_id": "sv6",
+    "collector": "202/167",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_211",
+    "expansion_id": "sv6",
+    "collector": "211/167",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_212",
+    "expansion_id": "sv6",
+    "collector": "212/167",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_213",
+    "expansion_id": "sv6",
+    "collector": "213/167",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_215",
+    "expansion_id": "sv6",
+    "collector": "215/167",
+    "name_en": "Cornerstone Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_216",
+    "expansion_id": "sv6",
+    "collector": "216/167",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_221",
+    "expansion_id": "sv6",
+    "collector": "221/167",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6_222",
+    "expansion_id": "sv6",
+    "collector": "222/167",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv6-5_25",
+    "expansion_id": "sv6-5",
+    "collector": "025/064",
+    "name_en": "Bloodmoon Ursaluna",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv7_8",
+    "expansion_id": "sv7",
+    "collector": "008/142",
+    "name_en": "Mow Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv7_118",
+    "expansion_id": "sv7",
+    "collector": "118/142",
+    "name_en": "Fan Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_18",
+    "expansion_id": "sv8",
+    "collector": "018/191",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_20",
+    "expansion_id": "sv8",
+    "collector": "020/191",
+    "name_en": "Castform Sunny Form",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_39",
+    "expansion_id": "sv8",
+    "collector": "039/191",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_48",
+    "expansion_id": "sv8",
+    "collector": "048/191",
+    "name_en": "Black Kyurem ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_101",
+    "expansion_id": "sv8",
+    "collector": "101/191",
+    "name_en": "Paldean Tauros",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_122",
+    "expansion_id": "sv8",
+    "collector": "122/191",
+    "name_en": "Alolan Diglett",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_123",
+    "expansion_id": "sv8",
+    "collector": "123/191",
+    "name_en": "Alolan Dugtrio",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_133",
+    "expansion_id": "sv8",
+    "collector": "133/191",
+    "name_en": "Alolan Exeggutor ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_195",
+    "expansion_id": "sv8",
+    "collector": "195/191",
+    "name_en": "Castform Sunny Form",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_208",
+    "expansion_id": "sv8",
+    "collector": "208/191",
+    "name_en": "Alolan Dugtrio",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_218",
+    "expansion_id": "sv8",
+    "collector": "218/191",
+    "name_en": "Black Kyurem ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_225",
+    "expansion_id": "sv8",
+    "collector": "225/191",
+    "name_en": "Alolan Exeggutor ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_242",
+    "expansion_id": "sv8",
+    "collector": "242/191",
+    "name_en": "Alolan Exeggutor ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8_248",
+    "expansion_id": "sv8",
+    "collector": "248/191",
+    "name_en": "Alolan Exeggutor ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_12",
+    "expansion_id": "sv8-5",
+    "collector": "012/131",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_17",
+    "expansion_id": "sv8-5",
+    "collector": "017/131",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_27",
+    "expansion_id": "sv8-5",
+    "collector": "027/131",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_54",
+    "expansion_id": "sv8-5",
+    "collector": "054/131",
+    "name_en": "Bloodmoon Ursaluna",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_58",
+    "expansion_id": "sv8-5",
+    "collector": "058/131",
+    "name_en": "Cornerstone Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_85",
+    "expansion_id": "sv8-5",
+    "collector": "085/131",
+    "name_en": "Fan Rotom",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_145",
+    "expansion_id": "sv8-5",
+    "collector": "145/131",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_148",
+    "expansion_id": "sv8-5",
+    "collector": "148/131",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_152",
+    "expansion_id": "sv8-5",
+    "collector": "152/131",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_160",
+    "expansion_id": "sv8-5",
+    "collector": "160/131",
+    "name_en": "Cornerstone Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_168",
+    "expansion_id": "sv8-5",
+    "collector": "168/131",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv8-5_177",
+    "expansion_id": "sv8-5",
+    "collector": "177/131",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_44",
+    "expansion_id": "sv9",
+    "collector": "044/159",
+    "name_en": "Alolan Geodude",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_45",
+    "expansion_id": "sv9",
+    "collector": "045/159",
+    "name_en": "Alolan Graveler",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_46",
+    "expansion_id": "sv9",
+    "collector": "046/159",
+    "name_en": "Alolan Golem",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_57",
+    "expansion_id": "sv9",
+    "collector": "057/159",
+    "name_en": "Alolan Marowak",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_93",
+    "expansion_id": "sv9",
+    "collector": "093/159",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_94",
+    "expansion_id": "sv9",
+    "collector": "094/159",
+    "name_en": "Paldean Clodsire ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "sv9_106",
+    "expansion_id": "sv9",
+    "collector": "106/159",
+    "name_en": "Galarian Stunfisk",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_123",
+    "expansion_id": "svalt",
+    "collector": "123",
+    "name_en": "Teal Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_100",
+    "expansion_id": "svalt",
+    "collector": "100/167",
+    "name_en": "Hisuian Arcanine",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_24",
+    "expansion_id": "svalt",
+    "collector": "024/167",
+    "name_en": "Teal Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_87",
+    "expansion_id": "svalt",
+    "collector": "087/182",
+    "name_en": "Team Rocket's Mimikyu",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_96",
+    "expansion_id": "svalt",
+    "collector": "096/182",
+    "name_en": "Team Rocket's Tyranitar",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_203",
+    "expansion_id": "svalt",
+    "collector": "203",
+    "name_en": "Team Rocket's Wobbuffet",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_149",
+    "expansion_id": "svalt",
+    "collector": "149/182",
+    "name_en": "Team Rocket's Meowth",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_40",
+    "expansion_id": "svalt",
+    "collector": "040/167",
+    "name_en": "Hearthflame Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_64",
+    "expansion_id": "svalt",
+    "collector": "064/167",
+    "name_en": "Wellspring Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_48",
+    "expansion_id": "svalt",
+    "collector": "048/191",
+    "name_en": "Black Kyurem ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_208",
+    "expansion_id": "svalt",
+    "collector": "208/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_229",
+    "expansion_id": "svalt",
+    "collector": "229/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_31",
+    "expansion_id": "svalt",
+    "collector": "031/182",
+    "name_en": "Team Rocket's Moltres ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_41",
+    "expansion_id": "svbsp",
+    "collector": "041",
+    "name_en": "Paldean Wooper",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_123",
+    "expansion_id": "svbsp",
+    "collector": "123",
+    "name_en": "Teal Mask Ogerpon",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_166",
+    "expansion_id": "svbsp",
+    "collector": "166",
+    "name_en": "Teal Mask Ogerpon ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_177",
+    "expansion_id": "svbsp",
+    "collector": "177",
+    "name_en": "Bloodmoon Ursaluna ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_203",
+    "expansion_id": "svbsp",
+    "collector": "203",
+    "name_en": "Team Rocket's Wobbuffet",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_205",
+    "expansion_id": "svbsp",
+    "collector": "205",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_216",
+    "expansion_id": "svbsp",
+    "collector": "216",
+    "name_en": "Team Rocket's Mewtwo ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_217",
+    "expansion_id": "svbsp",
+    "collector": "217",
+    "name_en": "Team Rocket's Nidoking ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svbsp_218",
+    "expansion_id": "svbsp",
+    "collector": "218",
+    "name_en": "Team Rocket's Persian ex",
+    "lang_seen": "en-US"
+  },
+  {
+    "print_id": "svalt_13",
+    "expansion_id": "svalt",
+    "collector": "013/198",
+    "name_en": "Basic {P} Energy",
+    "lang_seen": "fr-FR"
+  },
+  {
+    "print_id": "svalt_164",
+    "expansion_id": "svalt",
+    "collector": "164/198",
+    "name_en": "Future Booster Energy Capsule",
+    "lang_seen": "fr-FR"
+  },
+  {
+    "print_id": "svalt_15",
+    "expansion_id": "svalt",
+    "collector": "015/198",
+    "name_en": "Basic {D} Energy",
+    "lang_seen": "fr-FR"
+  },
+  {
+    "print_id": "svalt_16",
+    "expansion_id": "svalt",
+    "collector": "016/197",
+    "name_en": "Basic {M} Energy",
+    "lang_seen": "fr-FR"
+  },
+  {
+    "print_id": "svalt_10",
+    "expansion_id": "svalt",
+    "collector": "010/064",
+    "name_en": "Basic {R} Energy",
+    "lang_seen": "fr-FR"
+  },
+  {
+    "print_id": "svalt_159",
+    "expansion_id": "svalt",
+    "collector": "159",
+    "name_en": "Ogre's Mask",
+    "lang_seen": "fr-FR"
+  }
+]

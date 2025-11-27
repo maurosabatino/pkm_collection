@@ -1,0 +1,314 @@
+[
+  {
+    "name": "Basis-{G}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "001",
+      "numerator": "001",
+      "numeric": 1
+    },
+    "types": [
+      "GRASS"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_1",
+        "longFormID": "BasicGEnergy_mee_1_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xf28ddbd4",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_001_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_001_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_001_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{R}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "002",
+      "numerator": "002",
+      "numeric": 2
+    },
+    "types": [
+      "FIRE"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_2",
+        "longFormID": "BasicREnergy_mee_2_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xe70c9158",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_002_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_002_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_002_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{W}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "003",
+      "numerator": "003",
+      "numeric": 3
+    },
+    "types": [
+      "WATER"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_3",
+        "longFormID": "BasicWEnergy_mee_3_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xb454e50c",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_003_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_003_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_003_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{L}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "004",
+      "numerator": "004",
+      "numeric": 4
+    },
+    "types": [
+      "LIGHTNING"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_4",
+        "longFormID": "BasicLEnergy_mee_4_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xf78ead40",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_004_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_004_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_004_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{P}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "005",
+      "numerator": "005",
+      "numeric": 5
+    },
+    "types": [
+      "PSYCHIC"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_5",
+        "longFormID": "BasicPEnergy_mee_5_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xcc8e3559",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_005_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_005_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_005_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{F}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "006",
+      "numerator": "006",
+      "numeric": 6
+    },
+    "types": [
+      "FIGHTING"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_6",
+        "longFormID": "BasicFEnergy_mee_6_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xd73bd820",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_006_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_006_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_006_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{D}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "007",
+      "numerator": "007",
+      "numeric": 7
+    },
+    "types": [
+      "DARKNESS"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_7",
+        "longFormID": "BasicDEnergy_mee_7_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xd4b126c0",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_007_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_007_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_007_std.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Basis-{M}-Energie",
+    "card_type": "ENERGY",
+    "subtype": "BASIC",
+    "lang": "de-DE",
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "set_icon": "MEE_DE",
+    "collector_number": {
+      "full": "008",
+      "numerator": "008",
+      "numeric": 8
+    },
+    "types": [
+      "METAL"
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mee_8",
+        "longFormID": "BasicMEnergy_mee_8_std_FreeBasicEnergy_NonFoil_None",
+        "archetypeID": "0xb2c8d08b",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mee"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/de/mee/mee_de_008_std.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/de/mee/mee_de_008_std.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/de/mee/mee_de_008_std.jpg"
+        }
+      }
+    }
+  }
+]

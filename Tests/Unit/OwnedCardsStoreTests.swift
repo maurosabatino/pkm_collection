@@ -1,6 +1,6 @@
 import XCTest
-@testable import PKMCollection
-@testable import CoreKit
+import CoreModels
+@testable import Persistence
 
 final class OwnedCardsStoreTests: XCTestCase {
     private final class InMemoryPersistence: OwnedCardsPersistence {

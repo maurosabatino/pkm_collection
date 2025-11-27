@@ -33,6 +33,10 @@ struct ContentView: View {
                 }
             }
         }
+        .environmentObject(moduleRegistry.ownedCardsStore)
+        .environmentObject(moduleRegistry.wishlistStore)
+        .environmentObject(moduleRegistry.deckStore)
+        .environmentObject(moduleRegistry.languageSettings)
         .onAppear {
             if selection == nil {
                 selection = entries.first

@@ -6,6 +6,8 @@
 //
 import SwiftUI
 import CoreKit
+import CoreModels
+import Persistence
 import UIComponents
 
 /// Riga di elenco che mostra logo, nome e progressi di un'espansione.

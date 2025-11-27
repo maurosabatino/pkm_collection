@@ -1,18 +1,18 @@
 import Foundation
-import CoreKit
+import CoreModels
 
 protocol FetchCardListUseCase {
-    func execute(path: String) async throws -> [CardData]
+    func execute(path: String, language: String) async throws -> [CardData]
 }
 
 struct FetchCardListUseCaseImpl: FetchCardListUseCase {
     private let repository: CardListRepository
 
-    init(repository: CardListRepository = DatabaseCardListRepository()) {
+    init(repository: CardListRepository = CardListRepositoryAdapter()) {
         self.repository = repository
     }
 
-    func execute(path: String) async throws -> [CardData] {
-        try await repository.fetchCardList(path: path)
+    func execute(path: String, language: String) async throws -> [CardData] {
+        try await repository.fetchCardList(path: path, language: language)
     }
 }

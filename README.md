@@ -47,10 +47,13 @@ PKMCollection è un'app iOS sviluppata in SwiftUI che permette di sfogliare ed e
 PKMCollection/
 ├─ App/
 │  ├─ Sources/         # Entry point, flow e root views
-│  └─ Resources/       # Assets, stringhe, GoogleService-Info.plist, JSON
+│  └─ Resources/       # Assets, stringhe, GoogleService-Info.plist, cards.db (no JSON)
 ├─ Modules/
 │  ├─ CoreKit/         # Domain, data layer, stores, utilities
 │  ├─ FeatureExpansion/# Feature SwiftUI per esplorare le espansioni
+│  ├─ FeatureCollection# Wishlist/collections
+│  ├─ FeatureDecks/    # Deck builder/import
+│  ├─ FeatureSettings/ # Impostazioni (selezione lingua dati)
 │  └─ UIComponents/    # Componenti riutilizzabili
 ├─ Tests/
 │  ├─ Unit/            # Unit test (OwnedCards, Store, UseCase)
@@ -58,6 +61,12 @@ PKMCollection/
 ├─ Project.swift       # Manifest Tuist
 └─ Tuist/              # Dipendenze Swift Package e configurazioni Tuist
 ```
+
+### Dati carte multi-lingua
+- Le sorgenti JSON delle carte/espansioni sono tenute fuori dal bundle in `Scripts/db_sources/<lang>`.
+- Lo script `Scripts/build_card_archive.py` scarica i dump Malie multi-lingua, popola `Scripts/db_sources/<lang>` e genera `App/Resources/db/cards.db` con tutte le lingue.
+- Esempio: `python Scripts/build_card_archive.py --languages it-IT en-US fr-FR --overwrite` (usa `--skip-download` per riutilizzare i JSON già presenti).
+- In app è presente il tab **Impostazioni** per scegliere la lingua dei dati da usare nelle query.
 
 ## Esecuzione e test
 - **Build**: `tuist build PKMCollection --platform iOS`

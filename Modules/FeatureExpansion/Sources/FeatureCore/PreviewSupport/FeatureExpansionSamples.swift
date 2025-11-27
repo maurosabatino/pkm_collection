@@ -1,4 +1,5 @@
 import Foundation
+import CoreModels
 
 enum FeatureExpansionSamples {
     static let expansionName1 = "Spada e Scudo"
@@ -53,14 +54,8 @@ enum FeatureExpansionSamples {
             abilities: nil,
             rules: nil,
             flavorText: nil,
-            ext: Extension(tcgl: TcglExtension(cardID: "pi1", longFormID: "longpi1", archetypeID: "archpi1", reldate: "2020-01-01", key: "keypi1")),
-            images: Images(
-                tcgl: TcglImages(
-                    tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil),
-                    png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/1.png", back: nil, foil: nil, etch: nil),
-                    jpg: nil
-                )
-            )
+            ext: nil,
+            images: nil
         ),
         CardData(
             name: FeatureExpansionSamples.cardName2,
@@ -83,14 +78,8 @@ enum FeatureExpansionSamples {
             abilities: nil,
             rules: nil,
             flavorText: nil,
-            ext: Extension(tcgl: TcglExtension(cardID: "ch2", longFormID: "longch2", archetypeID: "archch2", reldate: "2020-01-01", key: "keych2")),
-            images: Images(
-                tcgl: TcglImages(
-                    tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil),
-                    png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/2.png", back: nil, foil: nil, etch: nil),
-                    jpg: nil
-                )
-            )
+            ext: nil,
+            images: nil
         ),
         CardData(
             name: FeatureExpansionSamples.cardName3,
@@ -113,14 +102,8 @@ enum FeatureExpansionSamples {
             abilities: nil,
             rules: nil,
             flavorText: nil,
-            ext: Extension(tcgl: TcglExtension(cardID: "me3", longFormID: "longme3", archetypeID: "archme3", reldate: "2020-01-01", key: "keyme3")),
-            images: Images(
-                tcgl: TcglImages(
-                    tex: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil),
-                    png: ImagePaths(front: "https://images.pokemontcg.io/swsh1/3.png", back: nil, foil: nil, etch: nil),
-                    jpg: nil
-                )
-            )
+            ext: nil,
+            images: nil
         )
     ]
 

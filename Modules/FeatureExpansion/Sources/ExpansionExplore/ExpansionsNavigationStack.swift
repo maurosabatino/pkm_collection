@@ -5,6 +5,7 @@
 //  Created by SABATINO MAURO on 26/07/25.
 //
 import SwiftUI
+import CoreModels
 
 struct ExpansionsNavigationStack: View {
     @EnvironmentObject var expansionStore: ExpansionStore

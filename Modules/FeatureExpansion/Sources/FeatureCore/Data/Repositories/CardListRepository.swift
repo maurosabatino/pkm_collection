@@ -1,23 +1,19 @@
 import Foundation
-import CoreKit
+import CoreModels
+import Persistence
 
-protocol CardListRepository {
-    func fetchCardList(path: String) async throws -> [CardData]
+public protocol CardListRepository {
+    func fetchCardList(path: String, language: String) async throws -> [CardData]
 }
 
-struct DefaultCardListRepository: CardListRepository {
-    func fetchCardList(path: String) async throws -> [CardData] {
-        guard let url = Bundle.main.url(forResource: path, withExtension: "json") else {
-            throw DomainError.dataNotFound(message: FeatureExpansionStrings.cardsJsonFileNotFound(path))
-        }
+public struct CardListRepositoryAdapter: CardListRepository {
+    private let repository: Persistence.CardListRepository
 
-        do {
-            let data = try Data(contentsOf: url)
-            return try JSONDecoder().decode([CardData].self, from: data)
-        } catch let decodingError as DecodingError {
-            throw DomainError.decodingError(decodingError)
-        } catch {
-            throw DomainError.unknownError
-        }
+    public init(repository: Persistence.CardListRepository = DatabaseCardListRepository()) {
+        self.repository = repository
+    }
+
+    public func fetchCardList(path: String, language: String) async throws -> [CardData] {
+        try await repository.fetchCardList(path: path, language: language)
     }
 }

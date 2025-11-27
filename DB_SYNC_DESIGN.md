@@ -1,15 +1,17 @@
 # PKM Collection – Local DB & Sync (Draft)
 
 ## Goals
-- Migrare da JSON a SQLite (GRDB) con schema esplicito.
+- Migrare da JSON a SQLite (GRDB) con schema esplicito e multi-lingua.
 - Supportare wishlist multiple, deck import/tracking, ownership.
 - Preparare un flusso di sync verso backend (stub ora, API reale in seguito).
 
+Nota: i JSON sorgente per il seed sono tenuti fuori dal bundle in `Scripts/db_sources/<lang>`; il bundle contiene solo `App/Resources/db/cards.db` generato dallo script `Scripts/build_card_archive.py`.
+
 ## Proposta schema (GRDB/SQLite)
-- `expansions` (read-only master)
-  - `id` (TEXT PK), `name`, `series`, `abbr`, `release_date`, `logo_url`, `symbol_url`, `num_master`, `num_regular`, `hash`, `updated_at`
-- `cards` (read-only master)
-  - `id` (TEXT PK), `expansion_id` (FK), `name`, `collector_number`, `rarity`, `types`, `stage`, `hp`, `lang`, `image_url`, `foil_url`, `etch_url`, `data_hash`, `updated_at`
+- `expansions` (read-only master, PK composto `id`,`lang`)
+  - `id` (TEXT), `lang` (TEXT), `name`, `series`, `abbr`, `release_date`, `logo_url`, `symbol_url`, `num_master`, `num_regular`, `hash`, `updated_at`
+- `cards` (read-only master, PK composto `id`,`lang`)
+  - `id` (TEXT), `lang` (TEXT), `expansion_id` (FK -> `expansions.id` + `lang`), `name`, `collector_number`, `rarity`, `types`, `stage`, `hp`, `image_url`, `foil_url`, `etch_url`, `data_hash`, `updated_at`
 - `ownership` (user)
   - `card_id` (FK), `quantity` (INT), `wishlist` (BOOL), `updated_at`, `dirty` (BOOL), `deleted` (BOOL default 0), PK (`card_id`)
 - `wishlists` (user)

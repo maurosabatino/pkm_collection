@@ -21,6 +21,9 @@ struct PKMCollectionApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(moduleRegistry)
+                .environmentObject(moduleRegistry.ownedCardsStore)
+                .environmentObject(moduleRegistry.wishlistStore)
+                .environmentObject(moduleRegistry.deckStore)
                 .environmentObject(moduleRegistry.navigator)
         }
     }

@@ -1,39 +1,35 @@
 import SwiftUI
+import CoreModels
 import CoreKit
+import Persistence
 
 public final class FeatureExpansionModule: FeatureModule {
     private enum Entry: String {
         case explore
-        case collections
-        case deckImport
     }
 
     private let expansionStore: ExpansionStore
     private let ownedCardsStore: OwnedCardsStore
-    private let wishlistStore: WishlistStore
-    private let deckStore: DeckStore
 
     private let moduleId = "feature.expansion"
 
-    init(
+    @MainActor
+    public init(
         expansionStore: ExpansionStore,
-        ownedCardsStore: OwnedCardsStore,
-        wishlistStore: WishlistStore,
-        deckStore: DeckStore
+        ownedCardsStore: OwnedCardsStore
     ) {
         self.expansionStore = expansionStore
         self.ownedCardsStore = ownedCardsStore
-        self.wishlistStore = wishlistStore
-        self.deckStore = deckStore
     }
 
     @MainActor
-    public convenience init() {
+    public convenience init(
+        ownedCardsStore: OwnedCardsStore,
+        languageSettings: LanguageSettings = .shared
+    ) {
         self.init(
-            expansionStore: ExpansionStore(),
-            ownedCardsStore: OwnedCardsStore(),
-            wishlistStore: WishlistStore(),
-            deckStore: DeckStore()
+            expansionStore: ExpansionStore(languageSettings: languageSettings),
+            ownedCardsStore: ownedCardsStore
         )
     }
 
@@ -60,35 +56,6 @@ public final class FeatureExpansionModule: FeatureModule {
                         ownedCardsStore: self.ownedCardsStore
                     )
                     .environmentObject(navigator)
-                )
-            }
-        ,
-            ModuleEntryDescriptor(
-                moduleId: metadata.id,
-                id: Entry.collections.rawValue,
-                title: "Collection",
-                systemImage: "tray.full.fill"
-            ) { [weak self] _ in
-                guard let self else { return AnyView(EmptyView()) }
-                return AnyView(
-                    NavigationStack {
-                        WishlistEntryView(wishlistStore: self.wishlistStore)
-                    }
-                )
-            }
-        ,
-            ModuleEntryDescriptor(
-                moduleId: metadata.id,
-                id: Entry.deckImport.rawValue,
-                title: "Mazzi",
-                systemImage: "rectangle.stack.badge.plus"
-            ) { [weak self] _ in
-                guard let self else { return AnyView(EmptyView()) }
-                return AnyView(
-                    NavigationStack {
-                        DecksEntryView(deckStore: self.deckStore, ownedCardsStore: self.ownedCardsStore)
-                    }
-                    .environmentObject(self.ownedCardsStore)
                 )
             }
         ]

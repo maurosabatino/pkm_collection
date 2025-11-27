@@ -5,9 +5,9 @@
 //  Created by Mauro on 15/06/25.
 //
 
-enum Language: String, CaseIterable, Identifiable {
-    var id: String { self.rawValue }
-    
+public enum Language: String, CaseIterable, Identifiable {
+    public var id: String { self.rawValue }
+
     case enUS = "en-US"
     case frFR = "fr-FR"
     case itIT = "it-IT"
@@ -15,8 +15,8 @@ enum Language: String, CaseIterable, Identifiable {
     case esES = "es-ES"
     case ptBR = "pt-BR"
     case es419 = "es-419"
-    
-    var label: String {
+
+    public var label: String {
         switch self {
         case .enUS: return "🇺🇸 English"
         case .frFR: return "🇫🇷 Français"

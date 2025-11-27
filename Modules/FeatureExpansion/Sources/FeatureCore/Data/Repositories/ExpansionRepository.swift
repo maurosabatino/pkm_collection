@@ -1,36 +1,19 @@
 import Foundation
-import CoreKit
+import CoreModels
+import Persistence
 
-protocol ExpansionRepository {
-    func fetchExpansions() async throws -> [Expansion]
+public protocol ExpansionRepository {
+    func fetchExpansions(language: String) async throws -> [Expansion]
 }
 
-struct DefaultExpansionRepository: ExpansionRepository {
-    private let fileName: String
+public struct ExpansionRepositoryAdapter: ExpansionRepository {
+    private let repository: Persistence.ExpansionRepository
 
-    init(fileName: String) {
-        self.fileName = fileName
+    public init(repository: Persistence.ExpansionRepository = DatabaseExpansionRepository()) {
+        self.repository = repository
     }
 
-    func fetchExpansions() async throws -> [Expansion] {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            throw DomainError.dataNotFound(message: FeatureExpansionStrings.jsonFileNotFound(fileName))
-        }
-
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            formatter.calendar = Calendar(identifier: .iso8601)
-            formatter.timeZone = TimeZone(secondsFromGMT: 0)
-            formatter.locale = Locale(identifier: "en_US_POSIX")
-            decoder.dateDecodingStrategy = .formatted(formatter)
-            return try decoder.decode([Expansion].self, from: data)
-        } catch let decodingError as DecodingError {
-            throw DomainError.decodingError(decodingError)
-        } catch {
-            throw DomainError.unknownError
-        }
+    public func fetchExpansions(language: String) async throws -> [Expansion] {
+        try await repository.fetchExpansions(language: language)
     }
 }

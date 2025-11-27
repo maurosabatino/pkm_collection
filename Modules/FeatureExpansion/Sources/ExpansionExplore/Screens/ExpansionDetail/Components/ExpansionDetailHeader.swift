@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreKit
+import CoreModels
 
 /// Box che mostra avanzamento, duplicati e wishlist dell'espansione.
 struct ExpansionCompletionView: View {

@@ -13,18 +13,8 @@ let project = Project(
             sources: ["Sources/**"],
             resources: [],
             dependencies: [
-                .external(name: "GRDB")
-            ]
-        ),
-        .target(
-            name: "CoreKitTests",
-            destinations: .iOS,
-            product: .unitTests,
-            bundleId: "com.maurosabatino.CoreKit.tests",
-            infoPlist: .default,
-            sources: ["Tests/**"],
-            dependencies: [
-                .target(name: "CoreKit")
+                .project(target: "CoreModels", path: "../CoreModels"),
+                .project(target: "Persistence", path: "../Persistence")
             ]
         )
     ]

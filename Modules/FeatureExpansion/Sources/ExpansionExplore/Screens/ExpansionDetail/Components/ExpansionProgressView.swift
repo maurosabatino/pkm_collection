@@ -1,5 +1,7 @@
 import SwiftUI
 import CoreKit
+import CoreModels
+import Persistence
 
 @MainActor
 /// ViewModel che calcola lo snapshot di avanzamento dell'espansione.

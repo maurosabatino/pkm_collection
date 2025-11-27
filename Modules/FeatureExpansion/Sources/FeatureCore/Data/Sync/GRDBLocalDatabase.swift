@@ -1,6 +1,5 @@
 import Foundation
-import CoreKit
-import GRDB
+import Persistence
 
 public final class GRDBLocalDatabase: LocalDatabase {
     private let dbQueue: DatabaseQueue

@@ -1,6 +1,8 @@
 import SwiftUI
 import Combine
 import CoreKit
+import CoreModels
+import Persistence
 
 extension String {
     fileprivate var foldedForSearch: String {
@@ -19,11 +21,17 @@ final class CardListStore: ObservableObject {
 
     private let expansionPath: String
     private let fetchCardListUseCase: FetchCardListUseCase
+    private let languageSettings: LanguageSettings
     private var cancellables: Set<AnyCancellable> = []
 
-    init(expansionPath: String, fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl()) {
+    init(
+        expansionPath: String,
+        fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl(),
+        languageSettings: LanguageSettings = .shared
+    ) {
         self.expansionPath = expansionPath
         self.fetchCardListUseCase = fetchCardListUseCase
+        self.languageSettings = languageSettings
 
         recomputeDisplayedCards()
 
@@ -34,6 +42,13 @@ final class CardListStore: ObservableObject {
                 return true
             }
             .sink { _ in }
+            .store(in: &cancellables)
+
+        languageSettings.$language
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                Task { await self?.loadCards() }
+            }
             .store(in: &cancellables)
     }
 
@@ -70,7 +85,10 @@ final class CardListStore: ObservableObject {
         isLoading = true
         error = nil
         do {
-            let fetched = try await fetchCardListUseCase.execute(path: expansionPath)
+            let fetched = try await fetchCardListUseCase.execute(
+                path: expansionPath,
+                language: languageSettings.language.rawValue
+            )
             allCardData = fetched
             recomputeDisplayedCards()
         } catch {

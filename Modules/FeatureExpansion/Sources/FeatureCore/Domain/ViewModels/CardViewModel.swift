@@ -5,6 +5,7 @@
 //  Created by SABATINO MAURO on 27/07/25.
 //
 import Foundation
+import CoreModels
 
 public struct CardViewModel: Identifiable, Hashable {
     public let id: String

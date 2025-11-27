@@ -1,6 +1,8 @@
 
 import SwiftUI
 import CoreKit
+import CoreModels
+import Persistence
 import UIComponents
 
 // MARK: - ExpansionDetailView
@@ -60,6 +62,7 @@ struct ExpansionDetailView: View {
                     if !newValue { selectedCardForModal = nil }
                 }
             ))
+            .environmentObject(ownedCardsStore)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

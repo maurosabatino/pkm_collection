@@ -1,18 +1,18 @@
 import Foundation
-import CoreKit
+import CoreModels
 
-protocol FetchExpansionUseCase {
-    func execute() async throws -> [Expansion]
+public protocol FetchExpansionUseCase {
+    func execute(language: String) async throws -> [Expansion]
 }
 
-struct FetchExpansionUseCaseImpl: FetchExpansionUseCase {
+public struct FetchExpansionUseCaseImpl: FetchExpansionUseCase {
     private let repository: ExpansionRepository
 
-    init(repository: ExpansionRepository = DatabaseExpansionRepository()) {
+    public init(repository: ExpansionRepository = ExpansionRepositoryAdapter()) {
         self.repository = repository
     }
 
-    func execute() async throws -> [Expansion] {
-        try await repository.fetchExpansions()
+    public func execute(language: String) async throws -> [Expansion] {
+        try await repository.fetchExpansions(language: language)
     }
 }

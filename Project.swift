@@ -11,7 +11,7 @@ let project = Project(
         // MARK: App
         .target(
             name: "PKMCollection",
-            destinations: [.iPhone, .iPad], 
+            destinations: [.iPhone, .iPad, .macWithiPadDesign], 
             product: .app,
             bundleId: "com.maurosabatino.PKM-Collection",
             infoPlist: .extendingDefault(
@@ -31,6 +31,9 @@ let project = Project(
             dependencies: [
                 // Internal
                 .project(target: "FeatureExpansion", path: "Modules/FeatureExpansion"),
+                .project(target: "FeatureCollection", path: "Modules/FeatureCollection"),
+                .project(target: "FeatureDecks", path: "Modules/FeatureDecks"),
+                .project(target: "FeatureSettings", path: "Modules/FeatureSettings"),
                 .project(target: "UIComponents", path: "Modules/UIComponents"),
                 .project(target: "CoreKit", path: "Modules/CoreKit"),
 
@@ -57,7 +60,9 @@ let project = Project(
             dependencies: [
                 .target(name: "PKMCollection"),
                 .project(target: "CoreKit", path: "Modules/CoreKit"),
-                .project(target: "FeatureExpansion", path: "Modules/FeatureExpansion")
+                .project(target: "FeatureExpansion", path: "Modules/FeatureExpansion"),
+                .project(target: "CoreModels", path: "Modules/CoreModels"),
+                .project(target: "Persistence", path: "Modules/Persistence")
             ]
         ),
 

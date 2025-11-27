@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreKit
+import CoreModels
 
 enum OwnershipFilter: String, CaseIterable, Identifiable {
     case all, owned, missing

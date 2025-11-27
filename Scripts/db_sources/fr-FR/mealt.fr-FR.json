@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Alakazam",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "009",
+      "numerator": "009",
+      "numeric": 9
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "STAGE2",
+    "stage_text": "Évolution de : Kadabra",
+    "hp": 140,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Pioche Psy",
+        "text": "Une fois pendant votre tour, lorsque vous jouez ce Pokémon de votre main pour faire évoluer l'un de vos Pokémon, vous pouvez utiliser ce talent. Piochez 3 cartes."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Main Puissante",
+        "text": "Placez 2 marqueurs de dégâts sur le Pokémon Actif de votre adversaire pour chaque carte dans votre main.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_1",
+        "longFormID": "Alakazam_mebsp_9_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xf47205f1",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_009_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_009_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mealt/mebsp_fr_009_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Riolu",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "010",
+      "numerator": "010",
+      "numeric": 10
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "PSYCHIC"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Poignard Accélérateur",
+        "text": "Pendant votre prochain tour, ce Pokémon ne peut pas utiliser Poignard Accélérateur.",
+        "cost": [
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 30
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_2",
+        "longFormID": "Riolu_mebsp_10_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x23ecf303",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_010_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_010_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mealt/mebsp_fr_010_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Bulbizarre",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEG_FR",
+    "collector_number": {
+      "full": "133/132",
+      "numerator": "133",
+      "denominator": "132",
+      "numeric": 133
+    },
+    "rarity": {
+      "designation": "ILLUSTRATION_RARE",
+      "icon": "GOLD_STAR"
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "GRASS"
+    ],
+    "weakness": {
+      "types": [
+        "FIRE"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Astreinte",
+        "text": "Pendant le prochain tour de votre adversaire, le Pokémon Défenseur ne peut pas battre en retraite.",
+        "cost": [
+          "GRASS"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_3",
+        "longFormID": "Bulbasaur_me1_133_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xcf909c72",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/me1_fr_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/me1_fr_133_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/me1_fr_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/me1_fr_133_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mealt/me1_fr_133_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Charbambin",
+    "card_type": "POKEMON",
+    "lang": "fr-FR",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_FR",
+    "collector_number": {
+      "full": "022",
+      "numerator": "022",
+      "numeric": 22
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Pouvoir Collecté",
+        "text": "Cherchez dans votre deck jusqu'à 2 cartes Énergie de base, montrez-les, puis ajoutez-les à votre main. Mélangez ensuite votre deck.",
+        "cost": [
+          "FIRE"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Coup Tranchant",
+        "cost": [
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_4",
+        "longFormID": "Charcadet_mebsp_22_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xedf0944f",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/fr/mealt/mebsp_fr_022_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/fr/mealt/mebsp_fr_022_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/fr/mealt/mebsp_fr_022_alt.jpg"
+        }
+      }
+    }
+  }
+]

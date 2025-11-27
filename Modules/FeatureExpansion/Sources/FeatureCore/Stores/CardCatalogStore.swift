@@ -1,6 +1,7 @@
 import SwiftUI
 import Combine
 import CoreKit
+import CoreModels
 
 @MainActor
 final class CardCatalogStore: ObservableObject {
@@ -18,6 +19,8 @@ final class CardCatalogStore: ObservableObject {
     private let preferencesStorage: CardCatalogPreferencesPersisting
     private var storedPreferences: CardCatalogPreferences
     private var cancellables: Set<AnyCancellable> = []
+    private let languageSettings: LanguageSettings
+    private var lastLoadedExpansions: [Expansion] = []
     private var availableTypesCache: [PokemonType] = []
     private var availableRaritiesCache: [Designation] = []
     private var availableExpansionsCache: [Expansion] = []
@@ -28,10 +31,12 @@ final class CardCatalogStore: ObservableObject {
 
     init(
         fetchCardListUseCase: FetchCardListUseCase = FetchCardListUseCaseImpl(),
-        preferencesStorage: CardCatalogPreferencesPersisting = UserDefaultsCardCatalogPreferences()
+        preferencesStorage: CardCatalogPreferencesPersisting = UserDefaultsCardCatalogPreferences(),
+        languageSettings: LanguageSettings = .shared
     ) {
         self.fetchCardListUseCase = fetchCardListUseCase
         self.preferencesStorage = preferencesStorage
+        self.languageSettings = languageSettings
         self.storedPreferences = preferencesStorage.load() ?? CardCatalogPreferences()
 
         searchText = storedPreferences.searchText
@@ -43,6 +48,7 @@ final class CardCatalogStore: ObservableObject {
         latestDisplayMode = CardDisplayMode(rawValue: storedPreferences.displayMode) ?? .regular
 
         subscribeToChanges()
+        subscribeToLanguageChanges()
     }
 
     func loadCards(for expansions: [Expansion]) async {
@@ -57,6 +63,7 @@ final class CardCatalogStore: ObservableObject {
 
         do {
             availableExpansionsCache = expansions
+            lastLoadedExpansions = expansions
             let defaultExpansionSelection = normalizedExpansionsSelection(from: expansions)
             if selectedExpansions.isEmpty {
                 selectedExpansions = defaultExpansionSelection
@@ -67,7 +74,10 @@ final class CardCatalogStore: ObservableObject {
 
             var aggregated: [CardWithExpansion] = []
             for expansion in expansions {
-                let cards = try await fetchCardListUseCase.execute(path: expansion.path)
+                let cards = try await fetchCardListUseCase.execute(
+                    path: expansion.path,
+                    language: languageSettings.language.rawValue
+                )
                 let enriched = cards.map { card in
                     CardWithExpansion(
                         card: card,
@@ -167,6 +177,14 @@ final class CardCatalogStore: ObservableObject {
             }
             .store(in: &cancellables)
 
+        languageSettings.$language
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                Task { await self.loadCards(for: self.lastLoadedExpansions) }
+            }
+            .store(in: &cancellables)
+
         $selectedExpansions
             .sink { [weak self] _ in
                 self?.recomputeDisplayedCards()
@@ -176,6 +194,16 @@ final class CardCatalogStore: ObservableObject {
         $sortOption
             .sink { [weak self] _ in
                 self?.recomputeDisplayedCards()
+            }
+            .store(in: &cancellables)
+    }
+
+    private func subscribeToLanguageChanges() {
+        languageSettings.$language
+            .removeDuplicates()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                Task { await self.loadCards(for: self.lastLoadedExpansions) }
             }
             .store(in: &cancellables)
     }

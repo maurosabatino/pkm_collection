@@ -1,0 +1,341 @@
+[
+  {
+    "name": "Alakazam",
+    "card_type": "POKEMON",
+    "lang": "en-US",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "artists": {
+      "text": "Illus. Aya Kusube",
+      "list": [
+        "Aya Kusube"
+      ]
+    },
+    "regulation_mark": "I",
+    "set_icon": "MEP_EN",
+    "collector_number": {
+      "full": "009",
+      "numerator": "009",
+      "numeric": 9
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "copyright": {
+      "text": "©2025 Pokémon / Nintendo / Creatures / GAME FREAK",
+      "year": 2025
+    },
+    "stage": "STAGE2",
+    "stage_text": "Evolves from Kadabra",
+    "hp": 140,
+    "types": [
+      "PSYCHIC"
+    ],
+    "resistance": {
+      "types": [
+        "FIGHTING"
+      ],
+      "operator": "-",
+      "amount": 30
+    },
+    "weakness": {
+      "types": [
+        "DARKNESS"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 1,
+    "flavor_text": "Alakazam wields potent psychic powers. It’s said that this Pokémon used these powers to create the spoons it holds.",
+    "text": [
+      {
+        "kind": "ABILITY",
+        "name": "Psychic Draw",
+        "text": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Draw 3 cards."
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Powerful Hand",
+        "text": "Place 2 damage counters on your opponent's Active Pokémon for each card in your hand.",
+        "cost": [
+          "PSYCHIC"
+        ]
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_1",
+        "longFormID": "Alakazam_mebsp_9_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xf47205f1",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_009_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_009_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_009_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/en/mealt/mebsp_en_009_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Riolu",
+    "card_type": "POKEMON",
+    "lang": "en-US",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "artists": {
+      "text": "Illus. GOSSAN",
+      "list": [
+        "GOSSAN"
+      ]
+    },
+    "regulation_mark": "I",
+    "set_icon": "MEP_EN",
+    "collector_number": {
+      "full": "010",
+      "numerator": "010",
+      "numeric": 10
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "copyright": {
+      "text": "©2025 Pokémon / Nintendo / Creatures / GAME FREAK",
+      "year": 2025
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "FIGHTING"
+    ],
+    "weakness": {
+      "types": [
+        "PSYCHIC"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "flavor_text": "They communicate with one another using their auras. They are able to run all through the night.",
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Accelerating Stab",
+        "text": "During your next turn, this Pokémon can't use Accelerating Stab.",
+        "cost": [
+          "FIGHTING"
+        ],
+        "damage": {
+          "amount": 30
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_2",
+        "longFormID": "Riolu_mebsp_10_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0x23ecf303",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_010_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_010_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_010_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/en/mealt/mebsp_en_010_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Bulbasaur",
+    "card_type": "POKEMON",
+    "lang": "en-US",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "artists": {
+      "text": "Illus. mashu",
+      "list": [
+        "mashu"
+      ]
+    },
+    "regulation_mark": "I",
+    "set_icon": "MEG_EN",
+    "collector_number": {
+      "full": "133/132",
+      "numerator": "133",
+      "denominator": "132",
+      "numeric": 133
+    },
+    "rarity": {
+      "designation": "ILLUSTRATION_RARE",
+      "icon": "GOLD_STAR"
+    },
+    "copyright": {
+      "text": "©2025 Pokémon / Nintendo / Creatures / GAME FREAK",
+      "year": 2025
+    },
+    "stage": "BASIC",
+    "hp": 80,
+    "types": [
+      "GRASS"
+    ],
+    "weakness": {
+      "types": [
+        "FIRE"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "flavor_text": "﻿For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.",
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Bind Down",
+        "text": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+        "cost": [
+          "GRASS"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_3",
+        "longFormID": "Bulbasaur_me1_133_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xcf909c72",
+        "reldate": "2025-09-25 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/me1_en_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/me1_en_133_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/me1_en_133_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/me1_en_133_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/en/mealt/me1_en_133_alt.jpg"
+        }
+      }
+    }
+  },
+  {
+    "name": "Charcadet",
+    "card_type": "POKEMON",
+    "lang": "en-US",
+    "foil": {
+      "type": "SUN_PILLAR",
+      "mask": "HOLO"
+    },
+    "size": "STANDARD",
+    "back": "POKEMON_1999",
+    "regulation_mark": "I",
+    "set_icon": "MEP_EN",
+    "collector_number": {
+      "full": "022",
+      "numerator": "022",
+      "numeric": 22
+    },
+    "rarity": {
+      "designation": "PROMO",
+      "icon": "BLACK_STAR_PROMO"
+    },
+    "stage": "BASIC",
+    "hp": 70,
+    "types": [
+      "FIRE"
+    ],
+    "weakness": {
+      "types": [
+        "WATER"
+      ],
+      "operator": "×",
+      "amount": 2
+    },
+    "retreat": 2,
+    "text": [
+      {
+        "kind": "ATTACK",
+        "name": "Gather Strength",
+        "text": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "cost": [
+          "FIRE"
+        ]
+      },
+      {
+        "kind": "ATTACK",
+        "name": "Chop",
+        "cost": [
+          "FIRE"
+        ],
+        "damage": {
+          "amount": 10
+        }
+      }
+    ],
+    "ext": {
+      "tcgl": {
+        "cardID": "mealt_4",
+        "longFormID": "Charcadet_mebsp_22_alt_IllustrationRare_SunPillar_Holo",
+        "archetypeID": "0xedf0944f",
+        "reldate": "2025-11-13 17:00:00+00:00",
+        "key": "mealt"
+      }
+    },
+    "images": {
+      "tcgl": {
+        "tex": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/tex/en/mealt/mebsp_en_022_alt.foil.png"
+        },
+        "png": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_022_alt.png",
+          "foil": "https://cdn.malie.io/file/malie-io/tcgl/cards/png/en/mealt/mebsp_en_022_alt.foil.png"
+        },
+        "jpg": {
+          "front": "https://cdn.malie.io/file/malie-io/tcgl/cards/jpg/en/mealt/mebsp_en_022_alt.jpg"
+        }
+      }
+    }
+  }
+]

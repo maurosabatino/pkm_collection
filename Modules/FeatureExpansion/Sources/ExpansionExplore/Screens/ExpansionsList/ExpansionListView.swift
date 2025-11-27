@@ -1,5 +1,7 @@
 import SwiftUI
 import CoreKit
+import CoreModels
+import Persistence
 
 // MARK: - ExpansionListView
 /// Elenco espansioni raggruppate per serie con navigazione verso dettaglio e catalogo carte.
@@ -62,7 +64,7 @@ public struct ExpansionListView: View {
 
 #if DEBUG
 private struct PreviewFetchExpansionUseCase: FetchExpansionUseCase {
-    func execute() async throws -> [Expansion] {
+    func execute(language: String) async throws -> [Expansion] {
         FeatureExpansionSamples.sampleExpansions
     }
 }

@@ -70,8 +70,8 @@ final class CollectionsStoreTests: XCTestCase {
         let fallback = StubExpansionRepository()
         let repository = DatabaseExpansionRepository(fallback: fallback, databaseManager: manager)
 
-        let first = try await repository.fetchExpansions()
-        let second = try await repository.fetchExpansions()
+        let first = try await repository.fetchExpansions(language: "it-IT")
+        let second = try await repository.fetchExpansions(language: "it-IT")
 
         XCTAssertEqual(fallback.fetchCount, 1)
         XCTAssertEqual(first.map(\.id), ["exp-1"])
@@ -83,13 +83,13 @@ final class CollectionsStoreTests: XCTestCase {
         _ = try await DatabaseExpansionRepository(
             fallback: StubExpansionRepository(),
             databaseManager: manager
-        ).fetchExpansions()
+        ).fetchExpansions(language: "it-IT")
 
         let fallback = StubCardListRepository(cards: [makeCard(id: "card-1")])
         let repository = DatabaseCardListRepository(fallback: fallback, databaseManager: manager)
 
-        let first = try await repository.fetchCardList(path: "exp-1")
-        let second = try await repository.fetchCardList(path: "exp-1")
+        let first = try await repository.fetchCardList(path: "exp-1", language: "it-IT")
+        let second = try await repository.fetchCardList(path: "exp-1", language: "it-IT")
 
         XCTAssertEqual(fallback.fetchCount, 1)
         XCTAssertEqual(first.map(\.id), ["card-1"])
@@ -99,20 +99,16 @@ final class CollectionsStoreTests: XCTestCase {
     func testCardListRepositoryCreatesPlaceholderExpansionWhenMissing() async throws {
         let manager = try DatabaseManager(inMemory: true)
         let fallback = StubCardListRepository(cards: [makeCard(id: "card-1")])
-        let repository = DatabaseCardListRepository(
-            fallback: fallback,
-            expansionRepository: StubExpansionRepository(expansions: []),
-            databaseManager: manager
-        )
+        let repository = DatabaseCardListRepository(fallback: fallback, databaseManager: manager)
 
-        let cards = try await repository.fetchCardList(path: "missing-exp")
+        let cards = try await repository.fetchCardList(path: "missing-exp", language: "it-IT")
         XCTAssertEqual(cards.count, 1)
 
         // Verify the placeholder expansion is present and returned by DB repo.
         let expansionsFromDB = try await DatabaseExpansionRepository(
             fallback: StubExpansionRepository(expansions: []),
             databaseManager: manager
-        ).fetchExpansions()
+        ).fetchExpansions(language: "it-IT")
         XCTAssertEqual(expansionsFromDB.map(\.id), ["missing-exp"])
     }
 
@@ -135,20 +131,16 @@ final class CollectionsStoreTests: XCTestCase {
             ]
         )
         let cardFallback = StubCardListRepository(cards: [makeCard(id: "card-override")])
-        let repository = DatabaseCardListRepository(
-            fallback: cardFallback,
-            expansionRepository: fallbackExpansion,
-            databaseManager: manager
-        )
+        let repository = DatabaseCardListRepository(fallback: cardFallback, databaseManager: manager)
 
-        let cards = try await repository.fetchCardList(path: "exp-base-it")
+        let cards = try await repository.fetchCardList(path: "exp-base-it", language: "it-IT")
         XCTAssertEqual(cards.map(\.id), ["card-override"])
 
         // Ensure expansion with the path key exists, satisfying FK for inserted cards.
         let expansionsFromDB = try await DatabaseExpansionRepository(
             fallback: StubExpansionRepository(expansions: []),
             databaseManager: manager
-        ).fetchExpansions()
+        ).fetchExpansions(language: "it-IT")
         XCTAssertTrue(expansionsFromDB.contains { $0.id == "exp-base-it" })
     }
 
@@ -173,21 +165,20 @@ final class CollectionsStoreTests: XCTestCase {
                 ]
             ),
             databaseManager: manager
-        ).fetchExpansions()
+        ).fetchExpansions(language: "it-IT")
 
         let repository = DatabaseCardListRepository(
             fallback: StubCardListRepository(cards: [makeCard(id: "card-override")]),
-            expansionRepository: StubExpansionRepository(expansions: []),
             databaseManager: manager
         )
 
         // This should replace the base id with the path id and delete the old row.
-        _ = try await repository.fetchCardList(path: "exp-base.it-IT")
+        _ = try await repository.fetchCardList(path: "exp-base.it-IT", language: "it-IT")
 
         let expansionsFromDB = try await DatabaseExpansionRepository(
             fallback: StubExpansionRepository(expansions: []),
             databaseManager: manager
-        ).fetchExpansions()
+        ).fetchExpansions(language: "it-IT")
         XCTAssertEqual(Set(expansionsFromDB.map(\.id)), ["exp-base.it-IT"])
     }
 }
@@ -215,7 +206,7 @@ private final class StubExpansionRepository: ExpansionRepository {
         self.expansions = expansions
     }
 
-    func fetchExpansions() async throws -> [Expansion] {
+    func fetchExpansions(language: String) async throws -> [Expansion] {
         fetchCount += 1
         return expansions
     }
@@ -229,7 +220,7 @@ private final class StubCardListRepository: CardListRepository {
         self.cards = cards
     }
 
-    func fetchCardList(path: String) async throws -> [CardData] {
+    func fetchCardList(path: String, language: String) async throws -> [CardData] {
         fetchCount += 1
         return cards
     }
